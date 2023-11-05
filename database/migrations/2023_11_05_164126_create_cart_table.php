@@ -11,16 +11,22 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('bank_account', function (Blueprint $table) {
+        Schema::create('cart', function (Blueprint $table) {
             $table->id();
             $table->string('username');
-            $table->string('bank');
-            $table->string('account_number');
-            $table->string('beneficiary_name');
+            $table->unsignedBigInteger('id_product_detail');
+            $table->integer('quantity');
+            $table->string('id_size');
             $table->timestamps();
 
             $table->foreign('username')
             ->references('username')->on('user')->onUpdate('cascade')->onDelete('cascade');
+
+            $table->foreign('id_product_detail')
+            ->references('id')->on('product_detail')->onUpdate('cascade')->onDelete('cascade');
+
+            $table->foreign('id_size')
+            ->references('id_size')->on('size')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 
@@ -29,6 +35,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('bank_account');
+        Schema::dropIfExists('cart');
     }
 };

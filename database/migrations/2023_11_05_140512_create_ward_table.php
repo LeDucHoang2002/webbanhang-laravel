@@ -11,16 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('bank_account', function (Blueprint $table) {
+        Schema::create('ward', function (Blueprint $table) {
             $table->id();
-            $table->string('username');
-            $table->string('bank');
-            $table->string('account_number');
-            $table->string('beneficiary_name');
+            $table->string('name_ward');
+            $table->unsignedBigInteger('id_district');
             $table->timestamps();
 
-            $table->foreign('username')
-            ->references('username')->on('user')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('id_district')
+            ->references('id')->on('district')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 
@@ -29,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('bank_account');
+        Schema::dropIfExists('ward');
     }
 };

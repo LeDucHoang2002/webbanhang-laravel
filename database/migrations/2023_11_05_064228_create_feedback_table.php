@@ -13,7 +13,14 @@ return new class extends Migration
     {
         Schema::create('feedback', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('id_order');
+            $table->text('message');
+            $table->unsignedBigInteger('star');
+            $table->datetime('day_feedback');
             $table->timestamps();
+
+            $table->foreign('id_order')
+            ->references('id')->on('order')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 

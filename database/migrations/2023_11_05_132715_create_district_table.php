@@ -11,9 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('cart', function (Blueprint $table) {
+        Schema::create('district', function (Blueprint $table) {
             $table->id();
+            $table->string('name_district');
+            $table->unsignedBigInteger('id_province');
             $table->timestamps();
+
+            $table->foreign('id_province')
+            ->references('id')->on('province')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 
@@ -22,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('cart');
+        Schema::dropIfExists('district');
     }
 };

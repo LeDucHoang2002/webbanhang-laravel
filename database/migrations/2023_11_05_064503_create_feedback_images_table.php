@@ -13,7 +13,18 @@ return new class extends Migration
     {
         Schema::create('feedback_images', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('id_feedback');
+            $table->unsignedBigInteger('id_image');
             $table->timestamps();
+
+            $table->unique(['id_feedback', 'id_image']);
+
+            $table->foreign('id_feedback')
+            ->references('id')->on('feedback')->onUpdate('cascade')->onDelete('cascade');
+
+            $table->foreign('id_image')
+            ->references('id')->on('images')->onUpdate('cascade')->onDelete('cascade');
+            
         });
     }
 
