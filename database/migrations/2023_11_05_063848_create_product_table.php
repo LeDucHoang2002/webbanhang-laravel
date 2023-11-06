@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('name_product');
             $table->string('image_product');
             $table->unsignedBigInteger('id_category');
+            $table->string('description');
             $table->timestamps();
 
             $table->foreign('id_category')
