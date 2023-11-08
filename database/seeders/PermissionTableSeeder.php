@@ -7,6 +7,8 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
+use Carbon\Carbon;
+
 class PermissionTableSeeder extends Seeder
 {
     /**
@@ -18,7 +20,7 @@ class PermissionTableSeeder extends Seeder
 
         DB::table('permission')->insert([
             ['name_permission' => 'Admin', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
-            ['name_permission' => 'Nhanvien', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['name_permission' => 'NhanVien', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
             ['name_permission' => 'KhachHang', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
         ]);
     }

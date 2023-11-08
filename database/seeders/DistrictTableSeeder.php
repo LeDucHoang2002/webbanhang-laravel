@@ -9,9 +9,8 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 use Carbon\Carbon;
 
-class ProvinceTableSeeder extends Seeder
+class DistrictTableSeeder extends Seeder
 {
-
     /**
      * Run the database seeds.
      */

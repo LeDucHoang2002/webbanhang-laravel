@@ -10,6 +10,7 @@ use Illuminate\Support\Str;
 use Carbon\Carbon;
 
 class UserTableSeeder extends Seeder
+
 {
     /**
      * Run the database seeds.
@@ -18,7 +19,7 @@ class UserTableSeeder extends Seeder
     {
         date_default_timezone_set('Asia/Ho_Chi_Minh');
 
-        DB::table('users')->insert([
+        DB::table('user')->insert([
             [
                 'username' => 'leduchoang', 
                 'account_name' => 'Lê Đức Hoàng',

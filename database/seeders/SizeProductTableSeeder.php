@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 use Carbon\Carbon;
 
-class ProductDetailTableSeeder extends Seeder
+class SizeProductTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -18,11 +18,11 @@ class ProductDetailTableSeeder extends Seeder
     {
         date_default_timezone_set('Asia/Ho_Chi_Minh');
 
-        DB::table('product_detail')->insert([
+        DB::table('size_product')->insert([
             [
-                'id_product' => 1, 
-                'color' => 'Màu xanh',
-                'price' => '100000', 
+                'id_product_detail' => 1, 
+                'id_size' => 'L',
+                'stock' => 200, 
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
             ],

@@ -4,6 +4,10 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
+use Carbon\Carbon;
 
 class DatabaseSeeder extends Seeder
 {
@@ -18,5 +22,26 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+        $this->call([
+            ProvinceTableSeeder::class,
+            DistrictTableSeeder::class,
+            WardTableSeeder::class,
+            UserTableSeeder::class,
+            BankAccountTableSeeder::class,
+            PermissionTableSeeder::class,
+            UserPermissionTableSeeder::class,
+            ImagesTableSeeder::class,
+            CategoryTableSeeder::class,
+            ProductTableSeeder::class,
+            ProductDetailTableSeeder::class,
+            SizeTableSeeder::class,
+            SizeProductTableSeeder::class,
+            ProductImagesTableSeeder::class,
+            OrderTableSeeder::class,
+            OrderDetailTableSeeder::class,
+            CartTableSeeder::class,
+            FeedbackTableSeeder::class,
+            FeedbackImagesTableSeeder::class,
+        ]);
     }
 }
