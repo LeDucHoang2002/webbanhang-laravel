@@ -14,5 +14,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('client.home.index');
+})->name('client.home');
+Route::get('/detail', function () {
+    return view('client.product.detail');
+})->name('client.product.detail');
+
+Route::get('/payment', function () {
+    return view('client.payment.index');
+})->name('client.payment.index');
+
+Route::get('/profile', function () {
+    return view('client.profile.index');
+})->name('client.profile.index');
+
