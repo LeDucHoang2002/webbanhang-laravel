@@ -26,6 +26,36 @@ class UserPermissionTableSeeder extends Seeder
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
             ],
+            [
+                'id_permission' => 3, 
+                'username' => 'nguyenhaily',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'id_permission' => 3, 
+                'username' => 'phamdgoon',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'id_permission' => 3, 
+                'username' => 'quochung',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'id_permission' => 3, 
+                'username' => 'ngochieu',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'id_permission' => 3, 
+                'username' => 'vothanhhai',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
         ]);
     }
 }

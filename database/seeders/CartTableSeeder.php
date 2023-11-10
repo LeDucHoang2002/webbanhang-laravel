@@ -20,9 +20,17 @@ class CartTableSeeder extends Seeder
 
         DB::table('cart')->insert([
             [
-                'username' => 'leduchoang', 
+                'username' => 'nguyenhaily', 
                 'id_product_detail' => 1,
                 'quantity' => 2,
+                'id_size' =>'L',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'username' => 'nguyenhaily', 
+                'id_product_detail' => 11,
+                'quantity' => 1,
                 'id_size' =>'L',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()

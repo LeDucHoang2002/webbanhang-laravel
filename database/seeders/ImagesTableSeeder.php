@@ -17,9 +17,17 @@ class ImagesTableSeeder extends Seeder
     public function run(): void
     {
         DB::table('images')->insert([
-            ['image' => 'https://baoangiang.com.vn/image/fckeditor/upload/2022/20221124/images/Untitled%20(11).jpg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
-            ['image' => 'https://bizweb.dktcdn.net/100/300/101/files/ao-dai-co-dau-do-tuoi-ket-hy-add208-2.jpg?v=1655304942486v', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
-            ['image' => 'https://static2.yan.vn/YanNews/2167221/202001/5-mau-ao-so-mi-nu-du-doan-hot-nam-2020-27d975e9.jpg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['image' => 'https://4menshop.com/images/thumbs/2017/06/ao-thun-co-tron-xanh-at716-8801-slide-2.jpg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['image' => 'https://4menshop.com/images/thumbs/2017/10/ao-thun-soc-xanh-at718-9143.jpg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['image' => 'https://4menshop.com/images/thumbs/2017/10/ao-thun-do-do-at716-9144.jpg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+
+            ['image' => 'https://salt.tikicdn.com/cache/w1200/ts/product/c8/6f/64/bd8afb8f2b55004077dc58ab04fef5d0.jpg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['image' => 'https://lamdepwiki.com/wp-content/uploads/2019/09/vay-dam-voan-2-lop.jpg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['image' => 'https://vpfashion.vn/wp-content/uploads/2021/06/mau-vay-cong-so-dep-nhat-moi-nhat.png', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+
+            ['image' => 'https://4men.com.vn/images/thumbs/2017/09/tong-hop-nhung-mau-quan-jogger-nam-dep-nhat-hien-nay-news-245.jpg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['image' => 'https://tmluxury.vn/wp-content/uploads/quan-tay-thun-nam-dep-tmqt02.jpg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['image' => 'https://dony.vn/wp-content/uploads/2021/09/quan-tay-nam-dep-ban-chay-1.jpg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
         ]);
     }
 }

@@ -28,6 +28,24 @@ class OrderDetailTableSeeder extends Seeder
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
             ],
+            [
+                'id_order' => 1, 
+                'id_product_detail' => 2,
+                'quantity' => 2,
+                'size' =>'L',
+                'price' => '200000',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'id_order' => 2, 
+                'id_product_detail' => 3,
+                'quantity' => 2,
+                'size' =>'L',
+                'price' => '200000',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
         ]);
     }
 }

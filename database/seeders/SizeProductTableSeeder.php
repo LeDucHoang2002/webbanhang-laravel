@@ -26,6 +26,120 @@ class SizeProductTableSeeder extends Seeder
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
             ],
+            [
+                'id_product_detail' => 1, 
+                'id_size' => 'M',
+                'stock' => 200, 
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'id_product_detail' => 1, 
+                'id_size' => 'XL',
+                'stock' => 200, 
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+
+            [
+                'id_product_detail' => 2, 
+                'id_size' => 'L',
+                'stock' => 220, 
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'id_product_detail' => 2, 
+                'id_size' => 'M',
+                'stock' => 150, 
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'id_product_detail' => 2, 
+                'id_size' => 'XL',
+                'stock' => 170, 
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+
+            [
+                'id_product_detail' => 3, 
+                'id_size' => 'L',
+                'stock' => 245, 
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'id_product_detail' => 3, 
+                'id_size' => 'M',
+                'stock' => 211, 
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'id_product_detail' => 3, 
+                'id_size' => 'XL',
+                'stock' => 135, 
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+
+            [
+                'id_product_detail' => 4, 
+                'id_size' => 'L',
+                'stock' => 325, 
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'id_product_detail' => 5, 
+                'id_size' => 'M',
+                'stock' => 231, 
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'id_product_detail' => 6, 
+                'id_size' => 'XL',
+                'stock' => 150, 
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'id_product_detail' => 7, 
+                'id_size' => 'L',
+                'stock' => 200, 
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'id_product_detail' => 8, 
+                'id_size' => 'M',
+                'stock' => 241, 
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'id_product_detail' => 9, 
+                'id_size' => 'XL',
+                'stock' => 311, 
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],[
+                'id_product_detail' => 10, 
+                'id_size' => 'L',
+                'stock' => 115, 
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'id_product_detail' => 11, 
+                'id_size' => 'M',
+                'stock' => 113, 
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
         ]);
     }
 }

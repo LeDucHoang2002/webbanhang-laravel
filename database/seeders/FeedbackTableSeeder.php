@@ -27,6 +27,22 @@ class FeedbackTableSeeder extends Seeder
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
             ],
+            [
+                'id_order' => 2, 
+                'message' => 'Áo tạm được',
+                'star' => 4,
+                'day_feedback' =>Carbon::now(),
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'id_order' => 3, 
+                'message' => 'Áo đẹp',
+                'star' => 5,
+                'day_feedback' =>Carbon::now(),
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
         ]);
     }
 }
