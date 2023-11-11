@@ -12,10 +12,11 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+use App\Http\Controllers\Client\HomeController;
 
-Route::get('/', function () {
-    return view('client.home.index');
-})->name('client.home');
+
+Route::get('/', [HomeController::class, 'index'])->name('client.home');
+
 Route::get('/detail', function () {
     return view('client.product.detail');
 })->name('client.product.detail');

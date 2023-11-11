@@ -2037,6 +2037,7 @@ input.num-product::-webkit-inner-spin-button {
 /*//////////////////////////////////////////////////////////////////
 [ Block2 ]*/
 .block2-pic {
+  height: 250px;
   position: relative;
 }
 

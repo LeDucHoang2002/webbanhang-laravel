@@ -29,14 +29,14 @@ class ProductDetailTableSeeder extends Seeder
             [
                 'id_product' => 1, 
                 'color' => 'Màu đỏ',
-                'price' => '100000', 
+                'price' => '120000', 
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
             ],
             [
                 'id_product' => 1, 
                 'color' => 'Màu tím',
-                'price' => '100000', 
+                'price' => '130000', 
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
             ],
@@ -50,28 +50,28 @@ class ProductDetailTableSeeder extends Seeder
             [
                 'id_product' => 3, 
                 'color' => 'Màu xanh',
-                'price' => '100000', 
+                'price' => '120000', 
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
             ],
             [
                 'id_product' => 4, 
                 'color' => 'Màu xanh',
-                'price' => '100000', 
+                'price' => '200000', 
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
             ],
             [
                 'id_product' => 5, 
                 'color' => 'Màu xanh',
-                'price' => '100000', 
+                'price' => '300000', 
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
             ],
             [
                 'id_product' => 6, 
                 'color' => 'Màu xanh',
-                'price' => '100000', 
+                'price' => '120000', 
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
             ],
@@ -85,14 +85,14 @@ class ProductDetailTableSeeder extends Seeder
             [
                 'id_product' => 8, 
                 'color' => 'Màu xanh',
-                'price' => '100000', 
+                'price' => '190000', 
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
             ],
             [
                 'id_product' => 9, 
                 'color' => 'Màu xanh',
-                'price' => '100000', 
+                'price' => '150000', 
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
             ],

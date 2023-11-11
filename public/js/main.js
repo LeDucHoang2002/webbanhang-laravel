@@ -277,6 +277,26 @@
         $('.js-modal1').removeClass('show-modal1');
     });
 
+    document.addEventListener('DOMContentLoaded', function () {
+        const showModalButtons = document.querySelectorAll('.js-show-modal1');
+        showModalButtons.forEach(function (button) {
+            button.addEventListener('click', function (event) {
+                event.preventDefault(); // Ngăn chặn hành vi mặc định của thẻ anchor
+
+                const productId = button.getAttribute('data-product-id');
+                const productName = button.getAttribute('data-product-name');
+                const productPrice = JSON.parse(button.getAttribute('data-product-price'));
+                const minPrice = productPrice.min;
+                const maxPrice = productPrice.max;
+                const productDescription = button.getAttribute('data-product-description');
+
+                // Cập nhật nội dung modal với chi tiết sản phẩm đã chọn
+                document.querySelector('.js-name-detail').innerText = productName;
+                document.querySelector('.mtext-106').innerText = (minPrice === maxPrice) ? `${minPrice} VNĐ` : `${minPrice} - ${maxPrice} VNĐ`;
+                document.getElementById('product-description').innerText = productDescription;
+            });
+        });
+    });
 
 
 })(jQuery);

@@ -16,6 +16,7 @@
 			});
 		})
 	</script>
+	
 	<!--===============================================================================================-->
 	<script src="vendor/daterangepicker/moment.min.js"></script>
 	<script src="vendor/daterangepicker/daterangepicker.js"></script>
@@ -45,6 +46,7 @@
 	<script src="vendor/isotope/isotope.pkgd.min.js"></script>
 	<!--===============================================================================================-->
 	<script src="vendor/sweetalert/sweetalert.min.js"></script>
+	
 	<script>
 		$('.js-addwish-b2').on('click', function (e) {
 			e.preventDefault();
