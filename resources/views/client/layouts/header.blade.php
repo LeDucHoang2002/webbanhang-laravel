@@ -5,40 +5,23 @@
             <nav class="limiter-menu-desktop container">
                 
                 <!-- Logo desktop -->		
-                <a href="{{ route('client.home') }}" class="logo">
-                    <img src="images/icons/logo-01.png" alt="IMG-LOGO">
+                <a href="{{ route('client.home') }}" class="logo" style="color: #000">
+                    <h4><b>SEASIDE</b> STORE</h4>
                 </a>
 
                 <!-- Menu desktop -->
                 <div class="menu-desktop">
                     <ul class="main-menu">
                         <li class="active-menu">
-                            <a href="{{ route('client.home') }}">Home</a>
-                            <ul class="sub-menu">
-                                <li><a href="index.html">Homepage 1</a></li>
-                                <li><a href="home-02.html">Homepage 2</a></li>
-                                <li><a href="home-03.html">Homepage 3</a></li>
-                            </ul>
+                            <a href="{{ route('client.home') }}">TRANG CHỦ</a>
                         </li>
 
                         <li >
-                            <a href="{{ route('client.product.detail') }}">Shop</a>
-                        </li>
-
-                        <li class="label1" data-label1="hot">
-                            <a href="shoping-cart.html">Features</a>
+                            <a href="{{ route('client.product.detail') }}">SẢN PHẨM</a>
                         </li>
 
                         <li>
-                            <a href="blog.html">Blog</a>
-                        </li>
-
-                        <li>
-                            <a href="about.html">About</a>
-                        </li>
-
-                        <li>
-                            <a href="contact.html">Contact</a>
+                            <a href="contact.html">LIÊN HỆ</a>
                         </li>
                     </ul>
                 </div>	
