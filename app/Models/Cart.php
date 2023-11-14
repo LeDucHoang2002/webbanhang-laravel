@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Cart extends Model
 {
     use HasFactory;
+    protected $table = 'cart'; // Tên của bảng trong cơ sở dữ liệu
+    protected $primaryKey = 'id'; // Khóa chính của bảng
+    protected $fillable = ['username','id_product_detail','quantity','id_size','created_at','updated_at'];
 }

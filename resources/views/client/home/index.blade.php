@@ -9,7 +9,7 @@
         <div class="header-cart flex-col-l p-l-65 p-r-25">
             <div class="header-cart-title flex-w flex-sb-m p-b-8">
                 <span class="mtext-103 cl2">
-                    Your Cart
+                    GIỎ HÀNG
                 </span>
 
                 <div class="fs-35 lh-10 cl2 p-lr-5 pointer hov-cl1 trans-04 js-hide-cart">
@@ -76,12 +76,12 @@
                     <div class="header-cart-buttons flex-w w-full">
                         <a href="shoping-cart.html"
                             class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-r-8 m-b-10">
-                            View Cart
+                            Xem chi tiết
                         </a>
 
                         <a href="shoping-cart.html"
                             class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-b-10">
-                            Check Out
+                            Thanh toán
                         </a>
                     </div>
                 </div>
@@ -95,25 +95,25 @@
     <section class="section-slide">
         <div class="wrap-slick1">
             <div class="slick1">
-                <div class="item-slick1" style="background-image: url(images/slide-01.jpg);">
+                <div class="item-slick1" style="background-image: url(images/slide-00.jpg);">
                     <div class="container h-full">
                         <div class="flex-col-l-m h-full p-t-100 p-b-30 respon5">
                             <div class="layer-slick1 animated visible-false" data-appear="fadeInDown" data-delay="0">
                                 <span class="ltext-101 cl2 respon2">
-                                    Women Collection 2018
+                                    Thời trang nữ 2023
                                 </span>
                             </div>
 
                             <div class="layer-slick1 animated visible-false" data-appear="fadeInUp" data-delay="800">
                                 <h2 class="ltext-201 cl2 p-t-19 p-b-43 respon1">
-                                    NEW SEASON
+                                    Bộ sưu tập mới
                                 </h2>
                             </div>
 
                             <div class="layer-slick1 animated visible-false" data-appear="zoomIn" data-delay="1600">
                                 <a href="product.html"
                                     class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">
-                                    Shop Now
+                                    Mua ngay
                                 </a>
                             </div>
                         </div>
@@ -125,45 +125,20 @@
                         <div class="flex-col-l-m h-full p-t-100 p-b-30 respon5">
                             <div class="layer-slick1 animated visible-false" data-appear="rollIn" data-delay="0">
                                 <span class="ltext-101 cl2 respon2">
-                                    Men New-Season
+                                    Thời trang nam
                                 </span>
                             </div>
 
                             <div class="layer-slick1 animated visible-false" data-appear="lightSpeedIn" data-delay="800">
                                 <h2 class="ltext-201 cl2 p-t-19 p-b-43 respon1">
-                                    Jackets & Coats
+                                    Khoác & Jean
                                 </h2>
                             </div>
 
                             <div class="layer-slick1 animated visible-false" data-appear="slideInUp" data-delay="1600">
                                 <a href="product.html"
                                     class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">
-                                    Shop Now
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="item-slick1" style="background-image: url(images/slide-03.jpg);">
-                    <div class="container h-full">
-                        <div class="flex-col-l-m h-full p-t-100 p-b-30 respon5">
-                            <div class="layer-slick1 animated visible-false" data-appear="rotateInDownLeft" data-delay="0">
-                                <span class="ltext-101 cl2 respon2">
-                                    Men Collection 2018
-                                </span>
-                            </div>
-
-                            <div class="layer-slick1 animated visible-false" data-appear="rotateInUpRight" data-delay="800">
-                                <h2 class="ltext-201 cl2 p-t-19 p-b-43 respon1">
-                                    New arrivals
-                                </h2>
-                            </div>
-
-                            <div class="layer-slick1 animated visible-false" data-appear="rotateIn" data-delay="1600">
-                                <a href="product.html"
-                                    class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">
-                                    Shop Now
+                                    Mua ngay
                                 </a>
                             </div>
                         </div>
@@ -173,125 +148,39 @@
         </div>
     </section>
 
-
-    <!-- Banner -->
-    <div class="sec-banner bg0 p-t-80 p-b-50">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 col-xl-4 p-b-30 m-lr-auto">
-                    <!-- Block1 -->
-                    <div class="block1 wrap-pic-w">
-                        <img src="images/banner-01.jpg" alt="IMG-BANNER">
-
-                        <a href="product.html"
-                            class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
-                            <div class="block1-txt-child1 flex-col-l">
-                                <span class="block1-name ltext-102 trans-04 p-b-8">
-                                    Women
-                                </span>
-
-                                <span class="block1-info stext-102 trans-04">
-                                    Spring 2018
-                                </span>
-                            </div>
-
-                            <div class="block1-txt-child2 p-b-4 trans-05">
-                                <div class="block1-link stext-101 cl0 trans-09">
-                                    Shop Now
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-xl-4 p-b-30 m-lr-auto">
-                    <!-- Block1 -->
-                    <div class="block1 wrap-pic-w">
-                        <img src="images/banner-02.jpg" alt="IMG-BANNER">
-
-                        <a href="product.html"
-                            class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
-                            <div class="block1-txt-child1 flex-col-l">
-                                <span class="block1-name ltext-102 trans-04 p-b-8">
-                                    Men
-                                </span>
-
-                                <span class="block1-info stext-102 trans-04">
-                                    Spring 2018
-                                </span>
-                            </div>
-
-                            <div class="block1-txt-child2 p-b-4 trans-05">
-                                <div class="block1-link stext-101 cl0 trans-09">
-                                    Shop Now
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-xl-4 p-b-30 m-lr-auto">
-                    <!-- Block1 -->
-                    <div class="block1 wrap-pic-w">
-                        <img src="images/banner-03.jpg" alt="IMG-BANNER">
-
-                        <a href="product.html"
-                            class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
-                            <div class="block1-txt-child1 flex-col-l">
-                                <span class="block1-name ltext-102 trans-04 p-b-8">
-                                    Accessories
-                                </span>
-
-                                <span class="block1-info stext-102 trans-04">
-                                    New Trend
-                                </span>
-                            </div>
-
-                            <div class="block1-txt-child2 p-b-4 trans-05">
-                                <div class="block1-link stext-101 cl0 trans-09">
-                                    Shop Now
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- Product -->
     <section class="bg0 p-t-23 p-b-140">
         <div class="container">
             <div class="p-b-10">
-                <h3 class="ltext-103 cl5">
-                    Product Overview
-                </h3>
+                <h6 class="ltext-103 cl5">
+                    Tổng quan sản phẩm
+                </h6>
             </div>
 
             <div class="flex-w flex-sb-m p-b-52">
                 <div class="flex-w flex-l-m filter-tope-group m-tb-10">
                     <button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5 how-active1" data-filter="*">
-                        All Products
+                        Tất cả sản phẩm
                     </button>
 
                     <button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".women">
-                        Women
+                        Nữ
                     </button>
 
                     <button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".men">
-                        Men
+                        Nam
                     </button>
 
                     <button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".bag">
-                        Bag
+                        Túi
                     </button>
 
                     <button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".shoes">
-                        Shoes
+                        Giày
                     </button>
 
                     <button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".watches">
-                        Watches
+                        Phụ kiện
                     </button>
                 </div>
 
@@ -300,13 +189,13 @@
                         class="flex-c-m stext-106 cl6 size-104 bor4 pointer hov-btn3 trans-04 m-r-8 m-tb-4 js-show-filter">
                         <i class="icon-filter cl2 m-r-6 fs-15 trans-04 zmdi zmdi-filter-list"></i>
                         <i class="icon-close-filter cl2 m-r-6 fs-15 trans-04 zmdi zmdi-close dis-none"></i>
-                        Filter
+                        Lọc
                     </div>
 
                     <div class="flex-c-m stext-106 cl6 size-105 bor4 pointer hov-btn3 trans-04 m-tb-4 js-show-search">
                         <i class="icon-search cl2 m-r-6 fs-15 trans-04 zmdi zmdi-search"></i>
                         <i class="icon-close-search cl2 m-r-6 fs-15 trans-04 zmdi zmdi-close dis-none"></i>
-                        Search
+                        Tìm kiếm
                     </div>
                 </div>
 
@@ -530,7 +419,7 @@
 								data-product-name="{{ $product->name_product }}"
 								data-product-price="{{ json_encode($priceByProduct[$product->id]) }}"
 								data-product-description="{{ $product->description }}">
-								Quick View
+								Xem chi tiết
 							</a>
 						</div>
 			
@@ -636,7 +525,7 @@
 											<div class="size-204 respon6-next">
 												<div class="rs1-select2 bor8 bg0">
 													<select class="js-select2" name="time">
-														<option>Choose an option</option>
+														<option>Chọn size</option>
 														<option>Size S</option>
 														<option>Size M</option>
 														<option>Size L</option>
@@ -649,17 +538,17 @@
 
 										<div class="flex-w flex-r-m p-b-10">
 											<div class="size-203 flex-c-m respon6">
-												Color
+												Màu
 											</div>
 
 											<div class="size-204 respon6-next">
 												<div class="rs1-select2 bor8 bg0">
 													<select class="js-select2" name="time">
-														<option>Choose an option</option>
-														<option>Red</option>
-														<option>Blue</option>
-														<option>White</option>
-														<option>Grey</option>
+														<option>Chọn màu</option>
+														<option>Đỏ</option>
+														<option>Xanh</option>
+														<option>Trắng</option>
+														<option>Xám</option>
 													</select>
 													<div class="dropDownSelect2"></div>
 												</div>
@@ -683,7 +572,7 @@
 
 												<button
 													class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail">
-													Add to cart
+													Thêm vào giỏ hàng
 												</button>
 											</div>
 										</div>
@@ -731,7 +620,7 @@
             <!-- Load more -->
             <div class="flex-c-m flex-w w-full p-t-45">
                 <a href="#" class="flex-c-m stext-101 cl5 size-103 bg2 bor1 hov-btn1 p-lr-15 trans-04">
-                    Load More
+                    Xem thêm
                 </a>
             </div>
         </div>

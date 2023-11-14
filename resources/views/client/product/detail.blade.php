@@ -159,19 +159,19 @@
                             </div>
 
                             <!-- Facebook Share -->
-                            <a href="" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100"
+                            <a href="" class="fs-14 cl13 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100"
                                 onclick="shareOnFacebook()" data-tooltip="Chia sẻ trên Facebook">
-                                <i class="fa fa-facebook"></i>
+                                <i class="fa fa-facebook" ></i>
                             </a>
 
                             <!-- Twitter Share -->
-                            <a href="" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100"
+                            <a href="" class="fs-14 cl13 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100"
                                 onclick="shareOnTwitter()" data-tooltip="Chia sẻ trên Twitter">
                                 <i class="fa fa-twitter"></i>
                             </a>
 
                             <!-- Google Plus Share -->
-                            <a href="" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100"
+                            <a href="" class="fs-14 cl13 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100"
                                 onclick="shareOnGooglePlus()" data-tooltip="Chia sẻ trên Google Plus">
                                 <i class="fa fa-google-plus"></i>
                             </a>
