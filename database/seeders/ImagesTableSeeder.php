@@ -28,6 +28,10 @@ class ImagesTableSeeder extends Seeder
             ['image' => 'https://4men.com.vn/images/thumbs/2017/09/tong-hop-nhung-mau-quan-jogger-nam-dep-nhat-hien-nay-news-245.jpg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
             ['image' => 'https://tmluxury.vn/wp-content/uploads/quan-tay-thun-nam-dep-tmqt02.jpg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
             ['image' => 'https://dony.vn/wp-content/uploads/2021/09/quan-tay-nam-dep-ban-chay-1.jpg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+
+            ['image' => 'https://static2.yan.vn/YanNews/2167221/202002/5-mau-ao-thun-nam-dep-khong-nen-bo-qua-nam-2020-f7263123.jpg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['image' => 'https://aoxuanhe.com/upload/product/axh-162/ao-thun-nam-cotton-co-tron-trang.jpg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            
         ]);
     }
 }

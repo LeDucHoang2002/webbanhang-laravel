@@ -9,19 +9,17 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
-{
+{protected $table = 'user'; // Tên của bảng trong cơ sở dữ liệu
+    // Các trường của bảng
+    protected $fillable = ['username','account_name','email','phone_number','gender','birth_day','password','address','avt','remember_token', 'created_at', 'updated_at'];
+    
     use HasApiTokens, HasFactory, Notifiable;
-
     /**
      * The attributes that are mass assignable.
      *
      * @var array<int, string>
      */
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-    ];
+    
 
     /**
      * The attributes that should be hidden for serialization.

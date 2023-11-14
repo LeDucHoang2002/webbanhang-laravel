@@ -39,13 +39,13 @@ class ProductImagesTableSeeder extends Seeder
             ],
             [
                 'id_product_detail' => 4, 
-                'id_image' => 1,
+                'id_image' => 10,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
             ],
             [
                 'id_product_detail' => 5, 
-                'id_image' => 1,
+                'id_image' => 11,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
             ],

@@ -114,7 +114,6 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 
 
 
-
 /*//////////////////////////////////////////////////////////////////
 [ LOADDING ]*/
 .animsition-loading-1 {
@@ -328,7 +327,9 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   max-height: 100%;
 }
 
-
+.wrap-pic-w .img{
+  height: 500px;
+}
 
 /*------------------------------------------------------------------
 [ Menu ]*/
@@ -3326,4 +3327,13 @@ input.num-product::-webkit-inner-spin-button {
     padding: 20px;
   }
 
+}
+.block2-pic .img-feedback{
+  width: 200px;
+}
+.group-cart{
+  margin-top: 20px;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
 }

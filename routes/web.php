@@ -13,13 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 use App\Http\Controllers\Client\HomeController;
+use App\Http\Controllers\Client\ProductController;
 
 
 Route::get('/', [HomeController::class, 'index'])->name('client.home');
 
-Route::get('/detail', function () {
-    return view('client.product.detail');
-})->name('client.product.detail');
+Route::get('/detail', [ProductController::class, 'index'])->name('client.product.detail');
 
 Route::get('/payment', function () {
     return view('client.payment.index');

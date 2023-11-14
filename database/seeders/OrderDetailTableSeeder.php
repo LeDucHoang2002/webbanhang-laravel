@@ -29,7 +29,7 @@ class OrderDetailTableSeeder extends Seeder
                 'updated_at' => Carbon::now()
             ],
             [
-                'id_order' => 1, 
+                'id_order' => 2, 
                 'id_product_detail' => 2,
                 'quantity' => 2,
                 'size' =>'L',
@@ -37,9 +37,56 @@ class OrderDetailTableSeeder extends Seeder
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
             ],
+
             [
-                'id_order' => 2, 
+                'id_order' => 3, 
                 'id_product_detail' => 3,
+                'quantity' => 2,
+                'size' =>'L',
+                'price' => '200000',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'id_order' => 3, 
+                'id_product_detail' => 4,
+                'quantity' => 2,
+                'size' =>'L',
+                'price' => '200000',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'id_order' => 4, 
+                'id_product_detail' => 5,
+                'quantity' => 2,
+                'size' =>'L',
+                'price' => '200000',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+
+            [
+                'id_order' => 5, 
+                'id_product_detail' => 6,
+                'quantity' => 2,
+                'size' =>'L',
+                'price' => '200000',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'id_order' => 5, 
+                'id_product_detail' => 7,
+                'quantity' => 2,
+                'size' =>'L',
+                'price' => '200000',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'id_order' => 6, 
+                'id_product_detail' => 8,
                 'quantity' => 2,
                 'size' =>'L',
                 'price' => '200000',

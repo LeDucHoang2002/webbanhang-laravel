@@ -226,45 +226,45 @@
 
     /*==================================================================
     [ Rating ]*/
-    $('.wrap-rating').each(function(){
-        var item = $(this).find('.item-rating');
-        var rated = -1;
-        var input = $(this).find('input');
-        $(input).val(0);
+    // $('.wrap-rating').each(function(){
+    //     var item = $(this).find('.item-rating');
+    //     var rated = -1;
+    //     var input = $(this).find('input');
+    //     $(input).val(0);
 
-        $(item).on('mouseenter', function(){
-            var index = item.index(this);
-            var i = 0;
-            for(i=0; i<=index; i++) {
-                $(item[i]).removeClass('zmdi-star-outline');
-                $(item[i]).addClass('zmdi-star');
-            }
+    //     $(item).on('mouseenter', function(){
+    //         var index = item.index(this);
+    //         var i = 0;
+    //         for(i=0; i<=index; i++) {
+    //             $(item[i]).removeClass('zmdi-star-outline');
+    //             $(item[i]).addClass('zmdi-star');
+    //         }
 
-            for(var j=i; j<item.length; j++) {
-                $(item[j]).addClass('zmdi-star-outline');
-                $(item[j]).removeClass('zmdi-star');
-            }
-        });
+    //         for(var j=i; j<item.length; j++) {
+    //             $(item[j]).addClass('zmdi-star-outline');
+    //             $(item[j]).removeClass('zmdi-star');
+    //         }
+    //     });
 
-        $(item).on('click', function(){
-            var index = item.index(this);
-            rated = index;
-            $(input).val(index+1);
-        });
+    //     $(item).on('click', function(){
+    //         var index = item.index(this);
+    //         rated = index;
+    //         $(input).val(index+1);
+    //     });
 
-        $(this).on('mouseleave', function(){
-            var i = 0;
-            for(i=0; i<=rated; i++) {
-                $(item[i]).removeClass('zmdi-star-outline');
-                $(item[i]).addClass('zmdi-star');
-            }
+    //     $(this).on('mouseleave', function(){
+    //         var i = 0;
+    //         for(i=0; i<=rated; i++) {
+    //             $(item[i]).removeClass('zmdi-star-outline');
+    //             $(item[i]).addClass('zmdi-star');
+    //         }
 
-            for(var j=i; j<item.length; j++) {
-                $(item[j]).addClass('zmdi-star-outline');
-                $(item[j]).removeClass('zmdi-star');
-            }
-        });
-    });
+    //         for(var j=i; j<item.length; j++) {
+    //             $(item[j]).addClass('zmdi-star-outline');
+    //             $(item[j]).removeClass('zmdi-star');
+    //         }
+    //     });
+    // });
     
     /*==================================================================
     [ Show modal1 ]*/
@@ -298,5 +298,23 @@
         });
     });
 
+ 
 
-})(jQuery);
+})(jQuery);   
+function shareOnFacebook() {
+    var currentUrl = window.location.href;
+    var facebookShareUrl = "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(currentUrl);
+    window.open(facebookShareUrl, '_blank');
+}
+
+function shareOnTwitter() {
+    var currentUrl = window.location.href;
+    var twitterShareUrl = "https://twitter.com/intent/tweet?url=" + encodeURIComponent(currentUrl);
+    window.open(twitterShareUrl, '_blank');
+}
+
+function shareOnGooglePlus() {
+    var currentUrl = window.location.href;
+    var googlePlusShareUrl = "https://plus.google.com/share?url=" + encodeURIComponent(currentUrl);
+    window.open(googlePlusShareUrl, '_blank');
+}
