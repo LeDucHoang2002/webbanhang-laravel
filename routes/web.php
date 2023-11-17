@@ -29,3 +29,6 @@ Route::get('/profile', function () {
     return view('client.profile.index');
 })->name('client.profile.index');
 
+Route::get('/account', function () {
+    return view('auth.login_register');
+})->name('account');
