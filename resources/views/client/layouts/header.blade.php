@@ -1,7 +1,7 @@
 	<!-- Header -->
 	<header class="header-v4">
 		<!-- Header desktop -->
-        <div class="wrap-menu-desktop how-shadow1">
+        <div class="wrap-menu-desktop how-shadow1" style="display: flex">
             <nav class="limiter-menu-desktop container">
                 
                 <!-- Logo desktop -->		
@@ -39,13 +39,17 @@
                     <a href="#" class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti" data-notify="0">
                         <i class="zmdi zmdi-favorite-outline"></i>
                     </a>
+                    <a href="{{ route('client.cart.index') }}" class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti" data-notify="0">
+                        <i class="zmdi zmdi-shopping-cart"></i>
+                    </a>
                 </div>
                 
             </nav>
+            <div class="flex-w flex-r-m m-r" >
+                <button>Đăng nhập</button>
+            </div>
         </div>	
-        <div style="height: 70px;">
-
-        </div>
+        <div style="height: 70px"></div>
 
 		<!-- Modal Search -->
 		<div class="modal-search-header flex-c-m trans-04 js-hide-modal-search">

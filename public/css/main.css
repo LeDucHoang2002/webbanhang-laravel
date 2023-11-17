@@ -2647,6 +2647,7 @@ input.num-product::-webkit-inner-spin-button {
 .bg6 {background-color: #f2f2f2;}
 .bg7 {background-color: #333;}
 .bg8 {background-color: #f3f3f3;}
+.bg10 {background-color: #d52a2a;}
 .bg9 {background-color: rgba(255,255,255,0.9);}
 
 /*---------------------------------------------*/
@@ -3189,7 +3190,9 @@ input.num-product::-webkit-inner-spin-button {
 
 }
 
-
+.m-r{
+  margin-right: 15px;
+}
 /*//////////////////////////////////////////////////////////////////
 [ LG ]*/
 @media (max-width: 991px) {
@@ -3337,4 +3340,72 @@ input.num-product::-webkit-inner-spin-button {
   width: 90%;
   display: flex;
   justify-content: space-between;
+}
+/* Add this CSS to your style file or in a style tag within your HTML file */
+/* Add this CSS to your style file or in a style tag within your HTML file */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+th, td {
+  padding: 12px 12px 12px 20px;
+  text-align: left;
+}
+
+/* Center the content in the "ID" column */
+#id-column {
+  justify-content: center;
+  text-align: center;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+  background-color: #f5f5f5; /* Background color for even rows */
+}
+
+tr:hover {
+  background-color: #ddd; /* Background color on hover */
+}
+
+img {
+  margin-right: 10px;
+  max-width: 100%;
+}
+/* Add some basic styles to the quantity buttons and the span */
+.quantity-btn {
+  color: #201919;
+  border: 1px solid #cfd0d1;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.quantity{
+  display: inline-block;
+  padding: 5px 10px;
+}
+
+.quantity-btn:hover {
+  border-color: #575a5c;
+}
+.buy-button-container {
+  font-size: 20px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 20px;
+}
+
+.buy-button-container button{
+  margin-left: 20px;
+}
+
+.buy-button-container p{
+  margin-left:5px;
+  margin-right:5px;
 }

@@ -14,11 +14,16 @@ use Illuminate\Support\Facades\Route;
 */
 use App\Http\Controllers\Client\HomeController;
 use App\Http\Controllers\Client\ProductController;
+use App\Http\Controllers\Client\CartController;
 
 
 Route::get('/', [HomeController::class, 'index'])->name('client.home');
 
 Route::get('/detail', [ProductController::class, 'index'])->name('client.product.detail');
+
+Route::get('/cart', [CartController::class, 'index'])->name('client.cart.index');
+
+Route::post('/remove-cart-item/{id}', [CartController::class, 'removeCartItem'])->name('remove.cart.item');
 
 Route::get('/payment', function () {
     return view('client.payment.index');
