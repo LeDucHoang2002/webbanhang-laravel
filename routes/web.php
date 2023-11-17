@@ -14,11 +14,15 @@ use Illuminate\Support\Facades\Route;
 */
 use App\Http\Controllers\Client\HomeController;
 use App\Http\Controllers\Client\ProductController;
+use App\Http\Controllers\Client\OrderController;
+
 
 
 Route::get('/', [HomeController::class, 'index'])->name('client.home');
 
 Route::get('/detail', [ProductController::class, 'index'])->name('client.product.detail');
+
+Route::get('/order', [OrderController::class, 'OrderProduct'])->name('client.order.product');
 
 Route::get('/payment', function () {
     return view('client.payment.index');

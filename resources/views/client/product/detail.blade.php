@@ -136,15 +136,13 @@
 
                                 </div>
                                 <div class="group-cart">
-                                    <button
-                                        class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail">
-                                        Giỏ hàng
+                                    <button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail" > 
+                                        Giỏ Hàng
                                     </button>
-                                    <button
-                                        class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail">
+                                    <button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail" id="btnCart">
                                         Mua ngay
                                     </button>
-                                </div>
+                                </div>      
                             </div>
                         </div>
 
