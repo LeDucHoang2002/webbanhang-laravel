@@ -16,9 +16,10 @@ class CartController extends Controller
         ->join('product', 'product_detail.id_product', '=', 'product.id')
         ->select('cart.*', 'product.name_product', 'product_detail.color', 'product_detail.price', 'product.image_product')
         ->get();
-        
+        $countCart=$carts->count('id');
         return view('client.cart.index', [
            'carts' => $carts,
+           'countCart' => $countCart,
         ]);
     }
 
