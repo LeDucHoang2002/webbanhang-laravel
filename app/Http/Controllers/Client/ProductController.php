@@ -12,11 +12,14 @@ use App\Models\Images;
 use App\Models\Order;
 use App\Models\Order_Detail;
 use App\Models\Feedback;
+use App\Models\Cart;
 
 class ProductController extends Controller
 {
     public function index(Request $request)
     {
+        $carts=Cart::all();
+        $countCart=$carts->count('id');
         $id = $request->input('id');
         $products = Product::find($id);
         $priceByProduct = [];
@@ -77,6 +80,7 @@ class ProductController extends Controller
             'feedbackData' => $feedbackData,
             'totalFeedback' => $totalFeedback,
             'averageStarRating' => $averageStarRating,
+            'countCart'=> $countCart,
         ]);
     }
 }

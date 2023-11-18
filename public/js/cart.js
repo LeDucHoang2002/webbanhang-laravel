@@ -1,3 +1,4 @@
+// Tạo sự kiện số lượng và thành tiền
 document.addEventListener('DOMContentLoaded', function () {
     setupQuantityButtons();
     setupDeleteButtons();
@@ -78,6 +79,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
+// Xóa sản phẩm
 function deleteCartItem(cartId) {
     // Ajax request to delete the item on the server
     fetch('/remove-cart-item/' + cartId, {
@@ -102,6 +104,7 @@ function deleteCartItem(cartId) {
         });
 }
 
+//cập nhật số lượng
 function updateCartItem(cartId, newQuantity) {
     fetch('/update-cart-item/' + cartId, {
         method: 'POST', 
@@ -125,7 +128,7 @@ function updateCartItem(cartId, newQuantity) {
     });
 }
 
-
+//tạo sự kiện cho checkbox giỏ hàng
 document.addEventListener('DOMContentLoaded', function () {
     var selectAllCheckbox = document.querySelector('.cart-checkbox[data-cart-id="All"]');
     var checkboxes = document.querySelectorAll('.cart-checkbox');
