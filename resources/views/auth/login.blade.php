@@ -28,11 +28,14 @@
                         {{ session('fail') }}
                     </div>
                 @endif
-                <input class="form__input" type="text" id="username1" name="username" placeholder="Tên đăng nhập"
+                <input class="form__input" type="text" id="username" name="username" placeholder="Tên đăng nhập"
                     required>
                 <!-- Add the 'required' attribute above -->
-                <input class="form__input" type="password" id="password1" name="password" placeholder="Mật khẩu"
-                    required>
+                <div class="input-wrapper">
+                    <input class="form__input" id="password" type="password" name="password" placeholder="Mật khẩu"
+                        required>
+                    <i id="togglePassword" class="fas fa-regular fa-eye-slash toggle-password"></i>
+                </div>
                 <!-- Add the 'required' attribute above -->
                 <a class="form__link" href="#">Bạn quên mật khẩu?</a>
                 <button class="form__button button" type="submit">ĐĂNG NHẬP</button>
@@ -52,3 +55,5 @@
 </body>
 
 </html>
+
+<script src="js/togglePassword.js"></script>
