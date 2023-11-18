@@ -54,8 +54,9 @@
                         {{ $user->account_name }}
                     </a>
                     <div id="userDropdown" class="dropdown-menu">
-                        <a href="{{ route('profile') }}" class="dropdown-item">Thông tin cá nhân</a>
-                        <a href="{{ route('logout') }}" class="dropdown-item">Đăng xuất</a>
+                        <a href="{{ route('profile') }}" class="dropdown-item"><i class="fa-solid fa-user"></i> Thông tin cá nhân</a>
+                        <a href="{{ route('logout') }}" class="dropdown-item"  data-toggle="modal" data-target="#logoutModal">
+                            <i class="fa-solid fa-right-from-bracket"></i> Đăng xuất</a>
                     </div>
                 </div>
             @else
@@ -81,27 +82,24 @@
             </form>
         </div>
     </div>
+    {{-- Modal đăng xuất --}}
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Bạn muốn đăng xuất ?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Chọn "Đăng xuất" nếu bạn chắc chắn.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Hủy</button>
+                    <a class="btn btn-primary" href="{{ route('logout') }}">Đăng xuất</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </header>
 
-<!-- Trong phần head của trang web -->
-<script>
-    // Hàm mở dropdown khi click
-    function toggleDropdown() {
-        var dropdown = document.getElementById("userDropdown");
-        dropdown.classList.toggle("show");
-    }
-
-    // Đóng dropdown nếu click bên ngoài dropdown
-    window.onclick = function(event) {
-        if (!event.target.matches('.nav-link.dropdown-toggle')) {
-            var dropdowns = document.getElementsByClassName("dropdown-menu");
-            var i;
-            for (i = 0; i < dropdowns.length; i++) {
-                var openDropdown = dropdowns[i];
-                if (openDropdown.classList.contains('show')) {
-                    openDropdown.classList.remove('show');
-                }
-            }
-        }
-    }
-</script>
+<script src="js/dropdown_header.js"></script>
