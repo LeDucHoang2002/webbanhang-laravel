@@ -1,65 +1,107 @@
-	<!-- Header -->
-	<header class="header-v4">
-		<!-- Header desktop -->
-        <div class="wrap-menu-desktop how-shadow1">
-            <nav class="limiter-menu-desktop container">
-                
-                <!-- Logo desktop -->		
-                <a href="{{ route('client.home') }}" class="logo" style="color: #000">
-                    <h4><b>SEASIDE</b> STORE</h4>
-                </a>
+<!-- Header -->
+<header class="header-v4">
+    <!-- Header desktop -->
+    <div class="wrap-menu-desktop how-shadow1">
+        <nav class="limiter-menu-desktop container">
 
-                <!-- Menu desktop -->
-                <div class="menu-desktop">
-                    <ul class="main-menu">
-                        <li class="active-menu">
-                            <a href="{{ route('client.home') }}">TRANG CHỦ</a>
-                        </li>
+            <!-- Logo desktop -->
+            <a href="{{ route('client.home') }}" class="logo" style="color: #000">
+                <h4><b>SEASIDE</b> STORE</h4>
+            </a>
 
-                        <li >
-                            <a href="{{ route('client.product.detail') }}">SẢN PHẨM</a>
-                        </li>
+            <!-- Menu desktop -->
+            <div class="menu-desktop">
+                <ul class="main-menu">
+                    <li class="active-menu">
+                        <a href="{{ route('client.home') }}">TRANG CHỦ</a>
+                    </li>
 
-                        <li>
-                            <a href="contact.html">LIÊN HỆ</a>
-                        </li>
-                    </ul>
-                </div>	
+                    <li>
+                        <a href="{{ route('client.product.detail') }}">SẢN PHẨM</a>
+                    </li>
 
-                <!-- Icon header -->
-                <div class="wrap-icon-header flex-w flex-r-m">
-                    <div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 js-show-modal-search">
-                        <i class="zmdi zmdi-search"></i>
-                    </div>
+                    <li>
+                        <a href="contact.html">LIÊN HỆ</a>
+                    </li>
+                </ul>
+            </div>
 
-                    <div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart" data-notify="2">
-                        <i class="zmdi zmdi-shopping-cart"></i>
-                    </div>
-
-                    <a href="#" class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti" data-notify="0">
-                        <i class="zmdi zmdi-favorite-outline"></i>
-                    </a>
+            <!-- Icon header -->
+            <div class="wrap-icon-header flex-w flex-r-m">
+                <div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 js-show-modal-search">
+                    <i class="zmdi zmdi-search"></i>
                 </div>
-                
-            </nav>
-        </div>	
-        <div style="height: 70px;">
 
+                <div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart"
+                    data-notify="2">
+                    <i class="zmdi zmdi-shopping-cart"></i>
+                </div>
+
+                <a href="#" class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti"
+                    data-notify="0">
+                    <i class="zmdi zmdi-favorite-outline"></i>
+                </a>
+            </div>
+
+            @if (session('username'))
+                @php
+                    $user = \App\Models\User::where('username', session('username'))->first();
+                @endphp
+                <div class="nav-item dropdown">
+                    <a href="#" style="height: 100%;" class="nav-link dropdown-toggle" onclick="toggleDropdown()"
+                        data-bs-toggle="dropdown">
+                        <img src="{{ $user->avt }}" alt="" class="rounded-circle" style="width: 40px;">
+                        {{ $user->account_name }}
+                    </a>
+                    <div id="userDropdown" class="dropdown-menu">
+                        <a href="{{ route('profile') }}" class="dropdown-item">Thông tin cá nhân</a>
+                        <a href="{{ route('logout') }}" class="dropdown-item">Đăng xuất</a>
+                    </div>
+                </div>
+            @else
+                <a class="" href="{{ route('login') }}">Đăng nhập</a>
+            @endif
+
+        </nav>
+    </div>
+    <div style="height: 70px;"></div>
+
+    <!-- Modal Search -->
+    <div class="modal-search-header flex-c-m trans-04 js-hide-modal-search">
+        <div class="container-search-header">
+            <button class="flex-c-m btn-hide-modal-search trans-04 js-hide-modal-search">
+                <img src="images/icons/icon-close2.png" alt="CLOSE">
+            </button>
+
+            <form class="wrap-search-header flex-w p-l-15">
+                <button class="flex-c-m trans-04">
+                    <i class="zmdi zmdi-search"></i>
+                </button>
+                <input class="plh3" type="text" name="search" placeholder="Search...">
+            </form>
         </div>
+    </div>
+</header>
 
-		<!-- Modal Search -->
-		<div class="modal-search-header flex-c-m trans-04 js-hide-modal-search">
-			<div class="container-search-header">
-				<button class="flex-c-m btn-hide-modal-search trans-04 js-hide-modal-search">
-					<img src="images/icons/icon-close2.png" alt="CLOSE">
-				</button>
+<!-- Trong phần head của trang web -->
+<script>
+    // Hàm mở dropdown khi click
+    function toggleDropdown() {
+        var dropdown = document.getElementById("userDropdown");
+        dropdown.classList.toggle("show");
+    }
 
-				<form class="wrap-search-header flex-w p-l-15">
-					<button class="flex-c-m trans-04">
-						<i class="zmdi zmdi-search"></i>
-					</button>
-					<input class="plh3" type="text" name="search" placeholder="Search...">
-				</form>
-			</div>
-		</div>
-	</header>
+    // Đóng dropdown nếu click bên ngoài dropdown
+    window.onclick = function(event) {
+        if (!event.target.matches('.nav-link.dropdown-toggle')) {
+            var dropdowns = document.getElementsByClassName("dropdown-menu");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+            }
+        }
+    }
+</script>

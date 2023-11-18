@@ -13,7 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 use App\Http\Controllers\Client\HomeController;
-use App\Http\Controllers\Auth\LoginController;
 
 
 Route::get('/', [HomeController::class, 'index'])->name('client.home');
@@ -28,16 +27,21 @@ Route::get('/payment', function () {
 
 Route::get('/profile', function () {
     return view('client.profile.index');
-})->name('client.profile.index');
+})->name('profile');
 
-Route::get('/account', function () {
-    return view('auth.login_register');
-})->name('account');
+use App\Http\Controllers\Auth\AuthController; // Replace with your actual controller
 
-Route::post('/login', [LoginController::class, 'login'])->name('login');
+Route::post('/login', [AuthController::class, 'login'])->name('login');
+Route::get('/logout', [AuthController::class,'logout'])->name('logout');
+// Route login
+Route::get('/login', function () {
+    return view('auth.login');
+})->name('login');
 
-// Route xử lý đăng xuất
-Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
+Route::get('/register', function () {
+    return view('auth.register');
+})->name('register');
+
 
 // Route cho trang dashboard của từng loại người dùng
 // Route::middleware(['auth'])->group(function () {
@@ -46,6 +50,3 @@ Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
     // Route::get('/dashboard/admin', [LoginController::class, 'dashboard_admin'])->name('admin_home');
 // });
 
-Route::get('/owner_home',[LoginController::class,'dashboard_owner'])->name('owner_home');
-
-Route::get('/admin home page',[LoginController::class,'dashboard_admin'])->name('admin_home');
