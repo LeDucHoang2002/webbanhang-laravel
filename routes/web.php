@@ -19,11 +19,17 @@ use App\Http\Controllers\Client\CartController;
 
 Route::get('/', [HomeController::class, 'index'])->name('client.home');
 
+//  Route Product
+
 Route::get('/detail', [ProductController::class, 'index'])->name('client.product.detail');
+
+//  Route Cart
 
 Route::get('/cart', [CartController::class, 'index'])->name('client.cart.index');
 
-Route::post('/remove-cart-item/{id}', [CartController::class, 'removeCartItem'])->name('remove.cart.item');
+Route::delete('/remove-cart-item/{id}', [CartController::class, 'removeCartItem'])->name('remove.cart.item');
+
+Route::post('/update-cart-item/{id}', [CartController::class, 'updateCartItem'])->name('update.cart.item');
 
 Route::get('/payment', function () {
     return view('client.payment.index');

@@ -22,19 +22,34 @@ class CartController extends Controller
            'countCart' => $countCart,
         ]);
     }
-
     public function removeCartItem($id)
     {
-        // Tìm sản phẩm trong giỏ hàng
         $cartItem = Cart::find($id);
 
         if (!$cartItem) {
-            return redirect()->route('client.cart.index')->with('error', 'Sản phẩm không tồn tại trong giỏ hàng.');
+            return response()->json(['error' => 'Sản phẩm không tồn tại trong giỏ hàng.'], 404);
         }
 
-        // Xóa sản phẩm khỏi giỏ hàng
         $cartItem->delete();
 
-        return redirect()->route('client.cart.index')->with('success', 'Sản phẩm đã được xóa khỏi giỏ hàng.');
+        return response()->json(['success' => 'Sản phẩm đã được xóa khỏi giỏ hàng.']);
     }
+
+    public function updateCartItem($id, Request $request)
+    {
+        $quantity = $request->input('quantity', 0);
+
+        // Kiểm tra xem sản phẩm có tồn tại trong giỏ hàng không
+        $cartItem = Cart::find($id);
+
+        if (!$cartItem) {
+            return response()->json(['error' => 'Sản phẩm không tồn tại trong giỏ hàng.'], 404);
+        }
+
+        // Cập nhật số lượng trong cơ sở dữ liệu
+        $cartItem->update(['quantity' => $quantity]);
+
+        return response()->json(['success' => 'Số lượng sản phẩm đã được cập nhật thành công.']);
+    }
+    
 }

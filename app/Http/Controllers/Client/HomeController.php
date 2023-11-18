@@ -5,11 +5,14 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Product_Detail;
 use App\Models\Size_Product;
+use App\Models\Cart;
 
 class HomeController extends Controller
 {
     public function index()
     {
+        $carts=Cart::all();
+        $countCart=$carts->count('id');
         $products = Product::all(); // Lấy tất cả dữ liệu từ bảng Fields
         $priceByProduct = [];
         foreach ($products as $product){
@@ -29,6 +32,7 @@ class HomeController extends Controller
         return view('client.home.index', [
             'products' => $products, 
             'priceByProduct' => $priceByProduct, 
+            'countCart'=>$countCart
         ]);
     }
 }

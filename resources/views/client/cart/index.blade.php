@@ -1,14 +1,15 @@
 @extends('client.layouts.app')
 @section('title', 'Giỏ hàng')
 @section('content')
-<nav>
-    <ol class="breadcrumb ">
-        <li class="breadcrumb-item"><a  href="{{ route('client.home') }}">
-                <p>Trang chủ</p>
-            </a></li>
-        <li class="breadcrumb-item " aria-current="page">Giỏ hàng</li>
-    </ol>
-</nav>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <nav>
+        <ol class="breadcrumb ">
+            <li class="breadcrumb-item"><a href="{{ route('client.home') }}">
+                    <p>Trang chủ</p>
+                </a></li>
+            <li class="breadcrumb-item " aria-current="page">Giỏ hàng</li>
+        </ol>
+    </nav>
     <div>
         @if (count($carts) > 0)
             <table>
@@ -52,11 +53,8 @@
                             <td id="total-price-{{ $cart->id }}">
                                 {{ number_format($cart->price * $cart->quantity, 0, ',', ',') }}</td>
                             <td>
-                                <form method="POST" action="{{ route('remove.cart.item', ['id' => $cart->id]) }}">
-                                    @csrf
-                                    <!-- Rest of your form elements -->
-                                    <button class=" cl0 bg10 bor1 hov-btn1 p-lr-15" type="submit">X</button>
-                                </form>
+                                <button class="cl0 bg10 bor1 hov-btn1 p-lr-15 delete-btn"
+                                    data-cart-id="{{ $cart->id }}">X</button>
                             </td>
                         </tr>
                     @endforeach
