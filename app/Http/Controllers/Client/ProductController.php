@@ -12,6 +12,9 @@ use App\Models\Images;
 use App\Models\Order;
 use App\Models\Order_Detail;
 use App\Models\Feedback;
+use App\Models\User;
+use App\Models\Cart;
+
 
 class ProductController extends Controller
 {
@@ -79,6 +82,7 @@ class ProductController extends Controller
             'averageStarRating' => $averageStarRating,
         ]);
 
+
         return view('client.product.detail', [
             'ID' => $id,
             'products' => $products,
@@ -89,6 +93,7 @@ class ProductController extends Controller
             'feedbackData' => $feedbackData,
             'totalFeedback' => $totalFeedback,
             'averageStarRating' => $averageStarRating,
+
         ]);
 
     }

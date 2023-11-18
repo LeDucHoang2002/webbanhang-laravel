@@ -7,10 +7,10 @@
               <span class="fs-20" style="color: #bf6d72;"><i class="zmdi zmdi-pin p-r-10"></i>Địa chỉ nhận hàng</span>
             </div>
             <div class="down m-l-30">
-              <span class="name p-r-10">Phạm Dgoon</span>
-              <span class="phone p-r-10">0866920451</span>
-              <span class="address">Hải Châu, Đà Nẵng</span>
-            </div>
+              <span class="name p-r-10">{{$users->account_name}}</span>
+              <span class="phone p-r-10">{{$users->phone_number}}</span>
+              <span class="address">{{$users->address}}</span>
+            </div>  
         </div>
         <div class="product m-t-10 p-tb-40" style="background-color: #fff; border-radius: 10px">
           <div class="m-l-30">
@@ -25,11 +25,11 @@
             </div>
             <span class="shop-title">SEASIDE STORE</span>
             <div class="product-detail m-t-30">
-              @foreach ($productDetailsWithImages as $productDetailWithImages)
-                @foreach ($productDetailWithImages['imageUrls'] as $imageUrl)
+            @foreach ($productData['productDetailsWithImages'] as $productDetailWithImages)
+              @foreach ($productDetailWithImages['imageUrls'] as $imageUrl)
                   <img class="img" src="{{ asset($imageUrl) }}" alt="IMG-PRODUCT" style="width: 50px;height:50px">
-                  <span class="m-l-10"> {{ $products->name_product }} </span>
-                  @foreach ($size_Product as $sizeProduct)
+                  <span class="m-l-10"> {{ $productData['products']->name_product }} </span>
+                  @foreach ($productData['size_Product'] as $sizeProduct)
                     <span class="p-l-150">Size: {{ $sizeProduct->id_size }}</span>
                   @endforeach
                   <span class="p-l-90">{{ number_format($productDetailWithImages['productDetail']->price, 0, ',', '.') }} VNĐ</span>
