@@ -17,7 +17,7 @@ body {
   justify-content: center;
   align-items: center;
   font-family: "Montserrat", sans-serif;
-  font-size: 12px;
+  font-size: 14px;
   background-color: #ecf0f3;
   color: #a0a5a8;
 }
@@ -110,13 +110,15 @@ body {
 .form__span {
   margin-top: 30px;
   margin-bottom: 12px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
 }
 .form__link {
   color: #181818;
-  font-size: 15px;
+  font-size: 14px;
   border-bottom: 1px solid #a0a5a8;
   margin-top: 25px;
-  line-height: 2;
+  line-height: 1;
 }
 
 .title {
@@ -255,4 +257,16 @@ body {
   30%, 50% {
     width: 500px;
   }
+}
+.alert {
+  position: relative;
+  padding: 1rem 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: 2px
+}
+.alert-danger {
+    color: #842029;
+    background-color: #f8d7da;
+    border-color: #f5c2c7
 }
