@@ -25,15 +25,15 @@
             </div>
             <span class="shop-title">SEASIDE STORE</span>
             <div class="product-detail m-t-30">
-            @foreach ($productData['productDetailsWithImages'] as $productDetailWithImages)
-              @foreach ($productDetailWithImages['imageUrls'] as $imageUrl)
+              @foreach ($productData['productDetailsWithImages'] as $productDetailWithImages)
+                @foreach ($productDetailWithImages['imageUrls'] as $imageUrl)
                   <img class="img" src="{{ asset($imageUrl) }}" alt="IMG-PRODUCT" style="width: 50px;height:50px">
                   <span class="m-l-10"> {{ $productData['products']->name_product }} </span>
                   @foreach ($productData['size_Product'] as $sizeProduct)
-                    <span class="p-l-150">Size: {{ $sizeProduct->id_size }}</span>
+                    <span class="p-l-130">Size: {{ $sizeProduct->id_size }}</span>
                   @endforeach
-                  <span class="p-l-90">{{ number_format($productDetailWithImages['productDetail']->price, 0, ',', '.') }} VNĐ</span>
-                  <span class="p-l-100">1</span>
+                  <span class="p-l-50">{{ number_format($productDetailWithImages['productDetail']->price, 0, ',', '.') }} VNĐ</span>
+                  <span id="quantity-display" class="p-l-100">{{$productData['quantity']}}</span>
                   <span class="p-l-230">150.000 VNĐ</span>
                 @endforeach
               @endforeach
@@ -63,7 +63,7 @@
                       <p>Tổng tiền hàng</p>
                       <p>119.000đ</p>
                     </div>
-                    <div class="d-flex justify-content-between w-25 my-2 mx-4">
+                    <div class="d-flex justify-content-between w-25 my-2 m  x-4">
                       <p>Phí vận chuyển</p>
                       <p>119.000đ</p>
                     </div>

@@ -108,3 +108,4 @@
         window.location.href = "{{ route('client.order.product') }}";
     });
 	</script>
+	

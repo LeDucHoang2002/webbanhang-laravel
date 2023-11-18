@@ -70,6 +70,7 @@ class ProductController extends Controller
             $size_Product = Size_Product::where('id_product_detail', $product_Detail->id)->get();   
         }
 
+        $quantity = (int)$request->input('num-product');
         $request->session()->put('product_data', [
             'ID' => $id,
             'products' => $products,
@@ -80,6 +81,7 @@ class ProductController extends Controller
             'feedbackData' => $feedbackData,
             'totalFeedback' => $totalFeedback,
             'averageStarRating' => $averageStarRating,
+            'quantity' => $quantity,
         ]);
 
 
@@ -93,7 +95,6 @@ class ProductController extends Controller
             'feedbackData' => $feedbackData,
             'totalFeedback' => $totalFeedback,
             'averageStarRating' => $averageStarRating,
-
         ]);
 
     }

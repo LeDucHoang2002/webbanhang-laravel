@@ -14,7 +14,7 @@ class OrderController extends Controller
     {
 
         $productData = $request->session()->get('product_data');
-        $users = User::first();
+        $users = User::first(); 
 
         return view('client.order.product', compact('productData', 'users'));
 }
