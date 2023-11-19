@@ -17,7 +17,7 @@
                     </li>
 
                     <li>
-                        <a href="{{ route('client.product.detail') }}">SẢN PHẨM</a>
+                        <a href="">SẢN PHẨM</a>
                     </li>
 
                     <li>
@@ -44,7 +44,7 @@
                     $user = \App\Models\User::where('username', session('username'))->first();
                 @endphp
                 <div class="nav-item dropdown">
-                    <a href="#" style="height: 100%;" class="nav-link dropdown-toggle" onclick="toggleDropdown()"
+                    <a href="#" style="height: 100%;color: #bf6d72;" class="nav-link dropdown-toggle" onclick="toggleDropdown()"
                         data-bs-toggle="dropdown">
                         <img src="{{ $user->avt }}" alt="" class="rounded-circle" style="width: 40px;">
                         {{ $user->account_name }}
@@ -56,7 +56,7 @@
                     </div>
                 </div>
             @else
-                <a class="" href="{{ route('login') }}">Đăng nhập</a>
+                <a style="margin-left: 20px;color: inherit;" href="{{ route('login') }}">Đăng nhập</a>
             @endif
 
         </nav>

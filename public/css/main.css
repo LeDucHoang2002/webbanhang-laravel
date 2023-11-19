@@ -2133,7 +2133,9 @@ input.num-product::-webkit-inner-spin-button {
 .cl10 {color: #1d1d1d;}
 .cl11 {color: #f9ba48;}
 .cl12 {color: #ccc;}
-.cl13 {color: rgb(14, 24, 216);}
+.cl13 {color: #417ee6;}
+.cl14 {color: #e64147;}
+.cl15 {color: #41c0e6;}
 
 /*//////////////////////////////////////////////////////////////////
 [ S-Text 0 - 15 ]*/
@@ -2799,7 +2801,7 @@ input.num-product::-webkit-inner-spin-button {
 
 /*---------------------------------------------*/
 .js-addedwish-detail {
-  color: #bf6d72;
+  color: #ff0011;
 }
 
 /*---------------------------------------------*/

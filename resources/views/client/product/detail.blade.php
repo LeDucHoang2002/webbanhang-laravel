@@ -46,11 +46,9 @@
                                     @endforeach
                                 @endforeach
                             </div>
-
                         </div>
                     </div>
                 </div>
-
                 <div class="col-md-6 col-lg-5 p-b-30">
                     <div class="p-r-50 p-t-5 p-lr-0-lg">
                         <h4 class="mtext-105 cl2 p-b-14">
@@ -84,69 +82,74 @@
                         </p>
 
                         <!--  -->
-                        <div class="p-t-33">
-                            <div class="flex-w flex-r-m p-b-10">
-                                <div class="size-203 flex-c-m respon6">
-                                    Size
-                                </div>
-
-                                <div class="size-204 respon6-next">
-                                    <div class="rs1-select2 bor8 bg0">
-                                        <select class="js-select2" name="time">
-                                            @foreach ($size_Product as $sizeProduct)
-                                                <option>{{ $sizeProduct->id_size }}</option>
-                                            @endforeach
-                                        </select>
-                                        <div class="dropDownSelect2"></div>
+                        <form action="{{ route('cart.add') }}" method="post">
+                            @csrf
+                            <div class="p-t-33">
+                                <div class="flex-w flex-r-m p-b-10">
+                                    <div class="size-203 flex-c-m respon6">
+                                        Size
                                     </div>
-                                </div>
-                            </div>
 
-                            <div class="flex-w flex-r-m p-b-10">
-                                <div class="size-203 flex-c-m respon6">
-                                    Color
-                                </div>
-
-                                <div class="size-204 respon6-next">
-                                    <div class="rs1-select2 bor8 bg0">
-                                        <select class="js-select2" name="time">
-                                            @foreach ($product_Details as $product_Detail)
-                                                <option>{{ $product_Detail->color }}</option>
-                                            @endforeach
-                                        </select>
-                                        <div class="dropDownSelect2"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="flex-w flex-r-m p-b-10">
-                                <div class="size-204 flex-w flex-m respon6-next">
-                                    <div class="wrap-num-product flex-w m-r-20 m-tb-10">
-                                        <div class="btn-num-product-down cl8 hov-btn3 trans-04 flex-c-m">
-                                            <i class="fs-16 zmdi zmdi-minus"></i>
-                                        </div>
-
-                                        <input class="mtext-104 cl3 txt-center num-product" type="number"
-                                            name="num-product" value="1">
-
-                                        <div class="btn-num-product-up cl8 hov-btn3 trans-04 flex-c-m">
-                                            <i class="fs-16 zmdi zmdi-plus"></i>
+                                    <div class="size-204 respon6-next">
+                                        <div class="rs1-select2 bor8 bg0">
+                                            <select class="js-select2" name="size">
+                                                @foreach ($size_Product as $sizeProduct)
+                                                    <option>{{ $sizeProduct->id_size }}</option>
+                                                @endforeach
+                                            </select>
+                                            <div class="dropDownSelect2"></div>
                                         </div>
                                     </div>
-
                                 </div>
-                                <div class="group-cart">
-                                    <button
-                                        class="flex-c-m stext-101 cl0 size-101 bg10 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail">
-                                        Giỏ hàng
-                                    </button>
-                                    <button
-                                        class="flex-c-m stext-101 cl0 size-101 bg10 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail">
-                                        Mua ngay
-                                    </button>
+
+                                <div class="flex-w flex-r-m p-b-10">
+                                    <div class="size-203 flex-c-m respon6">
+                                        Color
+                                    </div>
+
+                                    <div class="size-204 respon6-next">
+                                        <div class="rs1-select2 bor8 bg0">
+                                            <select class="js-select2" name="color">
+                                                @foreach ($product_Details as $product_Detail)
+                                                    <option value="{{ $product_Detail->id }}">{{ $product_Detail->color }}
+                                                    </option>
+                                                @endforeach
+                                            </select>
+
+                                            <div class="dropDownSelect2"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="flex-w flex-r-m p-b-10">
+
+                                    <div class="size-204 flex-w flex-m respon6-next">
+                                        <div class="wrap-num-product flex-w m-r-20 m-tb-10">
+                                            <div class="btn-num-product-down cl8 hov-btn3 trans-04 flex-c-m">
+                                                <i class="fs-16 zmdi zmdi-minus"></i>
+                                            </div>
+
+                                            <input class="mtext-104 cl3 txt-center num-product" type="number"
+                                                name="quantity" value="1">
+
+                                            <div class="btn-num-product-up cl8 hov-btn3 trans-04 flex-c-m">
+                                                <i class="fs-16 zmdi zmdi-plus"></i>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="group-cart">
+                                        <button type="submit"
+                                            class="flex-c-m stext-101 cl0 size-101 bg10 bor1 hov-btn1 p-lr-15 trans-04">
+                                            Giỏ hàng
+                                        </button>
+                                        <button class="flex-c-m stext-101 cl0 size-101 bg10 bor1 hov-btn1 p-lr-15 trans-04">
+                                            Mua ngay
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        </form>
 
                         <!--  -->
                         <div class="flex-w flex-m p-l-100 p-t-40 respon7">
@@ -161,19 +164,19 @@
                             <!-- Facebook Share -->
                             <a href="" class="fs-14 cl13 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100"
                                 onclick="shareOnFacebook()" data-tooltip="Chia sẻ trên Facebook">
-                                <i class="fa fa-facebook" ></i>
+                                <i class="fa-brands fa-facebook"></i>
                             </a>
 
                             <!-- Twitter Share -->
-                            <a href="" class="fs-14 cl13 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100"
+                            <a href="" class="fs-14 cl15 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100"
                                 onclick="shareOnTwitter()" data-tooltip="Chia sẻ trên Twitter">
-                                <i class="fa fa-twitter"></i>
+                                <i class="fa-brands fa-square-twitter"></i>
                             </a>
 
                             <!-- Google Plus Share -->
-                            <a href="" class="fs-14 cl13 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100"
+                            <a href="" class="fs-14 cl14 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100"
                                 onclick="shareOnGooglePlus()" data-tooltip="Chia sẻ trên Google Plus">
-                                <i class="fa fa-google-plus"></i>
+                                <i class="fa-brands fa-google-plus"></i>
                             </a>
                         </div>
                     </div>

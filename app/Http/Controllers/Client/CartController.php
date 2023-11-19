@@ -12,15 +12,24 @@ class CartController extends Controller
 {
     public function index()
     {
-        $carts = Cart::join('product_detail', 'cart.id_product_detail', '=', 'product_detail.id')
-        ->join('product', 'product_detail.id_product', '=', 'product.id')
-        ->select('cart.*', 'product.name_product', 'product_detail.color', 'product_detail.price', 'product.image_product')
-        ->get();
-        $countCart=$carts->count('id');
-        return view('client.cart.index', [
-           'carts' => $carts,
-           'countCart' => $countCart,
-        ]);
+        if (session()->has('username')) {
+            $username = session('username');
+            $carts = Cart::join('product_detail', 'cart.id_product_detail', '=', 'product_detail.id')
+            ->join('product_images', 'product_detail.id', '=', 'product_images.id_product_detail')
+            ->join('images', 'images.id', '=', 'product_images.id_image')
+            ->join('product', 'product_detail.id_product', '=', 'product.id')
+            ->select('cart.*', 'product.name_product', 'product_detail.color', 'product_detail.price', 'images.image')
+            ->where('username',$username)
+            ->get();
+            $countCart=$carts->count('id');
+            return view('client.cart.index', [
+            'carts' => $carts,
+            'countCart' => $countCart,
+            ]);
+        } else {
+
+            return redirect()->route('login')->with('error', 'Please log in first.');
+        }
     }
     public function removeCartItem($id)
     {
@@ -52,4 +61,25 @@ class CartController extends Controller
         return response()->json(['success' => 'Số lượng sản phẩm đã được cập nhật thành công.']);
     }
     
+    public function addToCart(Request $request)
+    {
+        if (session()->has('username')) {
+            $username = session('username');
+            $selectedColorId = $request->input('color');
+
+            $size = $request->input('size');
+            $quantity = $request->input('quantity');
+
+            Cart::create([
+                'username' => $username,
+                'id_product_detail' => $selectedColorId, 
+                'quantity' => $quantity,
+                'id_size' => $size,
+            ]);
+        // Redirect back or to the cart page
+        return redirect()->back()->with('success', 'Item added to cart successfully');
+        } else {
+            return redirect()->route('login')->with('error', 'Please log in first.');
+        }    
+    }
 }

@@ -31,6 +31,8 @@ Route::delete('/remove-cart-item/{id}', [CartController::class, 'removeCartItem'
 
 Route::post('/update-cart-item/{id}', [CartController::class, 'updateCartItem'])->name('update.cart.item');
 
+Route::post('/cart/add', [CartController::class, 'addToCart'])->name('cart.add');
+
 Route::get('/payment', function () {
     return view('client.payment.index');
 })->name('client.payment.index');

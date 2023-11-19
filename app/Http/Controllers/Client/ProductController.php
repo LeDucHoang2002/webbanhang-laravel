@@ -18,7 +18,8 @@ class ProductController extends Controller
 {
     public function index(Request $request)
     {
-        $carts=Cart::all();
+        $username = session('username');
+        $carts=Cart::Where('username',$username);
         $countCart=$carts->count('id');
         $id = $request->input('id');
         $products = Product::find($id);

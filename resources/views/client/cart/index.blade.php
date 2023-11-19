@@ -1,6 +1,22 @@
 @extends('client.layouts.app')
 @section('title', 'Giỏ hàng')
 @section('content')
+<style>
+    .scrollable-table-container {
+        width: 90%;
+        margin-left: 5%;
+        height: 70vh; /* Set the container height to 80% of the viewport height */
+        overflow-y: auto; /* Enable vertical scrollbar if the content overflows */
+    }
+
+    /* Optional: You can style your table further if needed */
+    .scrollable-table {
+        width: 100%; /* Set the table width to 100% */
+        border-collapse: collapse; /* Optional: Remove spacing between table cells */
+        /* Add other styling as needed */
+    }
+</style>
+
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <nav>
         <ol class="breadcrumb ">
@@ -10,9 +26,9 @@
             <li class="breadcrumb-item " aria-current="page">Giỏ hàng</li>
         </ol>
     </nav>
-    <div>
+    <div class="scrollable-table-container">
         @if (count($carts) > 0)
-            <table>
+            <table class="scrollable-table">
                 <thead>
                     <tr>
                         <th><input type="checkbox" class="cart-checkbox" data-cart-id="All"></th>
@@ -37,7 +53,7 @@
                             </td>
                             <td>{{ $count++ }}</td>
                             <td style="display: flex">
-                                <img src="{{ $cart->image_product }}" alt="Product Image" width="50">
+                                <img src="{{ $cart->image }}" alt="Product Image" width="50">
                                 <b>{{ $cart->name_product }}</b>
                             </td>
                             <td>{{ $cart->color }}</td>
@@ -53,8 +69,8 @@
                             <td id="total-price-{{ $cart->id }}">
                                 {{ number_format($cart->price * $cart->quantity, 0, ',', ',') }}</td>
                             <td>
-                                <button class="cl0 bg10 bor1 hov-btn1 p-lr-15 delete-btn"
-                                    data-cart-id="{{ $cart->id }}">X</button>
+                                <button class="delete-btn"
+                                    data-cart-id="{{ $cart->id }}"><i class="fa-solid fa-delete-left" style="color: #ff0000;"></i></button>
                             </td>
                         </tr>
                     @endforeach
@@ -74,3 +90,5 @@
         </button>
     </div>
 @endsection
+
+<script src="js/cart.js"></script>

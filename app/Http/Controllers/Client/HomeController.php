@@ -11,7 +11,8 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $carts=Cart::all();
+        $username = session('username');
+        $carts=Cart::Where('username',$username);
         $countCart=$carts->count('id');
         $products = Product::all(); // Lấy tất cả dữ liệu từ bảng Fields
         $priceByProduct = [];
