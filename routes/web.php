@@ -44,6 +44,7 @@ Route::get('/profile', function () {
 use App\Http\Controllers\Auth\AuthController; // Replace with your actual controller
 
 Route::post('/login', [AuthController::class, 'login'])->name('login');
+Route::post('/register', [AuthController::class, 'register'])->name('register');
 Route::get('/logout', [AuthController::class,'logout'])->name('logout');
 // Route login
 Route::get('/login', function () {
