@@ -71,4 +71,5 @@ Route::get('/settings', [UserProfileController::class, 'showSettings']);
 
 Route::post('/profile/update', [UserProfileController::class, 'updateProfile'])->name('profile.update');
 
+Route::post('/profile/update-password', [UserProfileController::class, 'updatePassword'])->name('update.password');
 
