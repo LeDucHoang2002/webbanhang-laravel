@@ -17,7 +17,10 @@ use App\Models\Cart;
 class ProductController extends Controller
 {
     public function index(Request $request)
-    {
+    {  $username = session('username');
+        $carts=Cart::Where('username',$username);
+        $countCart=$carts->count('id');
+        session()->put('countCart', $countCart);
         $id = $request->input('id');
         $products = Product::find($id);
         $priceByProduct = [];

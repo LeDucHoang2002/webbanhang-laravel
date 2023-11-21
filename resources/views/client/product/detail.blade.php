@@ -143,7 +143,7 @@
                                             class="flex-c-m stext-101 cl0 size-101 bg10 bor1 hov-btn1 p-lr-15 trans-04">
                                             Giỏ hàng
                                         </button>
-                                        <button class="flex-c-m stext-101 cl0 size-101 bg10 bor1 hov-btn1 p-lr-15 trans-04">
+                                        <button type="submit22" class="flex-c-m stext-101 cl0 size-101 bg10 bor1 hov-btn1 p-lr-15 trans-04">
                                             Mua ngay
                                         </button>
                                     </div>

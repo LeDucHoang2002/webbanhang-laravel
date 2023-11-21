@@ -11,9 +11,12 @@ use Illuminate\Http\Request;
 class CartController extends Controller
 {
     public function index()
-    {
+    { 
         if (session()->has('username')) {
             $username = session('username');
+            $carts=Cart::Where('username',$username);
+            $countCart=$carts->count('id');
+            session()->put('countCart', $countCart);
             $carts = Cart::join('product_detail', 'cart.id_product_detail', '=', 'product_detail.id')
             ->join('product_images', 'product_detail.id', '=', 'product_images.id_product_detail')
             ->join('images', 'images.id', '=', 'product_images.id_image')
