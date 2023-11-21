@@ -35,6 +35,22 @@ class CartTableSeeder extends Seeder
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
             ],
+            [
+                'username' => 'nguyenhaily', 
+                'id_product_detail' => 8,
+                'quantity' => 1,
+                'id_size' =>'L',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'username' => 'nguyenhaily', 
+                'id_product_detail' => 7,
+                'quantity' => 1,
+                'id_size' =>'L',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
         ]);
     }
 }

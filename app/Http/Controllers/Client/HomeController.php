@@ -5,11 +5,16 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Product_Detail;
 use App\Models\Size_Product;
+use App\Models\Cart;
 
 class HomeController extends Controller
 {
     public function index()
     {
+        $username = session('username');
+        $carts=Cart::Where('username',$username);
+        $countCart=$carts->count('id');
+        session()->put('countCart', $countCart);
         $products = Product::all(); // Lấy tất cả dữ liệu từ bảng Fields
         $priceByProduct = [];
         foreach ($products as $product){

@@ -1,6 +1,6 @@
 <!-- Page Header Start -->
 @extends('client.layouts.app')
-@section('title', 'Home')
+@section('title', 'SEASIDE STORE SHOP')
 @section('content')
     <!-- Cart -->
     <div class="wrap-header-cart js-panel-cart">

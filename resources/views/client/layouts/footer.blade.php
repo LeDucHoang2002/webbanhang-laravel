@@ -72,21 +72,22 @@
                 </h4>
 
                 <p class="stext-107 cl7 size-201">
-                    Nếu bạn có câu hỏi? Hãy cho chúng tôi biết tại cửa hàng tại tầng 8, 123 Nguyễn Tất Thành, Thanh Bình, Hải Châu, Đà Nẵng hoặc gọi cho chúng tôi
-                     theo số (+1) 96 716 6879
+                    Nếu bạn có câu hỏi? Hãy cho chúng tôi biết tại cửa hàng tại tầng 8, 123 Nguyễn Tất Thành, Thanh
+                    Bình, Hải Châu, Đà Nẵng hoặc gọi cho chúng tôi
+                    theo số (+1) 96 716 6879
                 </p>
 
                 <div class="p-t-27">
                     <a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
-                        <i class="fa fa-facebook"></i>
+                        <i class="fa-brands fa-facebook"></i>
                     </a>
 
                     <a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
-                        <i class="fa fa-instagram"></i>
+                        <i class="fa-brands fa-instagram"></i>
                     </a>
 
                     <a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
-                        <i class="fa fa-pinterest-p"></i>
+                        <i class="fa-brands fa-google-plus"></i>
                     </a>
                 </div>
             </div>
@@ -138,7 +139,9 @@
             <p class="stext-107 cl6 txt-center">
                 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                 Bản quyền thuộc &copy;
-                <script>document.write(new Date().getFullYear());</script> SeaSide Store
+                <script>
+                    document.write(new Date().getFullYear());
+                </script> SeaSide Store
                 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 
             </p>
@@ -153,4 +156,3 @@
         <i class="zmdi zmdi-chevron-up"></i>
     </span>
 </div>
-

@@ -102,10 +102,3 @@
 	</script>
 	<!--===============================================================================================-->
 	<script src="js/main.js"></script>
-	<!--===============================================================================================-->
-	<script>
-    document.getElementById('btnCart').addEventListener('click', function() {
-        window.location.href = "{{ route('client.order.product') }}";
-    });
-	</script>
-	

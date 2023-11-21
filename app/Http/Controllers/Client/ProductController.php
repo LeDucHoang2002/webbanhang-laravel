@@ -12,14 +12,16 @@ use App\Models\Images;
 use App\Models\Order;
 use App\Models\Order_Detail;
 use App\Models\Feedback;
-use App\Models\User;
 use App\Models\Cart;
-
 
 class ProductController extends Controller
 {
     public function index(Request $request)
     {
+        $username = session('username');
+        $carts=Cart::Where('username',$username);
+        $countCart=$carts->count('id');
+        session()->put('countCart', $countCart);
         $id = $request->input('id');
         $products = Product::find($id);
         $priceByProduct = [];
@@ -67,10 +69,9 @@ class ProductController extends Controller
         $averageStarRating = $feedbackData->avg('star');
 
         foreach ($product_Details as $product_Detail) {
-            $size_Product = Size_Product::where('id_product_detail', $product_Detail->id)->get();   
+            $size_Product = Size_Product::where('id_product_detail', $product_Detail->id)->get();
         }
 
-        $quantity = (int)$request->input('num-product');
         $request->session()->put('product_data', [
             'ID' => $id,
             'products' => $products,
@@ -81,9 +82,7 @@ class ProductController extends Controller
             'feedbackData' => $feedbackData,
             'totalFeedback' => $totalFeedback,
             'averageStarRating' => $averageStarRating,
-            'quantity' => $quantity,
         ]);
-
 
         return view('client.product.detail', [
             'ID' => $id,
@@ -96,8 +95,5 @@ class ProductController extends Controller
             'totalFeedback' => $totalFeedback,
             'averageStarRating' => $averageStarRating,
         ]);
-
     }
-
-
 }
