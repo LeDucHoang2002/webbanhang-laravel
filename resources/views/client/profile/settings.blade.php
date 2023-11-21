@@ -85,8 +85,8 @@
                 </label>
             </fieldset>
 
-            <input class="m-t flex-c-m stext-101 cl0  bg10 bor4 hov-btn1 p-lr-15 trans-04" type="submit" value="Lưu thay đổi">
+            <input class="m-t flex-c-m stext-101 cl0  bg10 bor4 hov-btn1 p-lr-15 trans-04" type="submit"
+                value="Lưu thay đổi">
         </form>
-    </div>
     </div>
 @endsection
