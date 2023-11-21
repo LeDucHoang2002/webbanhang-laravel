@@ -62,55 +62,19 @@
         display: flex;
     }
 
-    /* .layout-left {
-        display: flex;
-        width: 50%;
-        justify-content: right;
-    } */
-
-    .layout-left {
-        display: flex;
-        flex-direction: column;
-        /* Sắp xếp các phần tử theo chiều dọc */
-        width: 50%;
-    }
-
-    .layout-left form {
+    .layout form {
         display: flex;
         flex-direction: column;
     }
 
-    .layout-left form button {
+    .layout form button {
         align-self: flex-end;
         margin-top: 10px;
     }
 
-    .layout-left div {
+    .layout div {
         display: flex;
         justify-content: right;
-    }
-
-    .layout-right {
-        width: 48%;
-        justify-content: center;
-        align-content: center;
-        display: flex;
-        margin-left: 30px;
-        border-left: 1px solid #efefef;
-        height: 200px;
-    }
-
-    .image-upload {
-        text-align: center;
-        margin-top: 20px;
-    }
-
-    #profile-image {
-        width: 150px;
-        height: 150px;
-        margin-top: 10px;
-        border-radius: 100px;
-        border-left: 1px solid #efefef;
     }
 </style>
 @section('content1')
@@ -131,7 +95,7 @@
             </div>
         @endif
         <div class="separator"></div>
-            <div class="layout-left">
+            <div class="layout">
                 <!-- Add the following form to your Blade view -->
                 <form method="post" action="{{ route('update.password') }}">
                     @csrf
