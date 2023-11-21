@@ -2,6 +2,25 @@
 <header class="header-v4">
     <!-- Header desktop -->
     <div class="wrap-menu-desktop how-shadow1">
+        {{-- Modal đăng xuất --}}
+        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Bạn muốn đăng xuất ?</h5>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">Chọn "Đăng xuất" nếu bạn chắc chắn.</div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Hủy</button>
+                        <a class="btn btn-primary" href="{{ route('logout') }}">Đăng xuất</a>
+                    </div>
+                </div>
+            </div>
+        </div>
         <nav class="limiter-menu-desktop container">
 
             <!-- Logo desktop -->
@@ -31,27 +50,36 @@
                 <div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 js-show-modal-search">
                     <i class="zmdi zmdi-search"></i>
                 </div>
-                <a href="#" class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti" data-notify="0">
+                <a href="#" class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti"
+                    data-notify="0">
                     <i class="zmdi zmdi-favorite-outline"></i>
                 </a>
-                <a href="{{ route('client.cart.index') }}" class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti" data-notify="{{$countCart}}">
+                <a href="{{ route('client.cart.index') }}"
+                    class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti"
+                    data-notify="@if (session('countCart')) {{ session('countCart') }}
+                @else
+                    0 @endif">
                     <i class="zmdi zmdi-shopping-cart"></i>
                 </a>
             </div>
+
 
             @if (session('username'))
                 @php
                     $user = \App\Models\User::where('username', session('username'))->first();
                 @endphp
                 <div class="nav-item dropdown">
-                    <a href="#" style="height: 100%;color: #bf6d72;" class="nav-link dropdown-toggle" onclick="toggleDropdown()"
-                        data-bs-toggle="dropdown">
-                        <img src="{{ $user->avt }}" alt="" class="rounded-circle" style="width: 40px;">
+                    <a href="#" style="height: 100%;color: #bf6d72;" class="nav-link dropdown-toggle"
+                        onclick="toggleDropdown()" data-bs-toggle="dropdown">
+                        <img src="{{ $user->avt }}" alt="" class="rounded-circle"
+                            style=" width: 50px;height: 50px;">
                         {{ $user->account_name }}
                     </a>
                     <div id="userDropdown" class="dropdown-menu">
-                        <a href="{{ route('profile') }}" class="dropdown-item"><i class="fa-solid fa-user"></i> Thông tin cá nhân</a>
-                        <a href="{{ route('logout') }}" class="dropdown-item"  data-toggle="modal" data-target="#logoutModal">
+                        <a href="{{ route('profile') }}" class="dropdown-item"><i class="fa-solid fa-user"></i> Thông
+                            tin cá nhân</a>
+                        <a href="{{ route('logout') }}" class="dropdown-item" data-toggle="modal"
+                            data-target="#logoutModal">
                             <i class="fa-solid fa-right-from-bracket"></i> Đăng xuất</a>
                     </div>
                 </div>
@@ -78,24 +106,7 @@
             </form>
         </div>
     </div>
-    {{-- Modal đăng xuất --}}
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Bạn muốn đăng xuất ?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">Chọn "Đăng xuất" nếu bạn chắc chắn.</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Hủy</button>
-                    <a class="btn btn-primary" href="{{ route('logout') }}">Đăng xuất</a>
-                </div>
-            </div>
-        </div>
-    </div>
+
 </header>
 
 <script src="js/dropdown_header.js"></script>

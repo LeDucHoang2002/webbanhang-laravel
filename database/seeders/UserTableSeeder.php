@@ -30,6 +30,7 @@ class UserTableSeeder extends Seeder
                 'password' => bcrypt('ABC12345'),
                 'address' => '41 Cao Thắng',
                 'avt' => 'https://phunugioi.com/wp-content/uploads/2020/01/anh-avatar-supreme-dep-lam-dai-dien-facebook.jpg',
+                'email_verified' => 1,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
             ],
@@ -43,6 +44,7 @@ class UserTableSeeder extends Seeder
                 'password' => bcrypt('ABC12345'),
                 'address' => '41 Cao Thắng',
                 'avt' => 'https://tse4.mm.bing.net/th?id=OIP.tS4o_QzG25ntuI90jWWWXQHaHa&pid=Api&P=0&h=180',
+                'email_verified' => 1,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
             ],
@@ -56,6 +58,7 @@ class UserTableSeeder extends Seeder
                 'password' => bcrypt('ABC12345'),
                 'address' => '41 Cao Thắng',
                 'avt' => 'https://tse1.mm.bing.net/th?id=OIP.Q2dDRKv9PWDyrnBJuYwtmAHaHa&pid=Api&P=0&h=180',
+                'email_verified' => 1,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
             ],
@@ -68,6 +71,7 @@ class UserTableSeeder extends Seeder
                 'birth_day' => '2002-08-11',
                 'password' => bcrypt('ABC12345'),
                 'address' => '41 Cao Thắng',
+                'email_verified' => 1,
                 'avt' => 'https://toigingiuvedep.vn/wp-content/uploads/2021/01/avatar-cho-con-trai-cuc-chat.jpg',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
@@ -82,6 +86,7 @@ class UserTableSeeder extends Seeder
                 'password' => bcrypt('ABC12345'),
                 'address' => '41 Cao Thắng',
                 'avt' => 'https://i.9mobi.vn/cf/Images/tt/2021/3/15/hinh-anh-dai-dien-dep-dung-cho-facebook-instagram-zalo-2.jpg',
+                'email_verified' => 1,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
             ],
@@ -94,6 +99,7 @@ class UserTableSeeder extends Seeder
                 'birth_day' => '2002-08-11',
                 'password' => bcrypt('ABC12345'),
                 'address' => '41 Cao Thắng',
+                'email_verified' => 1,
                 'avt' => 'https://1.bp.blogspot.com/-IYXsyTIazaU/XrP7T-DkUKI/AAAAAAAAkhY/mnBCxRQeOkkXdXhlUfs7IE9fO_3ZTYjzQCLcBGAsYHQ/s1600/Avatar-Nam%2B%252811%2529.jpg',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()

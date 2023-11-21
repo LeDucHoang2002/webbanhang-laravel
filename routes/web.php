@@ -16,7 +16,6 @@ use App\Http\Controllers\Client\HomeController;
 use App\Http\Controllers\Client\ProductController;
 use App\Http\Controllers\Client\CartController;
 
-
 Route::get('/', [HomeController::class, 'index'])->name('client.home');
 
 //  Route Product
@@ -63,3 +62,11 @@ Route::get('/register', function () {
     // Route::get('/dashboard/admin', [LoginController::class, 'dashboard_admin'])->name('admin_home');
 // });
 
+// Route::get('/email/verify/{token}', [AuthController::class, 'verifyEmail'])->name('verify.email');
+
+
+Route::get('/email/verify/{token}', [AuthController::class, 'verifyEmail'])->name('verify.email');
+
+Route::get('/verify-email', function () {
+    return view('emails.verify-email');
+})->name('verify.email.custom');
