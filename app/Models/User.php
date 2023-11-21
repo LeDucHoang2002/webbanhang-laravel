@@ -11,8 +11,12 @@ use Laravel\Sanctum\HasApiTokens;
 class User extends Authenticatable
 {protected $table = 'user'; // Tên của bảng trong cơ sở dữ liệu
     // Các trường của bảng
+    protected $primaryKey = 'username';
+
     protected $fillable = ['username','account_name','email','phone_number','gender','birth_day','password','address','avt','remember_token', 'created_at', 'updated_at'];
     
+    // Thêm dòng sau để xác định rằng không sử dụng khóa tăng tự động
+    public $incrementing = false;
     use HasApiTokens, HasFactory, Notifiable;
     /**
      * The attributes that are mass assignable.

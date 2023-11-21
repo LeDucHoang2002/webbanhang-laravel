@@ -18,9 +18,6 @@ class ProductController extends Controller
 {
     public function index(Request $request)
     {
-        $username = session('username');
-        $carts=Cart::Where('username',$username);
-        $countCart=$carts->count('id');
         $id = $request->input('id');
         $products = Product::find($id);
         $priceByProduct = [];
@@ -81,7 +78,6 @@ class ProductController extends Controller
             'feedbackData' => $feedbackData,
             'totalFeedback' => $totalFeedback,
             'averageStarRating' => $averageStarRating,
-            'countCart'=> $countCart,
         ]);
     }
 }

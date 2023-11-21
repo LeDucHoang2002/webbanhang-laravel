@@ -21,10 +21,8 @@ class CartController extends Controller
             ->select('cart.*', 'product.name_product', 'product_detail.color', 'product_detail.price', 'images.image')
             ->where('username',$username)
             ->get();
-            $countCart=$carts->count('id');
             return view('client.cart.index', [
             'carts' => $carts,
-            'countCart' => $countCart,
             ]);
         } else {
 

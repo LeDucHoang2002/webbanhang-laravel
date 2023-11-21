@@ -14,6 +14,7 @@ class HomeController extends Controller
         $username = session('username');
         $carts=Cart::Where('username',$username);
         $countCart=$carts->count('id');
+        session()->put('countCart', $countCart);
         $products = Product::all(); // Lấy tất cả dữ liệu từ bảng Fields
         $priceByProduct = [];
         foreach ($products as $product){
@@ -33,7 +34,6 @@ class HomeController extends Controller
         return view('client.home.index', [
             'products' => $products, 
             'priceByProduct' => $priceByProduct, 
-            'countCart'=>$countCart
         ]);
     }
 }

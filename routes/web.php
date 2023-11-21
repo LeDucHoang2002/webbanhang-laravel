@@ -37,9 +37,6 @@ Route::get('/payment', function () {
     return view('client.payment.index');
 })->name('client.payment.index');
 
-Route::get('/profile', function () {
-    return view('client.profile.index');
-})->name('profile');
 
 use App\Http\Controllers\Auth\AuthController; // Replace with your actual controller
 
@@ -61,4 +58,17 @@ Route::get('/register', function () {
     // Route::get('/dashboard/owner', [LoginController::class, 'dashboard_owner'])->name('owner_home');
     // Route::get('/dashboard/admin', [LoginController::class, 'dashboard_admin'])->name('admin_home');
 // });
+
+use App\Http\Controllers\Client\UserProfileController;
+
+Route::get('/profile', [UserProfileController::class, 'showProfile'])->name('profile');
+
+Route::get('/password', [UserProfileController::class, 'showPassword'])->name('password');
+
+Route::get('/view', [UserProfileController::class, 'showView']);
+
+Route::get('/settings', [UserProfileController::class, 'showSettings']);
+
+Route::post('/profile/update', [UserProfileController::class, 'updateProfile'])->name('profile.update');
+
 
