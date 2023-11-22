@@ -82,7 +82,7 @@
                         </p>
 
                         <!--  -->
-                        <form action="{{ route('cart.add') }}" method="post">
+                        <form action="{{ route('cart.add') }}" method="post" id="productForm">
                             @csrf
                             <div class="p-t-33">
                                 <div class="flex-w flex-r-m p-b-10">
@@ -139,17 +139,26 @@
 
                                     </div>
                                     <div class="group-cart">
-                                        <button type="submit"
+                                        <button type="submit" name="action" value="add_to_cart"
                                             class="flex-c-m stext-101 cl0 size-101 bg10 bor1 hov-btn1 p-lr-15 trans-04">
-                                            Giỏ hàng
+                                            Giỏ hàng
                                         </button>
-                                        <button type="submit22" class="flex-c-m stext-101 cl0 size-101 bg10 bor1 hov-btn1 p-lr-15 trans-04">
+                                        <button type="button" onclick="submitForm('buy_now')"
+                                            class="flex-c-m stext-101 cl0 size-101 bg10 bor1 hov-btn1 p-lr-15 trans-04">
                                             Mua ngay
                                         </button>
                                     </div>
                                 </div>
                             </div>
                         </form>
+
+                        <script>
+                            function submitForm(action) {
+                                var form = document.getElementById('productForm');
+                                form.action = action === 'buy_now' ? "{{ route('client.order.processOrder') }}" : "{{ route('cart.add') }}";
+                                form.submit();
+                            }
+                        </script>
 
                         <!--  -->
                         <div class="flex-w flex-m p-l-100 p-t-40 respon7">
@@ -189,11 +198,13 @@
                     <!-- Nav tabs -->
                     <ul class="nav nav-tabs" role="tablist">
                         <li class="nav-item p-b-10">
-                            <a class="nav-link active" data-toggle="tab" href="#description" role="tab">MÔ TẢ SẢN PHẨM</a>
+                            <a class="nav-link active" data-toggle="tab" href="#description" role="tab">MÔ TẢ SẢN
+                                PHẨM</a>
                         </li>
 
                         <li class="nav-item p-b-10">
-                            <a class="nav-link" data-toggle="tab" href="#information" role="tab">CHI TIẾT SẢN PHẨM</a>
+                            <a class="nav-link" data-toggle="tab" href="#information" role="tab">CHI TIẾT SẢN
+                                PHẨM</a>
                         </li>
 
                         <li class="nav-item p-b-10">

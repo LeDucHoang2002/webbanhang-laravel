@@ -5,6 +5,8 @@
         border: 1px solid #ccc;
         padding: 10px;
         display: flex;
+        margin-left: 50px;
+        margin-right: 50px;
         justify-content: space-between;
     }
 
@@ -38,7 +40,7 @@
 </style>
 @section('content1')
     <div class="profile-container">
-        <h4>Đổi mật khẩu</h4>
+        <h4>Cài đặt thông báo</h4>
         <div class="separator"></div>
         <form class="form" action="#" method="post">
             <fieldset>
@@ -85,8 +87,7 @@
                 </label>
             </fieldset>
 
-            <input class="m-t flex-c-m stext-101 cl0  bg10 bor4 hov-btn1 p-lr-15 trans-04" type="submit"
-                value="Lưu thay đổi">
+            <input class="m-t flex-c-m stext-101 cl0  bg10 bor4 hov-btn1 p-lr-15 trans-04" type="submit" value="Lưu thay đổi">
         </form>
     </div>
 @endsection

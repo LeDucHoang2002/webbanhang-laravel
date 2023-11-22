@@ -5,13 +5,33 @@
         border: 1px solid #ccc;
         padding: 10px;
         display: flex;
+        margin-left: 50px;
+        margin-right: 50px;
         justify-content: space-between;
     }
 
     fieldset legend {
-        font-weight: bold;
         font-size: 18px;
         color: #333;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    fieldset div {
+        display: flex;
+    }
+
+    fieldset div div {
+        display: block;
+    }
+
+    fieldset div div h5 {
+        margin-bottom: 5px;
+    }
+
+    fieldset div img {
+        height: 120px;
+        width: 120px;
     }
 
     fieldset label {
@@ -38,54 +58,51 @@
 </style>
 @section('content1')
     <div class="profile-container">
-        <h4>Cài đặt thông báo</h4>
+        <h4>Đơn đã mua</h4>
         <div class="separator"></div>
-        <form class="form" action="#" method="post">
-            <fieldset>
-                <legend>Thông báo Email</legend>
-                <label>
-                    Thông báo khi có cập nhật về đơn hàng của bạn, bao gồm cả việc cập nhật thanh toán.
-                </label>
-                <label>
-                    <input type="checkbox" name="activation">
-                    Kích hoạt
-                </label>
-            </fieldset>
-
-            <fieldset>
-                <legend>Cập nhật sản phẩm</legend>
-                <label>
-                    Thông báo khi sản phẩm của bạn hết hàng, bị xóa hoặc bị khóa.
-                </label>
-                <label>
-                    <input type="checkbox" name="activation">
-                    Kích hoạt
-                </label>
-            </fieldset>
-
-            <fieldset>
-                <legend>Bản tin</legend>
-                <label>
-                    Gửi thông tin xu hướng, chương trình khuyến mãi & cập nhật mới nhất.
-                </label>
-                <label>
-                    <input type="checkbox" name="activation">
-                    Kích hoạt
-                </label>
-            </fieldset>
-
-            <fieldset>
-                <legend>Nội dung cá nhân</legend>
-                <label>
-                    Gửi cập nhật cá nhân (ví dụ: quà sinh nhật).
-                </label>
-                <label>
-                    <input type="checkbox" name="activation">
-                    Kích hoạt
-                </label>
-            </fieldset>
-
-            <input class="m-t flex-c-m stext-101 cl0  bg10 bor4 hov-btn1 p-lr-15 trans-04" type="submit" value="Lưu thay đổi">
-        </form>
+        <div class="form">
+            @foreach ($orderDetails as $orderDetail)
+                <fieldset>
+                    <legend><b>{{ $orderDetail->name_product }}</b>
+                        <p>{{ $orderDetail->status }}</p>
+                    </legend>
+                    <div>
+                        <img src="{{ $orderDetail->image }}" alt="">
+                        <div>
+                            <h5>Kiểu: {{ $orderDetail->color }}</h5>
+                            <h5>Size: {{ $orderDetail->size }}</h5>
+                            <h5>Số lượng: {{ $orderDetail->quantity }}</h5>
+                        </div>
+                    </div>
+                    <h5>Giá: {{ number_format($orderDetail->price, 0, ',', ',') }} VNĐ</h5>
+                    <div>
+                        @if ($orderDetail->status == 'Đã giao hàng')
+                            <div>
+                                <form method="POST" action="{{ route('confirm.received', $orderDetail->id) }}">
+                                    @csrf
+                                    <button type="submit"
+                                        class="flex-c-m stext-101 cl0 bg10 bor1 hov-btn1 p-lr-15 trans-04">
+                                        Xác nhận nhận hàng
+                                    </button>
+                                </form>
+                            </div>
+                        @else
+                            @if ($orderDetail->status == 'Đã nhận hàng')
+                                <div>
+                                    <a href="{{ route('client.product.detail', ['id' => $orderDetail->product_id]) }}" class="flex-c-m stext-101 cl0  bg10 bor1 hov-btn1 p-lr-15 trans-04">
+                                        Mua lại
+                                    </a>
+                                </div>
+                            @else
+                                <div>
+                                    <label class="flex-c-m stext-101 p-lr-15 trans-04"> Xác nhận nhận
+                                        hàng</label>
+                                </div>
+                            @endif
+                        @endif
+                    </div>
+                </fieldset>
+            @endforeach
+        </div>
     </div>
 @endsection

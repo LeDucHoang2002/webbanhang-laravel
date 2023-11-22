@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Client\HomeController;
 use App\Http\Controllers\Client\ProductController;
 use App\Http\Controllers\Client\CartController;
+use App\Http\Controllers\Client\OrderController;
 
 
 Route::get('/', [HomeController::class, 'index'])->name('client.home');
@@ -22,6 +23,9 @@ Route::get('/', [HomeController::class, 'index'])->name('client.home');
 //  Route Product
 
 Route::get('/detail', [ProductController::class, 'index'])->name('client.product.detail');
+//  Route Order Product
+
+Route::post('/order-product', [OrderController::class, 'ProcessOrder'])->name('client.order.processOrder');
 
 //  Route Cart
 
@@ -73,3 +77,4 @@ Route::post('/profile/update', [UserProfileController::class, 'updateProfile'])-
 
 Route::post('/profile/update-password', [UserProfileController::class, 'updatePassword'])->name('update.password');
 
+Route::post('/confirm-received/{id}', [UserProfileController::class, 'confirmReceived'])->name('confirm.received');

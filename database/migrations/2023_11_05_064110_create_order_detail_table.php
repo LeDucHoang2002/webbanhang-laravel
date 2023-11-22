@@ -18,6 +18,7 @@ return new class extends Migration
             $table->integer('quantity');
             $table->string('size');
             $table->decimal('price', 10, 2);
+            $table->string('status');
             $table->timestamps();
 
             $table->unique(['id_order', 'id_product_detail']);

@@ -25,15 +25,17 @@ class OrderDetailTableSeeder extends Seeder
                 'quantity' => 2,
                 'size' =>'L',
                 'price' => '200000',
+                'status' => 'Đang giao',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
             ],
             [
-                'id_order' => 2, 
+                'id_order' => 1, 
                 'id_product_detail' => 2,
                 'quantity' => 2,
                 'size' =>'L',
                 'price' => '200000',
+                'status' => 'Đã nhận hàng',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
             ],
@@ -44,6 +46,7 @@ class OrderDetailTableSeeder extends Seeder
                 'quantity' => 2,
                 'size' =>'L',
                 'price' => '200000',
+                'status' => 'Đã giao hàng',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
             ],
@@ -53,6 +56,7 @@ class OrderDetailTableSeeder extends Seeder
                 'quantity' => 2,
                 'size' =>'L',
                 'price' => '200000',
+                'status' => 'Đang giao',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
             ],
@@ -62,6 +66,7 @@ class OrderDetailTableSeeder extends Seeder
                 'quantity' => 2,
                 'size' =>'L',
                 'price' => '200000',
+                'status' => 'Đã giao hàng',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
             ],
@@ -72,6 +77,7 @@ class OrderDetailTableSeeder extends Seeder
                 'quantity' => 2,
                 'size' =>'L',
                 'price' => '200000',
+                'status' => 'Đang giao',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
             ],
@@ -81,6 +87,7 @@ class OrderDetailTableSeeder extends Seeder
                 'quantity' => 2,
                 'size' =>'L',
                 'price' => '200000',
+                'status' => 'Đang giao',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
             ],
@@ -90,6 +97,7 @@ class OrderDetailTableSeeder extends Seeder
                 'quantity' => 2,
                 'size' =>'L',
                 'price' => '200000',
+                'status' => 'Đang giao',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
             ],

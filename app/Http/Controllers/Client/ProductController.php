@@ -17,7 +17,8 @@ use App\Models\Cart;
 class ProductController extends Controller
 {
     public function index(Request $request)
-    {  $username = session('username');
+    {
+        $username = session('username');
         $carts=Cart::Where('username',$username);
         $countCart=$carts->count('id');
         session()->put('countCart', $countCart);
@@ -70,6 +71,18 @@ class ProductController extends Controller
         foreach ($product_Details as $product_Detail) {
             $size_Product = Size_Product::where('id_product_detail', $product_Detail->id)->get();
         }
+
+        $request->session()->put('product_data', [
+            'ID' => $id,
+            'products' => $products,
+            'priceByProduct' => $priceByProduct,
+            'productDetailsWithImages' => $productDetailsWithImages,
+            'size_Product' => $size_Product,
+            'product_Details' => $product_Details,
+            'feedbackData' => $feedbackData,
+            'totalFeedback' => $totalFeedback,
+            'averageStarRating' => $averageStarRating,
+        ]);
 
         return view('client.product.detail', [
             'ID' => $id,
