@@ -27,6 +27,10 @@ Route::get('/detail', [ProductController::class, 'index'])->name('client.product
 
 Route::post('/order-product', [OrderController::class, 'ProcessOrder'])->name('client.order.processOrder');
 
+// routes/web.php
+Route::post('/saveOrder', [OrderController::class, 'SaveOrder'])->name('saveOrder');
+
+
 //  Route Cart
 
 Route::get('/cart', [CartController::class, 'index'])->name('client.cart.index');
@@ -69,7 +73,7 @@ Route::get('/profile', [UserProfileController::class, 'showProfile'])->name('pro
 
 Route::get('/password', [UserProfileController::class, 'showPassword'])->name('password');
 
-Route::get('/view', [UserProfileController::class, 'showView']);
+Route::get('/view', [UserProfileController::class, 'showView'])->name('view');
 
 Route::get('/settings', [UserProfileController::class, 'showSettings']);
 
