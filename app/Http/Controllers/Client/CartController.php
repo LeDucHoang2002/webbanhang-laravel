@@ -79,7 +79,7 @@ class CartController extends Controller
                 'id_size' => $size,
             ]);
         // Redirect back or to the cart page
-        return redirect()->back()->with('success', 'Item added to cart successfully');
+        return redirect()->back()->with('success', 'Đã thêm sản phẩm vào giỏ hàng');
         } else {
             return redirect()->route('login')->with('error', 'Please log in first.');
         }    

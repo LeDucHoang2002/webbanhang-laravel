@@ -17,7 +17,6 @@ use App\Http\Controllers\Client\ProductController;
 use App\Http\Controllers\Client\CartController;
 use App\Http\Controllers\Client\OrderController;
 
-
 Route::get('/', [HomeController::class, 'index'])->name('client.home');
 
 //  Route Product
@@ -45,6 +44,7 @@ Route::get('/payment', function () {
 use App\Http\Controllers\Auth\AuthController; // Replace with your actual controller
 
 Route::post('/login', [AuthController::class, 'login'])->name('login');
+Route::post('/register', [AuthController::class, 'register'])->name('register');
 Route::get('/logout', [AuthController::class,'logout'])->name('logout');
 // Route login
 Route::get('/login', function () {
@@ -55,13 +55,6 @@ Route::get('/register', function () {
     return view('auth.register');
 })->name('register');
 
-
-// Route cho trang dashboard của từng loại người dùng
-// Route::middleware(['auth'])->group(function () {
-    // Route::get('/dashboard/client', [LoginController::class, 'dashboard_client'])->name('client_home');
-    // Route::get('/dashboard/owner', [LoginController::class, 'dashboard_owner'])->name('owner_home');
-    // Route::get('/dashboard/admin', [LoginController::class, 'dashboard_admin'])->name('admin_home');
-// });
 
 use App\Http\Controllers\Client\UserProfileController;
 
@@ -78,3 +71,21 @@ Route::post('/profile/update', [UserProfileController::class, 'updateProfile'])-
 Route::post('/profile/update-password', [UserProfileController::class, 'updatePassword'])->name('update.password');
 
 Route::post('/confirm-received/{id}', [UserProfileController::class, 'confirmReceived'])->name('confirm.received');
+// Route::get('/email/verify/{token}', [AuthController::class, 'verifyEmail'])->name('verify.email');
+
+
+Route::get('/email/verify/{token}', [AuthController::class, 'verifyEmail'])->name('verify.email');
+
+Route::get('/verify-email', function () {
+    return view('emails.verify-email');
+})->name('verify.email.custom');
+
+use App\Http\Controllers\Auth\ForgotPasswordController;
+
+Route::get('password/reset', [ForgotPasswordController::class, 'showLinkRequestForm'])->name('password.request');
+Route::post('password/email', [ForgotPasswordController::class, 'sendResetLinkEmail'])->name('password.email');
+
+use App\Http\Controllers\Auth\ResetPasswordController;
+
+Route::get('password/reset/{token}', [ResetPasswordController::class, 'showResetForm'])->name('password.reset');
+Route::post('password/reset', [ResetPasswordController::class, 'reset'])->name('password.update');
