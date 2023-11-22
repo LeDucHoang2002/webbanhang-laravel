@@ -10,5 +10,5 @@ class Order_Detail extends Model
     use HasFactory;
     protected $table = 'order_detail'; // Tên của bảng trong cơ sở dữ liệu
     protected $primaryKey = 'id'; // Khóa chính của bảng
-    protected $fillable = ['id_order','id_product_detail','quantity','size','price','created_at','updated_at'];
+    protected $fillable = ['id_order','id_product_detail','quantity','size','price','status','created_at','updated_at'];
 }

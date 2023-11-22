@@ -17,7 +17,7 @@
             <div class="separator"></div>
             <a href="{{ url('/profile') }}">Hồ Sơ</a>
             <a href="{{ url('/password') }}">Đổi Mật Khẩu</a>
-            <a href="{{ url('/view') }}">Xem</a>
+            <a href="{{ url('/view') }}">Đơn mua</a>
             <a href="{{ url('/settings') }}">Cài Đặt Thông Báo</a>
         </nav>
 

@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
+use App\Models\Order_Detail;
 use App\Models\User;
 
 class UserProfileController extends Controller
@@ -115,10 +116,36 @@ class UserProfileController extends Controller
     }
 
     public function showView()
-    {
-        return view('client.profile.view');
+    {    
+        $username = session('username');
+        $orderDetails = Order_Detail::join('order', 'order.id', '=', 'order_detail.id_order')
+            ->join('product_detail', 'order_detail.id_product_detail', '=', 'product_detail.id')
+            ->join('product_images', 'product_detail.id', '=', 'product_images.id_product_detail')
+            ->join('images', 'product_images.id_image', '=', 'images.id')
+            ->join('product', 'product.id', '=', 'product_detail.id_product')
+            ->where('order.username', '=', $username)
+            ->select('images.image', 'product.name_product', 'product_detail.color', 'order_detail.size', 'order_detail.quantity', 'order_detail.price', 'order_detail.status', 'order_detail.id','product.id as product_id')
+            ->orderByDesc('order_detail.id') // Add this line to sort by id in descending order
+            ->get();
+
+        return view('client.profile.view', ['orderDetails' => $orderDetails]);
     }
 
+    // OrderController.php
+    public function confirmReceived($id)
+    {
+        $orderDetail = Order_Detail::find($id);
+
+        if (!$orderDetail) {
+            return redirect()->back()->with('error', 'Đơn hàng không tồn tại.');
+        }
+
+        // Cập nhật trạng thái thành "Đã nhận hàng"
+        $orderDetail->update(['status' => 'Đã nhận hàng']);
+
+        return redirect()->back()->with('success', 'Đã xác nhận nhận hàng thành công.');
+    }
+    
     public function showSettings()
     {
         return view('client.profile.settings');
