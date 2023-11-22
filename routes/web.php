@@ -70,3 +70,26 @@ Route::get('/email/verify/{token}', [AuthController::class, 'verifyEmail'])->nam
 Route::get('/verify-email', function () {
     return view('emails.verify-email');
 })->name('verify.email.custom');
+
+
+
+// quên mật khẩu
+// use App\Http\Controllers\Auth\ForgotPasswordController;
+
+// Route::get('password/reset', [ForgotPasswordController::class, 'showLinkRequestForm'])->name('password.request');
+// Route::post('password/email', [ForgotPasswordController::class, 'sendResetLinkEmail'])->name('password.email');
+
+// use App\Http\Controllers\Auth\ResetPasswordController;
+
+// Route::get('password/reset/{token}', [ResetPasswordController::class, 'showResetForm'])->name('password.reset');
+// Route::post('password/reset', [ResetPasswordController::class, 'reset'])->name('password.update');
+
+use App\Http\Controllers\Auth\ForgotPasswordController;
+
+Route::get('password/reset', [ForgotPasswordController::class, 'showLinkRequestForm'])->name('password.request');
+Route::post('password/email', [ForgotPasswordController::class, 'sendResetLinkEmail'])->name('password.email');
+
+use App\Http\Controllers\Auth\ResetPasswordController;
+
+Route::get('password/reset/{token}', [ResetPasswordController::class, 'showResetForm'])->name('password.reset');
+Route::post('password/reset', [ResetPasswordController::class, 'reset'])->name('password.update');

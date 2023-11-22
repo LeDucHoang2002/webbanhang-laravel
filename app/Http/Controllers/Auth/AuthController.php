@@ -32,20 +32,28 @@ class AuthController extends Controller
         ]);
 
         if (auth()->attempt($credentials)) {
-
             $user = auth()->user();
 
-            $id_permission = User_Permission::where('username', $user->username)->value('id_permission');
-            session()->put('username', $user->username);
-            if ($id_permission == 3) {
-                return redirect()->intended('');
+            // Kiểm tra cả trường email_verified
+            if ($user->email_verified == 1) {
+                $id_permission = User_Permission::where('username', $user->username)->value('id_permission');
+                session()->put('username', $user->username);
+
+                if ($id_permission == 3) {
+                    return redirect()->intended('');
+                } else {
+                    return back()->with('fail', 'Không có quyền truy cập');
+                }
             } else {
-                return back()->with('fail', 'Không có quyền truy cập');
+                // Người dùng chưa xác thực email
+                auth()->logout(); // Đăng xuất người dùng
+                return back()->with('fail', 'Vui lòng xác thực email trước khi đăng nhập.');
             }
         } else {
             return back()->with('fail', 'Sai tên đăng nhập hoặc mật khẩu');
         }
     }
+
     // public function register(Request $request)
     // {
     //     $validator = Validator::make($request->all(), [

@@ -37,7 +37,7 @@
                     <i id="togglePassword" class="fas fa-regular fa-eye-slash toggle-password"></i>
                 </div>
                 <!-- Add the 'required' attribute above -->
-                <a class="form__link" href="#">Bạn quên mật khẩu?</a>
+                <a class="form__link" href="{{ route('password.request') }}">Bạn quên mật khẩu?</a>
                 <button class="form__button button" type="submit">ĐĂNG NHẬP</button>
             </form>
         </div>
