@@ -57,6 +57,17 @@
     }
 </style>
 @section('content1')
+    @if(session('ok'))
+        <div class="alert alert-success" id="success-alert">
+            {{ session('ok') }}
+        </div>
+
+        <script>
+            setTimeout(function(){
+                document.getElementById('success-alert').style.display = 'none';
+            }, 3000);
+        </script>
+    @endif
     <div class="profile-container">
         <h4>Đơn đã mua</h4>
         <div class="separator"></div>

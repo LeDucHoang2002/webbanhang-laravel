@@ -1,6 +1,7 @@
 @extends('client.layouts.app')
 @section('title', 'Order')
 @section('content')
+   
     <div class="order-container p-lr-100 p-t-30" style="background-color: #f5f5f5">
         <div class="order-address p-tb-40" style="background-color: #fff; border-radius: 10px">
             <div class="up m-l-30 p-b-10">
@@ -44,7 +45,8 @@
                                 {{ $quantity }}
                             </td>
                             <td>
-                                {{ number_format($productDetail->price * $quantity, 0, ',', ',') }}</td>
+                                {{ number_format($productDetail->price * $quantity, 0, ',', ',') }}
+                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -68,15 +70,48 @@
                         <div class="d-flex flex-column align-items-end">
                             <div class="d-flex justify-content-between w-25 my-2 mx-4">
                                 <p>Tổng tiền hàng</p>
-                                <p>119.000đ</p>
-                            </div>
-                            <div class="d-flex justify-content-between w-25 my-2 m  x-4">
-                                <p>Phí vận chuyển</p>
-                                <p>119.000đ</p>
+                                <p>{{ number_format($productDetail->price * $quantity, 0, ',', ',') }}</p>
                             </div>
                             <div class="d-flex justify-content-between w-25 my-2 mx-4">
+                                <p>Phí vận chuyển</p>
+                                <p>20.000</p>
+                            </div>
+
+                            <div class="d-flex justify-content-between w-25 my-2 mx-4">
                                 <p>Tổng thanh toán</p>
-                                <p class="h4 text-danger ">119.000đ</p>
+                                <p class="h4 text-danger ">
+                                    {{ number_format($productDetail->price * $quantity + 20000, 0, ',', ',') }}</p>
+                            </div>
+                            <hr />
+                            <form action="{{ route('saveOrder') }}" method="post">
+                                @csrf
+                                <input type="hidden" name="color" value="{{ $productDetail->id }}">
+                                <input type="hidden" name="quantity" value="{{ $quantity }}">
+                                <input type="hidden" name="size" value="{{ $size }}">
+                                <button
+                                    class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 mx-3 trans-04 js-addcart-detail"
+                                    id="btnCart">
+                                    Mua ngay
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="content2">
+                        <p>VNPay</p>
+                        <div class="d-flex flex-column align-items-end">
+                            <div class="d-flex justify-content-between w-25 my-2 mx-4">
+                                <p>Tổng tiền hàng</p>
+                                <p>{{ number_format($productDetail->price * $quantity, 0, ',', ',') }}</p>
+                            </div>
+                            <div class="d-flex justify-content-between w-25 my-2 mx-4">
+                                <p>Phí vận chuyển</p>
+                                <p>20.000</p>
+                            </div>
+
+                            <div class="d-flex justify-content-between w-25 my-2 mx-4">
+                                <p>Tổng thanh toán</p>
+                                <p class="h4 text-danger ">
+                                    {{ number_format($productDetail->price * $quantity + 20000, 0, ',', ',') }}</p>
                             </div>
                             <hr />
                             <button
@@ -85,10 +120,6 @@
                                 Mua ngay
                             </button>
                         </div>
-                    </div>
-                    <div class="tab-pane fade" id="content2">
-                        <!-- Nội dung của Tab 2 -->
-                        <p>VNPay</p>
                     </div>
                 </div>
             </div>
