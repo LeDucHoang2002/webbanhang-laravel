@@ -66,7 +66,7 @@
                 </ul>
                 <div class="tab-content">
                     <div class="tab-pane fade show active" id="content1">
-                        <h3 class="m-3" style="width: 500px;float:left">Thanh toán khi nhận hàng</h3>
+                        <h3 class="m-3" style="width: 300px;float:left">Thanh toán khi nhận hàng</h3>
                         <div class="d-flex flex-column align-items-end">
                             <div class="d-flex justify-content-between w-25 my-2 mx-4">
                                 <p>Tổng tiền hàng</p>
@@ -99,7 +99,7 @@
 
                     <div class="tab-pane fade" id="content2">
                         
-                            <img class="m-3" style="width: 500px;float:left" src="https://vnpayqr.vn/wp-content/uploads/2021/10/Logo-VNPAY-QR.png" alt="">
+                            <img class="m-3" style="width: 300px;float:left" src="https://vnpayqr.vn/wp-content/uploads/2021/10/Logo-VNPAY-QR.png" alt="">
                         
                         <div class="d-flex flex-column align-items-end">
                             <div class="d-flex justify-content-between w-25 my-2 mx-4">
