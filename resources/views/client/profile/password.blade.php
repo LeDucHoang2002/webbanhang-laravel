@@ -90,9 +90,15 @@
             </div>
         @endif
         @if (session('success'))
-            <div class="alert alert-success">
+            <div class="alert alert-success" id="success-alert">
                 {{ session('success') }}
             </div>
+
+            <script>
+                setTimeout(function() {
+                    document.getElementById('success-alert').style.display = 'none';
+                }, 3000);
+            </script>
         @endif
         <div class="separator"></div>
             <div class="layout">
@@ -101,19 +107,19 @@
                     @csrf
                     <div class="input-wrapper">
                         <label for="pass_old">Nhập mật khẩu cũ:</label>
-                        <input class="input" type="password" id="pass_old" name="pass_old" required>
+                        <input class="input" type="password" id="pass_old" name="pass_old" required placeholder="Mật khẩu hiện tại">
                         <i id="togglePassword_old" class="fas fa-regular fa-eye-slash toggle-password"></i>
                     </div>
 
                     <div class="input-wrapper">
                         <label for="pass_new">Nhập mật khẩu mới:</label>
-                        <input class="input" type="password" id="pass_new" name="pass_new" required>
+                        <input class="input" type="password" id="pass_new" name="pass_new" required placeholder="Mật khẩu mới">
                         <i id="togglePassword_new" class="fas fa-regular fa-eye-slash toggle-password"></i>
                     </div>
 
                     <div class="input-wrapper">
                         <label for="pass_new_confirm">Nhập lại mật khẩu mới:</label>
-                        <input class="input" type="password" id="pass_new_confirm" name="pass_new_confirm" required>
+                        <input class="input" type="password" id="pass_new_confirm" name="pass_new_confirm" required placeholder="Nhập lại khẩu">
                         <i id="togglePassword_confirm" class="fas fa-regular fa-eye-slash toggle-password"></i>
                     </div>
 

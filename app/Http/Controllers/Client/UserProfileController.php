@@ -124,7 +124,7 @@ class UserProfileController extends Controller
             ->join('images', 'product_images.id_image', '=', 'images.id')
             ->join('product', 'product.id', '=', 'product_detail.id_product')
             ->where('order.username', '=', $username)
-            ->select('images.image', 'product.name_product', 'product_detail.color', 'order_detail.size', 'order_detail.quantity', 'order_detail.price', 'order_detail.status', 'order_detail.id','product.id as product_id')
+            ->select('images.image', 'product.name_product', 'product_detail.color', 'order_detail.size', 'order_detail.quantity', 'order_detail.price', 'order_detail.status', 'order_detail.id','product.id as product_id','order.status as orderStatus','product_detail.price as productPrice')
             ->orderByDesc('order_detail.id') // Add this line to sort by id in descending order
             ->get();
 

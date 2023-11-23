@@ -25,10 +25,6 @@
         display: block;
     }
 
-    fieldset div div h5 {
-        margin-bottom: 5px;
-    }
-
     fieldset div img {
         height: 120px;
         width: 120px;
@@ -39,37 +35,21 @@
         margin-bottom: 5px;
     }
 
-    fieldset label input[type="checkbox"] {
-        margin-right: 5px;
-    }
-
-    fieldset label input[type="submit"] {
-        background-color: #4CAF50;
-        color: white;
-        padding: 10px 15px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-    }
-
-    fieldset label input[type="submit"]:hover {
-        background-color: #45a049;
-    }
 </style>
 @section('content1')
-    @if(session('ok'))
+    @if (session('ok'))
         <div class="alert alert-success" id="success-alert">
             {{ session('ok') }}
         </div>
 
         <script>
-            setTimeout(function(){
+            setTimeout(function() {
                 document.getElementById('success-alert').style.display = 'none';
             }, 3000);
         </script>
     @endif
     <div class="profile-container">
-        <h4>Đơn đã mua</h4>
+        <h4>Tất cả đơn hàng</h4>
         <div class="separator"></div>
         <div class="form">
             @foreach ($orderDetails as $orderDetail)
@@ -80,13 +60,21 @@
                     <div>
                         <img src="{{ $orderDetail->image }}" alt="">
                         <div>
-                            <h5>Kiểu: {{ $orderDetail->color }}</h5>
-                            <h5>Size: {{ $orderDetail->size }}</h5>
-                            <h5>Số lượng: {{ $orderDetail->quantity }}</h5>
+                            <p>Kiểu: {{ $orderDetail->color }}</p>
+                            <p>Size: {{ $orderDetail->size }}</p>
+                            <p>Giá: {{ number_format($orderDetail->productPrice, 0, ',', ',') }}</p>
+                            <p>Số lượng: {{ $orderDetail->quantity }}</p>
                         </div>
                     </div>
-                    <h5>Giá: {{ number_format($orderDetail->price, 0, ',', ',') }} VNĐ</h5>
-                    <div>
+                    <div style="display: block;width:250px">
+                        <p>Thành tiền: <span
+                                style="color: crimson;font-size: 20px">{{ number_format($orderDetail->price, 0, ',', ',') }}
+                                vnđ</span></p>
+                        @if ($orderDetail->orderStatus == 'Đã thanh toán')
+                            <p style="margin-top: 10px">( {{ $orderDetail->orderStatus }} )</p>
+                        @endif
+                    </div>
+                    <div style="width:220px">
                         @if ($orderDetail->status == 'Đã giao hàng')
                             <div>
                                 <form method="POST" action="{{ route('confirm.received', $orderDetail->id) }}">
@@ -100,14 +88,15 @@
                         @else
                             @if ($orderDetail->status == 'Đã nhận hàng')
                                 <div>
-                                    <a href="{{ route('client.product.detail', ['id' => $orderDetail->product_id]) }}" class="flex-c-m stext-101 cl0  bg10 bor1 hov-btn1 p-lr-15 trans-04">
+                                    <a href="{{ route('client.product.detail', ['id' => $orderDetail->product_id]) }}"
+                                        class="flex-c-m stext-101 cl0  bg10 bor1 hov-btn1 p-lr-15 trans-04">
                                         Mua lại
                                     </a>
                                 </div>
                             @else
                                 <div>
-                                    <label class="flex-c-m stext-101 p-lr-15 trans-04"> Xác nhận nhận
-                                        hàng</label>
+                                    <label class="flex-c-m stext-101 p-lr-15 trans-04">
+                                    </label>
                                 </div>
                             @endif
                         @endif

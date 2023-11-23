@@ -1,7 +1,7 @@
 @extends('client.layouts.app')
 @section('title', 'Order')
 @section('content')
-   
+
     <div class="order-container p-lr-100 p-t-30" style="background-color: #f5f5f5">
         <div class="order-address p-tb-40" style="background-color: #fff; border-radius: 10px">
             <div class="up m-l-30 p-b-10">
@@ -66,7 +66,7 @@
                 </ul>
                 <div class="tab-content">
                     <div class="tab-pane fade show active" id="content1">
-                        <h3 class="m-3">Thanh toán khi nhận hàng</h3>
+                        <h3 class="m-3" style="width: 500px;float:left">Thanh toán khi nhận hàng</h3>
                         <div class="d-flex flex-column align-items-end">
                             <div class="d-flex justify-content-between w-25 my-2 mx-4">
                                 <p>Tổng tiền hàng</p>
@@ -93,11 +93,14 @@
                                     id="btnCart">
                                     Mua ngay
                                 </button>
-                            </form>
+                            </form>                            
                         </div>
                     </div>
+
                     <div class="tab-pane fade" id="content2">
-                        <p>VNPay</p>
+                        
+                            <img class="m-3" style="width: 500px;float:left" src="https://vnpayqr.vn/wp-content/uploads/2021/10/Logo-VNPAY-QR.png" alt="">
+                        
                         <div class="d-flex flex-column align-items-end">
                             <div class="d-flex justify-content-between w-25 my-2 mx-4">
                                 <p>Tổng tiền hàng</p>
@@ -114,11 +117,14 @@
                                     {{ number_format($productDetail->price * $quantity + 20000, 0, ',', ',') }}</p>
                             </div>
                             <hr />
-                            <button
-                                class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 mx-3 trans-04 js-addcart-detail"
-                                id="btnCart">
-                                Mua ngay
-                            </button>
+                            <form action="{{ route('vnpay.payment') }}" method="POST">
+                                @csrf
+                                <input type="hidden" name="color" value="{{ $productDetail->id }}">
+                                <input type="hidden" name="quantity" value="{{ $quantity }}">
+                                <input type="hidden" name="size" value="{{ $size }}">
+                                <button type="submit" name="redirect" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 mx-3 trans-04 js-addcart-detail"
+                                id="btnCart">Mua ngay</button>
+                            </form>
                         </div>
                     </div>
                 </div>

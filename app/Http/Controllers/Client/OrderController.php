@@ -69,11 +69,36 @@ class OrderController extends Controller
         $orderDetail->quantity = $quantity;
         $orderDetail->size = $size;
         $orderDetail->price = $productDetail->price * $quantity + 20000; 
-        $orderDetail->status = 'Thanh toán khi nhận hàng'; 
+        $orderDetail->status = 'Chờ duyệt'; 
         $orderDetail->save();
 
         return redirect()->route('view')->with('ok', 'Đã đặt hàng thành công');
 
-        
     }
+
+    public function saveOrderOnline(Request $request) {
+        $user = $request->user();
+        $quantity = $request->input('quantity');
+        $size = $request->input('size');
+        $vnp_Amount=$request->input('vnp_Amount');
+        $idProductDetail = $request->input('idProductDetail');    
+        
+        $order = new Order();
+        $order->username = $user->username; 
+        $order->day_order = now(); 
+        $order->status = 'Đã thanh toán'; 
+        $order->save();
+
+        // Tạo một chi tiết đơn hàng mới
+        $orderDetail = new Order_Detail();
+        $orderDetail->id_order = $order->id; 
+        $orderDetail->id_product_detail = $idProductDetail;
+        $orderDetail->quantity = $quantity;
+        $orderDetail->size = $size;
+        $orderDetail->price = $vnp_Amount/100; 
+        $orderDetail->status = 'Chờ duyệt'; 
+        $orderDetail->save();
+        return redirect()->route('view')->with('ok', 'Đã đặt hàng thành công');
+    }
+    
 }

@@ -30,6 +30,8 @@ Route::post('/order-product', [OrderController::class, 'ProcessOrder'])->name('c
 Route::post('/saveOrder', [OrderController::class, 'SaveOrder'])->name('saveOrder');
 
 
+Route::get('/saveOrderOnline', [OrderController::class, 'saveOrderOnline'])->name('saveOrderOnline');
+
 //  Route Cart
 
 Route::get('/cart', [CartController::class, 'index'])->name('client.cart.index');
@@ -93,3 +95,7 @@ use App\Http\Controllers\Auth\ResetPasswordController;
 
 Route::get('password/reset/{token}', [ResetPasswordController::class, 'showResetForm'])->name('password.reset');
 Route::post('password/reset', [ResetPasswordController::class, 'reset'])->name('password.update');
+
+use App\Http\Controllers\Client\PaymentController;
+
+Route::post('/vnpay_payment', [PaymentController::class, 'vnpayPayment'])->name('vnpay.payment');
