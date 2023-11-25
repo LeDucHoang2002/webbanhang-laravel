@@ -101,6 +101,38 @@ class OrderDetailTableSeeder extends Seeder
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
             ],
+            //9 - 7
+            
+            [
+                'id_order' => 7, 
+                'id_product_detail' => 12,
+                'quantity' => 2,
+                'size' =>'L',
+                'price' => '200000',
+                'status' => 'Đã nhận hàng',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'id_order' => 8, 
+                'id_product_detail' => 13,
+                'quantity' => 2,
+                'size' =>'L',
+                'price' => '200000',
+                'status' => 'Đã nhận hàng',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'id_order' => 9, 
+                'id_product_detail' => 14,
+                'quantity' => 2,
+                'size' =>'L',
+                'price' => '200000',
+                'status' => 'Đã nhận hàng',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
         ]);
     }
 }

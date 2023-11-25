@@ -1593,14 +1593,7 @@ button.mfp-close {
 /*//////////////////////////////////////////////////////////////////
 [ Tab01 ]*/
 .tab01 .nav-tabs {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
+  padding-left: 50px;
   border: none;
 }
 
@@ -1635,7 +1628,10 @@ button.mfp-close {
   border-color: #797979;
 }
 
-
+.tab-pane .row {
+  padding-left: 120px;
+  padding-right: 120px;
+}
 
 /*//////////////////////////////////////////////////////////////////
 [ RS sweet alert ]*/
@@ -1755,6 +1751,9 @@ button.mfp-close {
 .filter-link:hover {
   color: #bf6d72;
   border-bottom: 1px solid #bf6d72;
+}
+.nav a.active {
+  color: red; /* Hoặc bất kỳ kiểu CSS nào bạn muốn */
 }
 
 .filter-link-active {

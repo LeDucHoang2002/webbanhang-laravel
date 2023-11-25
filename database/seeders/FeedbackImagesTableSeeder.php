@@ -37,6 +37,26 @@ class FeedbackImagesTableSeeder extends Seeder
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
             ],
+            //7-12
+            [
+                'id_feedback' => 7, 
+                'id_image' =>12,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'id_feedback' => 8, 
+                'id_image' =>13,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'id_feedback' => 9, 
+                'id_image' =>14,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            
         ]);
     }
 }

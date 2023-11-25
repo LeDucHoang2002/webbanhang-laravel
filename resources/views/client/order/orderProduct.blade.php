@@ -19,7 +19,7 @@
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Sản phẩm</th>
+                            <th style="width: 450px">Sản phẩm</th>
                             <th>Kiểu sản phẩm</th>
                             <th>Size</th>
                             <th>Giá</th>

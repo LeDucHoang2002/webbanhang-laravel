@@ -91,6 +91,15 @@ class ProductTableSeeder extends Seeder
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
             ],
+            //10
+            [
+                'name_product' => 'Áo Croptop thun tăm dài tay nữ cúc bấm 3 màu Áo thun croptop cổ bẻ chất thun tăm co giãn loại 1', 
+                'image_product' => 'https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lm1l3cl6zie719',
+                'id_category' => '1', 
+                'description' => 'Áo Croptop thun tăm dài tay nữ cúc bấm 3 màu Áo thun croptop cổ bẻ chất thun tăm co giãn loại 1. Đường may chuẩn chỉnh, tỉ mỉ, chắc chắn.Phong cách thời trang cá tính, quyến rũ.', 
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
         ]);
     }
 }

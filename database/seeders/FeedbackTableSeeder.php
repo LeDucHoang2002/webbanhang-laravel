@@ -68,6 +68,32 @@ class FeedbackTableSeeder extends Seeder
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
             ],
+            //7-9
+            
+            [
+                'id_order' => 7, 
+                'message' => 'Áo đẹp ôm sát body, mình 54kg vẫn vừa nhé',
+                'star' => 5,
+                'day_feedback' =>Carbon::now(),
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'id_order' => 8, 
+                'message' => 'Áo khá tốt',
+                'star' => 4,
+                'day_feedback' =>Carbon::now(),
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'id_order' => 9, 
+                'message' => 'Áo đẹp lắm nên mua nha',
+                'star' => 5,
+                'day_feedback' =>Carbon::now(),
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
         ]);
     }
 }
