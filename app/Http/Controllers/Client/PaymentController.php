@@ -31,9 +31,10 @@ class PaymentController extends Controller
         $size = $request->input('size');
         try{
             $response = $this->gateway->purchase(array(
-                'amount' => $price / 25000, // số tiền : cần chuyển sang usd
+                'amount' => $price / 100000, // số tiền : cần chuyển sang usd
                 'currency' => env('PAYPAL_CURRENCY'),
-                'returnUrl' => "http://localhost:8000/success?" . http_build_query([
+                // thay cổng theo server máy đang chạy http://localhost:8000 
+                'returnUrl' => "http://127.0.0.1:8000/success?" . http_build_query([
                     'quantity' => $quantity,
                     'size' => $size,
                     'idProductDetail' => $idProductDetail, 
@@ -95,7 +96,7 @@ class PaymentController extends Controller
         $latestOrderId = Order::max('id');
 
         $vnp_Url = "https://sandbox.vnpayment.vn/paymentv2/vpcpay.html";
-        // thay cổng theo server máy đang chạy
+        // thay cổng theo server máy đang chạy http://localhost:8000 
         $vnp_Returnurl = "http://127.0.0.1:8000/saveOrderOnline?" . http_build_query([
             'quantity' => $quantity,
             'size' => $size,
