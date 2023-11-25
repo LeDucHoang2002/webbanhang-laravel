@@ -99,3 +99,8 @@ Route::post('password/reset', [ResetPasswordController::class, 'reset'])->name('
 use App\Http\Controllers\Client\PaymentController;
 
 Route::post('/vnpay_payment', [PaymentController::class, 'vnpayPayment'])->name('vnpay.payment');
+
+Route::post('/paypal_payment', [PaymentController::class, 'pay'])->name('paypal.payment');
+Route::get('success', [PaymentController::class, 'success']);
+Route::get('error', [PaymentController::class, 'error']);
+

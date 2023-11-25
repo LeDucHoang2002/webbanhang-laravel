@@ -7,9 +7,68 @@ use Illuminate\Http\Request;
 use App\Models\Order;
 use App\Models\Product_Detail;
 use Illuminate\Support\Facades\Redirect;
+use Omnipay\Omnipay;
 
 class PaymentController extends Controller
 {
+    private $gateway;
+
+    public function __construct() {
+        $this->gateway = Omnipay::create("PayPal_Rest");
+        $this->gateway->setClientId(env("PAYPAL_CLIENT_ID"));
+        $this->gateway->setSecret(env("PAYPAL_CLIENT_SECRET"));
+        $this->gateway->setTestMode(true);
+    }
+
+    public function pay(Request $request) {
+        try{
+            $response = $this->gateway->purchase(array(
+                'amount' => 2, // số tiền : cần chuyển sang usd
+                'currency' => env('PAYPAL_CURRENCY'),
+                'returnUrl' => url('success'),  // direct đến trang success nếu thành công
+                'cancelUrl' => url('error'), // direact đến trang eror nếu thất bại
+            ))->send();
+
+            if($response->isRedirect()) {
+                $response->redirect();
+            } else {
+                return $response->getMessage();
+            }
+
+        }catch (\Throwable $th){
+            return $th->getMessage();
+        }
+    }
+
+    public function success(Request $request) {
+        // if($request->input('paymentId') && $request->input('PayerID')) {
+        //     $transaction = $this->gateway->completePurchase(array(
+        //         'payer_id' => $request->input('Payer_ID'),
+        //         'transactionReference' => $request->input('paymentId')
+        //     ));
+
+        //     $response= $transaction->send();
+
+        //     if($response.isSuccessful()){
+        //         $arr = $response->getData();
+
+        //         return "Payment success!";
+        //     }else {
+        //         return $response->getMessage();
+        //     }
+        // }else{
+        //     return "Payment Decline!";
+        // }
+
+        // thêm data vào database 
+        return "Succwwsss!";
+    }
+
+    public function error() {
+        return "User is decline Payment!"; //thanh toán thất bại
+    }
+
+
 
     public function vnpayPayment(Request $request)
     { 
@@ -90,4 +149,6 @@ class PaymentController extends Controller
             echo json_encode($returnData);
         }
     }
+
+
 }
