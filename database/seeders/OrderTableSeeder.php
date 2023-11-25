@@ -62,6 +62,28 @@ class OrderTableSeeder extends Seeder
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
             ],
+            //7-12
+            [
+                'username' => 'nguyenhaily', 
+                'day_order' => Carbon::now(),
+                'status' => 'Đã giao hàng',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'username' => 'vothanhhai', 
+                'day_order' => Carbon::now(),
+                'status' => 'Đã giao hàng',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'username' => 'ngochieu', 
+                'day_order' => Carbon::now(),
+                'status' => 'Đã giao hàng',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
 
         ]);
     }

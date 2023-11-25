@@ -96,6 +96,29 @@ class ProductDetailTableSeeder extends Seeder
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
             ],
+            //12
+            [
+                'id_product' => 10, 
+                'color' => 'Màu trắng',
+                'price' => '125000', 
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'id_product' => 10, 
+                'color' => 'Màu đen',
+                'price' => '125000', 
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'id_product' => 10, 
+                'color' => 'Màu xám',
+                'price' => '125000', 
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            //15
         ]);
     }
 }

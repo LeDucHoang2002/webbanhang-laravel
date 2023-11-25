@@ -126,7 +126,8 @@ class SizeProductTableSeeder extends Seeder
                 'stock' => 311, 
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
-            ],[
+            ],
+            [
                 'id_product_detail' => 10, 
                 'id_size' => 'L',
                 'stock' => 115, 
@@ -135,6 +136,51 @@ class SizeProductTableSeeder extends Seeder
             ],
             [
                 'id_product_detail' => 11, 
+                'id_size' => 'M',
+                'stock' => 113, 
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            //12
+            [
+                'id_product_detail' => 12, 
+                'id_size' => 'L',
+                'stock' => 115, 
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'id_product_detail' => 12, 
+                'id_size' => 'M',
+                'stock' => 113, 
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            //13
+            [
+                'id_product_detail' => 13, 
+                'id_size' => 'L',
+                'stock' => 115, 
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'id_product_detail' => 13, 
+                'id_size' => 'M',
+                'stock' => 113, 
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            //14
+            [
+                'id_product_detail' => 14, 
+                'id_size' => 'L',
+                'stock' => 115, 
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'id_product_detail' => 14, 
                 'id_size' => 'M',
                 'stock' => 113, 
                 'created_at' => Carbon::now(),

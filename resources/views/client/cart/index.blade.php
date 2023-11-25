@@ -33,7 +33,7 @@
                     <tr>
                         <th><input type="checkbox" class="cart-checkbox" data-cart-id="All"></th>
                         <th>ID</th>
-                        <th>Sản phẩm</th>
+                        <th style="width: 400px">Sản phẩm</th>
                         <th>Kiểu sản phẩm</th>
                         <th>Size</th>
                         <th>Giá</th>
@@ -54,7 +54,7 @@
                             <td>{{ $count++ }}</td>
                             <td style="display: flex">
                                 <img src="{{ $cart->image }}" alt="Product Image" width="50">
-                                <b>{{ $cart->name_product }}</b>
+                                <b>{{ \Illuminate\Support\Str::limit($cart->name_product, 60, ' ...') }}</b>
                             </td>
                             <td>{{ $cart->color }}</td>
                             <td>{{ $cart->id_size }}</td>

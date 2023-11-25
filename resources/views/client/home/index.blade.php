@@ -332,17 +332,18 @@
 
                             <div class="block2-txt flex-w flex-t p-t-14">
                                 <div class="block2-txt-child1 flex-col-l ">
-                                    <a href="{{ route('client.product.detail', ['id' => $product->id]) }}"
-                                        class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-                                        {{ $product->name_product }}
-                                    </a>
+                                    <a style="height: 40px;color: #000000" href="{{ route('client.product.detail', ['id' => $product->id]) }}"
+                                        class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6"
+                                        data-full-name="{{ $product->name_product }}">
+                                         {{ \Illuminate\Support\Str::limit($product->name_product, 60, ' ...') }}
+                                     </a>                                     
 
-                                    <span class="stext-105 cl3">
+                                    <span style="color: #ff2600;font-size: 18px" class="stext-105 cl3">
                                         @if ($priceByProduct[$product->id]['min'] === $priceByProduct[$product->id]['max'])
-                                            {{ number_format($priceByProduct[$product->id]['min'], 0, ',', '.') }} VNĐ
+                                            {{ number_format($priceByProduct[$product->id]['min'], 0, ',', '.') }} <span style="font-size: 14px">đ</span>
                                         @else
                                             {{ number_format($priceByProduct[$product->id]['min'], 0, ',', '.') }} -
-                                            {{ number_format($priceByProduct[$product->id]['max'], 0, ',', '.') }} VNĐ
+                                            {{ number_format($priceByProduct[$product->id]['max'], 0, ',', '.') }} <span style="font-size: 14px">đ</span>
                                         @endif
                                     </span>
                                 </div>

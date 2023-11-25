@@ -31,7 +31,11 @@ class ImagesTableSeeder extends Seeder
 
             ['image' => 'https://static2.yan.vn/YanNews/2167221/202002/5-mau-ao-thun-nam-dep-khong-nen-bo-qua-nam-2020-f7263123.jpg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
             ['image' => 'https://aoxuanhe.com/upload/product/axh-162/ao-thun-nam-cotton-co-tron-trang.jpg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
-            
+            //12
+            ['image' => 'https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lm1l3cl6k25ba4', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['image' => 'https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lm1l3cl7eyn3b9', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['image' => 'https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lm1l3cl6k2cf5f', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            //15
         ]);
     }
 }

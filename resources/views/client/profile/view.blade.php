@@ -54,7 +54,7 @@
         <div class="form">
             @foreach ($orderDetails as $orderDetail)
                 <fieldset>
-                    <legend><b>{{ $orderDetail->name_product }}</b>
+                    <legend><b>{{ \Illuminate\Support\Str::limit($orderDetail->name_product, 60, ' ...') }}</b>
                         <p>{{ $orderDetail->status }}</p>
                     </legend>
                     <div>
@@ -69,7 +69,7 @@
                     <div style="display: block;width:250px">
                         <p>Thành tiền: <span
                                 style="color: crimson;font-size: 20px">{{ number_format($orderDetail->price, 0, ',', ',') }}
-                                vnđ</span></p>
+                                đ</span></p>
                         @if ($orderDetail->orderStatus == 'Đã thanh toán')
                             <p style="margin-top: 10px">( {{ $orderDetail->orderStatus }} )</p>
                         @endif

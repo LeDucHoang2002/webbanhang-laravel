@@ -38,8 +38,9 @@
                                                     <i class="fa fa-expand"></i>
                                                 </a>
                                                 <h4>{{ $productDetailWithImages['productDetail']->color }}</h4>
-                                                <p>Giá
-                                                    :{{ number_format($productDetailWithImages['productDetail']->price, 0, ',', '.') }}VNĐ
+                                                <p style="color: #ff2600">Giá
+                                                    :{{ number_format($productDetailWithImages['productDetail']->price, 0, ',', '.') }}
+                                                    đ
                                                 </p>
                                             </div>
                                         </div>
@@ -52,9 +53,9 @@
                 <div class="col-md-6 col-lg-5 p-b-30">
                     <div class="p-r-50 p-t-5 p-lr-0-lg">
                         <h4 class="mtext-105 cl2 p-b-14">
-                            <span class="js-name-detail">{{ $products->name_product }}</span>
-                            {{ number_format($averageStarRating, 1) }}
-                            <span class="fs-18 cl11">
+                            <span class="js-name-detail">{{ $products->name_product }}</span><br>
+                            <b style="color: #f9ba48">
+                                {{ number_format($averageStarRating, 1) }}
                                 @if ($averageStarRating > floor($averageStarRating))
                                     @for ($i = 0; $i < floor($averageStarRating); $i++)
                                         <i class="zmdi zmdi-star"></i>
@@ -65,16 +66,16 @@
                                         <i class="zmdi zmdi-star"></i>
                                     @endfor
                                 @endif
-
-                            </span>
+                            </b>
                         </h4>
 
-                        <span class="mtext-106 cl2">
+                        <span style="color: #ff2600;font-size: 24px" class="mtext-106 cl2">
                             @if ($priceByProduct[$ID]['min'] == $priceByProduct[$ID]['max'])
-                                Giá : {{ number_format($priceByProduct[$ID]['min'], 0, ',', '.') }} VNĐ
+                                Giá : {{ number_format($priceByProduct[$ID]['min'], 0, ',', '.') }} <span
+                                    style="font-size: 18px">đ</span>
                             @else
                                 Giá : {{ number_format($priceByProduct[$ID]['min'], 0, ',', '.') }} -
-                                {{ number_format($priceByProduct[$ID]['max'], 0, ',', '.') }} VNĐ
+                                {{ number_format($priceByProduct[$ID]['max'], 0, ',', '.') }} <u>đ</u>
                             @endif
                         </span>
                         <p class="stext-102 cl3 p-t-23">
@@ -214,7 +215,7 @@
                     </ul>
 
                     <!-- Tab panes -->
-                    <div class="tab-content p-t-43">
+                    <div class="tab-content p-t-20">
                         <!-- - -->
                         <div class="tab-pane fade show active" id="description" role="tabpanel">
                             <div class="how-pos2 p-lr-15-md">
@@ -227,103 +228,99 @@
                         <!-- - -->
                         <div class="tab-pane fade" id="information" role="tabpanel">
                             <div class="row">
-                                <div class="col-sm-10 col-md-8 col-lg-6 m-lr-auto">
-                                    <ul class="p-lr-28 p-lr-15-sm">
-                                        <li class="flex-w flex-t p-b-7">
-                                            <span class="stext-102 cl3 size-205">
-                                                Weight
-                                            </span>
+                                <ul class="p-lr-28 p-lr-15-sm">
+                                    <li class="flex-w flex-t p-b-7">
+                                        <span class="stext-102 cl3 size-205">
+                                            Weight
+                                        </span>
 
-                                            <span class="stext-102 cl6 size-206">
-                                                0.79 kg
-                                            </span>
-                                        </li>
+                                        <span class="stext-102 cl6 size-206">
+                                            0.79 kg
+                                        </span>
+                                    </li>
 
-                                        <li class="flex-w flex-t p-b-7">
-                                            <span class="stext-102 cl3 size-205">
-                                                Dimensions
-                                            </span>
+                                    <li class="flex-w flex-t p-b-7">
+                                        <span class="stext-102 cl3 size-205">
+                                            Dimensions
+                                        </span>
 
-                                            <span class="stext-102 cl6 size-206">
-                                                110 x 33 x 100 cm
-                                            </span>
-                                        </li>
+                                        <span class="stext-102 cl6 size-206">
+                                            110 x 33 x 100 cm
+                                        </span>
+                                    </li>
 
-                                        <li class="flex-w flex-t p-b-7">
-                                            <span class="stext-102 cl3 size-205">
-                                                Materials
-                                            </span>
+                                    <li class="flex-w flex-t p-b-7">
+                                        <span class="stext-102 cl3 size-205">
+                                            Materials
+                                        </span>
 
-                                            <span class="stext-102 cl6 size-206">
-                                                60% cotton
-                                            </span>
-                                        </li>
+                                        <span class="stext-102 cl6 size-206">
+                                            60% cotton
+                                        </span>
+                                    </li>
 
-                                        <li class="flex-w flex-t p-b-7">
-                                            <span class="stext-102 cl3 size-205">
-                                                Color
-                                            </span>
+                                    <li class="flex-w flex-t p-b-7">
+                                        <span class="stext-102 cl3 size-205">
+                                            Color
+                                        </span>
 
-                                            <span class="stext-102 cl6 size-206">
-                                                @foreach ($product_Details as $product_Detail)
-                                                    {{ $product_Detail->color }} .
-                                                @endforeach
-                                            </span>
-                                        </li>
+                                        <span class="stext-102 cl6 size-206">
+                                            @foreach ($product_Details as $product_Detail)
+                                                {{ $product_Detail->color }} .
+                                            @endforeach
+                                        </span>
+                                    </li>
 
-                                        <li class="flex-w flex-t p-b-7">
-                                            <span class="stext-102 cl3 size-205">
-                                                Size
-                                            </span>
+                                    <li class="flex-w flex-t p-b-7">
+                                        <span class="stext-102 cl3 size-205">
+                                            Size
+                                        </span>
 
-                                            <span class="stext-102 cl6 size-206">
-                                                @foreach ($size_Product as $sizeProduct)
-                                                    {{ $sizeProduct->id_size }} .
-                                                @endforeach
-                                            </span>
-                                        </li>
-                                    </ul>
-                                </div>
+                                        <span class="stext-102 cl6 size-206">
+                                            @foreach ($size_Product as $sizeProduct)
+                                                {{ $sizeProduct->id_size }} .
+                                            @endforeach
+                                        </span>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
 
                         <!-- - -->
                         <div class="tab-pane fade" id="reviews" role="tabpanel">
                             <div class="row">
-                                <div class="col-sm-10 col-md-8 col-lg-6 m-lr-auto">
-                                    <div class="p-b-30 m-lr-15-sm">
-                                        <!-- Review -->
-                                        @foreach ($feedbackData as $feedback)
-                                            <div class="flex-w flex-t p-b-68">
-                                                <div class="wrap-pic-s size-109 bor0 of-hidden m-r-18 m-t-6">
-                                                    <img src="{{ $feedback->avt }}" alt="AVATAR">
+                                <div class="p-b-10">
+                                    <!-- Review -->
+                                    @foreach ($feedbackData as $feedback)
+                                        <div class="flex-w flex-t p-b-10">
+                                            <div class="wrap-pic-s size-109 bor0 of-hidden m-r-18 m-t-6">
+                                                <img src="{{ $feedback->avt }}" alt="AVATAR">
+                                            </div>
+
+                                            <div class="size-207">
+                                                <div>
+                                                    {{ $feedback->account_name }}
+                                                    <span class="fs-18 cl11">
+                                                        @for ($i = 0; $i < $feedback->star; $i++)
+                                                            <i class="zmdi zmdi-star"></i>
+                                                        @endfor
+                                                    </span>
                                                 </div>
+                                                <p>
+                                                    {{ $feedback->day_feedback }} | {{ $feedback->color }} |
+                                                    Size:{{ $feedback->size }}
+                                                </p>
 
-                                                <div class="size-207">
-                                                    <div>
-                                                        {{ $feedback->account_name }}
-                                                        <span class="fs-18 cl11">
-                                                            @for ($i = 0; $i < $feedback->star; $i++)
-                                                                <i class="zmdi zmdi-star"></i>
-                                                            @endfor
-                                                        </span>
-                                                    </div>
-                                                    <p>
-                                                        {{ $feedback->day_feedback }} | {{ $feedback->color }} |
-                                                        Size:{{ $feedback->size }}
-                                                    </p>
-
-                                                    <p class="stext-102 cl6">
-                                                        {{ $feedback->message }}
-                                                    </p>
-                                                    <div class="block2-pic hov-img0">
-                                                        <img class="img-feedback" src="{{ $feedback->image }}"
-                                                            alt="">
-                                                    </div>
+                                                <p class="stext-102 cl6">
+                                                    {{ $feedback->message }}
+                                                </p>
+                                                <div class="block2-pic hov-img0">
+                                                    <img class="img-feedback" src="{{ $feedback->image }}"
+                                                        alt="">
                                                 </div>
                                             </div>
-                                        @endforeach
-                                    </div>
+                                        </div>
+                                    @endforeach
                                 </div>
                             </div>
                         </div>
