@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Client\HomeController;
 use App\Http\Controllers\Client\ProductController;
 use App\Http\Controllers\Client\CartController;
-
+use App\Http\Controllers\FacebookController;
 
 Route::get('/', [HomeController::class, 'index'])->name('client.home');
 
@@ -73,3 +75,7 @@ Route::post('/profile/update', [UserProfileController::class, 'updateProfile'])-
 
 Route::post('/profile/update-password', [UserProfileController::class, 'updatePassword'])->name('update.password');
 
+// Route Facebook-Login
+Route::get('auth/facebook',[FacebookController::class,'facebookpage']);;
+
+Route::get('auth/facebook/callback',[FacebookController::class,'facebookredirect']);;
