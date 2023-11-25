@@ -152,6 +152,7 @@
                             <hr />
                             <form action="{{ route('paypal.payment') }}" method="POST">
                                 @csrf
+                                <input type="hidden" name="price" value="{{ $productDetail->price * $quantity + 20000 }}">
                                 <input type="hidden" name="color" value="{{ $productDetail->id }}">
                                 <input type="hidden" name="quantity" value="{{ $quantity }}">
                                 <input type="hidden" name="size" value="{{ $size }}">

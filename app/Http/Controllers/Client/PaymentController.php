@@ -8,6 +8,9 @@ use App\Models\Order;
 use App\Models\Product_Detail;
 use Illuminate\Support\Facades\Redirect;
 use Omnipay\Omnipay;
+use App\Models\User;
+use App\Models\Order_Detail;
+
 
 class PaymentController extends Controller
 {
@@ -21,11 +24,21 @@ class PaymentController extends Controller
     }
 
     public function pay(Request $request) {
+        $user = $request->user();
+        $price = $request->input('price');
+        $idProductDetail = $request->input('color');
+        $quantity = $request->input('quantity');
+        $size = $request->input('size');
         try{
             $response = $this->gateway->purchase(array(
-                'amount' => 2, // số tiền : cần chuyển sang usd
+                'amount' => $price / 25000, // số tiền : cần chuyển sang usd
                 'currency' => env('PAYPAL_CURRENCY'),
-                'returnUrl' => url('success'),  // direct đến trang success nếu thành công
+                'returnUrl' => "http://localhost:8000/success?" . http_build_query([
+                    'quantity' => $quantity,
+                    'size' => $size,
+                    'idProductDetail' => $idProductDetail, 
+                    'price' => $price, 
+                ]), // direct đến trang success nếu thành công
                 'cancelUrl' => url('error'), // direact đến trang eror nếu thất bại
             ))->send();
 
@@ -41,27 +54,29 @@ class PaymentController extends Controller
     }
 
     public function success(Request $request) {
-        // if($request->input('paymentId') && $request->input('PayerID')) {
-        //     $transaction = $this->gateway->completePurchase(array(
-        //         'payer_id' => $request->input('Payer_ID'),
-        //         'transactionReference' => $request->input('paymentId')
-        //     ));
+        $username = session('username');
+        $price = $request->input('price');
+        $productDetail = $request->input('idProductDetail');
+        $quantity = $request->input('quantity');
+        $size = $request->input('size');
 
-        //     $response= $transaction->send();
+        $order = new Order();
+        $order->username = $username; 
+        $order->day_order = now(); 
+        $order->status = 'Đã thanh toán'; 
+        $order->save();
 
-        //     if($response.isSuccessful()){
-        //         $arr = $response->getData();
+        // Tạo một chi tiết đơn hàng mới
+        $orderDetail = new Order_Detail();
+        $orderDetail->id_order = $order->id; 
+        $orderDetail->id_product_detail = $productDetail;
+        $orderDetail->quantity = $quantity;
+        $orderDetail->size = $size;
+        $orderDetail->price = $price; 
+        $orderDetail->status = 'Chờ duyệt'; 
+        $orderDetail->save();
 
-        //         return "Payment success!";
-        //     }else {
-        //         return $response->getMessage();
-        //     }
-        // }else{
-        //     return "Payment Decline!";
-        // }
-
-        // thêm data vào database 
-        return "Succwwsss!";
+        return redirect()->route('view')->with('ok', 'Đã đặt hàng thành công');
     }
 
     public function error() {
@@ -80,6 +95,7 @@ class PaymentController extends Controller
         $latestOrderId = Order::max('id');
 
         $vnp_Url = "https://sandbox.vnpayment.vn/paymentv2/vpcpay.html";
+        // thay cổng theo server máy đang chạy
         $vnp_Returnurl = "http://127.0.0.1:8000/saveOrderOnline?" . http_build_query([
             'quantity' => $quantity,
             'size' => $size,
