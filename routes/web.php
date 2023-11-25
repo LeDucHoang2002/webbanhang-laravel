@@ -18,6 +18,7 @@ use App\Http\Controllers\Client\HomeController;
 use App\Http\Controllers\Client\ProductController;
 use App\Http\Controllers\Client\CartController;
 use App\Http\Controllers\FacebookController;
+use App\Http\Controllers\GoogleController;
 
 Route::get('/', [HomeController::class, 'index'])->name('client.home');
 
@@ -79,3 +80,8 @@ Route::post('/profile/update-password', [UserProfileController::class, 'updatePa
 Route::get('auth/facebook',[FacebookController::class,'facebookpage']);;
 
 Route::get('auth/facebook/callback',[FacebookController::class,'facebookredirect']);;
+
+// Route Google-Login
+Route::get('auth/google',[GoogleController::class,'googlepage']);;
+
+Route::get('auth/google/callback',[GoogleController::class,'googlecallback']);;

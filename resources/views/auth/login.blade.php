@@ -46,11 +46,11 @@
                 <a class="form__link" href="#">Bạn quên mật khẩu?</a>
                 <button class="form__button button" type="submit">ĐĂNG NHẬP</button>
 
-                <!-- <div style="text-align: center; background-color: skyblue;">
+                <div style="text-align: center; background-color: skyblue;">
 
-                    <a href="{{url('auth/facebook')}}">Login with Facebook</a>
+                    <a href="{{url('auth/google')}}">Login with Google</a>
 
-                </div> -->
+                </div> 
             </form>
         </div>  
 

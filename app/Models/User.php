@@ -25,6 +25,7 @@ class User extends Authenticatable
     'created_at',
     'updated_at',
     'facebook_id',
+    'google_id',
     ];
     
     // Thêm dòng sau để xác định rằng không sử dụng khóa tăng tự động
