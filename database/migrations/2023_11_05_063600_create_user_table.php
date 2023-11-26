@@ -16,11 +16,12 @@ return new class extends Migration
             $table->string('account_name');
             $table->string('email');
             $table->string('phone_number')->nullable();
-            $table->string('gender')->nullable();
+            $table->string('gender')->default('Khác');
             $table->string('birth_day')->nullable();
             $table->string('password');
             $table->string('address')->nullable();
             $table->string('avt');
+            $table->string('google_id')->nullable();
             $table->string('email_verification_token')->nullable();
             $table->boolean('email_verified')->default(false);
             $table->rememberToken();

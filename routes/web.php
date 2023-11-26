@@ -93,3 +93,7 @@ use App\Http\Controllers\Auth\ResetPasswordController;
 
 Route::get('password/reset/{token}', [ResetPasswordController::class, 'showResetForm'])->name('password.reset');
 Route::post('password/reset', [ResetPasswordController::class, 'reset'])->name('password.update');
+use App\Http\Controllers\Auth\GoogleAuthController;
+//login with google
+Route::get('auth/google',[GoogleAuthController::class,'redirect'])->name('google-auth');
+Route::get('auth/google/callback',[GoogleAuthController::class,'callbackGoogle']);

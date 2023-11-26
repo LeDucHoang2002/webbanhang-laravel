@@ -13,9 +13,15 @@
             </div>
         @endif
         @if (session('success'))
-            <div class="alert alert-success">
+            <div class="alert alert-success" id="success-alert">
                 {{ session('success') }}
             </div>
+
+            <script>
+                setTimeout(function() {
+                    document.getElementById('success-alert').style.display = 'none';
+                }, 3000);
+            </script>
         @endif
         <div class="separator"></div>
         <form action="{{ route('profile.update') }}" method="post" enctype="multipart/form-data">

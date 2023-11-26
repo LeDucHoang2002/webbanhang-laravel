@@ -51,13 +51,13 @@ class OrderController extends Controller
     }
 
     public function SaveOrder(Request $request) {
-        $user = $request->user();
+        $username = session('username');
         $productDetail = Product_Detail::find($request->input('color'));
         $quantity = $request->input('quantity');
         $size = $request->input('size');
 
         $order = new Order();
-        $order->username = $user->username; 
+        $order->username = $username; 
         $order->day_order = now(); 
         $order->status = 'Thanh toán khi nhận hàng'; 
         $order->save();

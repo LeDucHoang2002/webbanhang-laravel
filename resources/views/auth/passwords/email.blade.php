@@ -3,21 +3,21 @@
 
 <head>
     <title>@yield('title', 'Quên mật khẩu')</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
         @media (min-width: 768px) {
             .card {
                 width: 40%;
             }
         }
-    
+
         .card {
             margin: 50px auto;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
         }
-    
+
         .card-header {
             background-color: #c6a0a3;
             color: #ffffff;
@@ -25,20 +25,36 @@
             border-top-left-radius: 8px;
             border-top-right-radius: 8px;
         }
-    
+
         .card-body {
             padding: 20px;
         }
-    
+
+        a {
+            text-decoration: none;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-left: 13.5%;
+            padding-right: 13.5%;
+            font-size: 22px;
+            height: 65px;
+            border-bottom: 1px solid #b2b2b2;
+            background-color: #ffffff;
+        }
+
         .form-group {
             margin-bottom: 20px;
         }
-    
+
         .col-md-4 {
             text-align: right;
             line-height: 2.5;
         }
-    
+
         .form-control {
             width: 100%;
             padding: 10px;
@@ -47,7 +63,7 @@
             margin-top: 5px;
             box-sizing: border-box;
         }
-    
+
         .btn-primary {
             background-color: #bf6d72;
             color: #ffffff;
@@ -56,20 +72,20 @@
             padding: 10px 20px;
             cursor: pointer;
         }
-    
+
         .btn-primary:hover {
             background-color: #c48185;
             border: 1px solid #c48185;
         }
-    
+
         .invalid-feedback {
             color: #dc3545;
         }
-    
+
         .alert {
             margin-top: 20px;
         }
-    
+
         .alert-success {
             background-color: #c48185;
             color: #ffffff;
@@ -77,12 +93,16 @@
             border-radius: 4px;
         }
     </style>
-    
-    
+
+
 </head>
 
 <body class="animsition">
-
+    <div class="header"> <a href="{{ route('client.home') }}" class="logo" style="color: #000">
+            <p><b>SEASIDE</b> STORE / <span style="color: #a0a5a8">Quên mật khẩu</span></p>
+        </a>
+        <p style="font-size: 16px;color: #bf6d72">Bạn cần giúp đỡ?</p>
+    </div>
     <div class="card">
         <div class="card-header">{{ __('Quên mật khẩu') }}</div>
 
@@ -97,10 +117,12 @@
                 @csrf
 
                 <div class="form-group row">
-                    <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Nhập địa chỉ email của bạn') }}</label>
+                    <label for="email"
+                        class="col-md-4 col-form-label text-md-right">{{ __('Nhập địa chỉ email của bạn') }}</label>
 
                     <div class="col-md-6">
-                        <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                        <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
+                            name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
                         @error('email')
                             <span class="invalid-feedback" role="alert">
