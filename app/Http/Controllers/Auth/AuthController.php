@@ -42,7 +42,11 @@ class AuthController extends Controller
                 if ($id_permission == 3) {
                     return redirect()->intended('');
                 } else {
-                    return back()->with('fail', 'Không có quyền truy cập');
+                    if ($id_permission == 1) {
+                        return redirect()->intended('/Admin');
+                    } else {
+                        return back()->with('fail', 'Không có quyền truy cập');
+                    }
                 }
             } else {
                 // Người dùng chưa xác thực email

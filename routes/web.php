@@ -117,3 +117,6 @@ use App\Http\Controllers\Auth\GoogleAuthController;
 //login with google
 Route::get('auth/google',[GoogleAuthController::class,'redirect'])->name('google-auth');
 Route::get('auth/google/callback',[GoogleAuthController::class,'callbackGoogle']);
+Route::get('/Admin', function () {
+    return view('admin.home.index');
+})->name('Admin');
