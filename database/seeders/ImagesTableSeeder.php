@@ -22,7 +22,7 @@ class ImagesTableSeeder extends Seeder
             ['image' => 'https://4menshop.com/images/thumbs/2017/10/ao-thun-do-do-at716-9144.jpg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
 
             ['image' => 'https://salt.tikicdn.com/cache/w1200/ts/product/c8/6f/64/bd8afb8f2b55004077dc58ab04fef5d0.jpg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
-            ['image' => 'https://lamdepwiki.com/wp-content/uploads/2019/09/vay-dam-voan-2-lop.jpg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['image' => 'https://kinhdoanhthoitrang.com.vn/wp-content/uploads/2020/10/9e087ac384826ddc3493.jpg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
             ['image' => 'https://vpfashion.vn/wp-content/uploads/2021/06/mau-vay-cong-so-dep-nhat-moi-nhat.png', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
 
             ['image' => 'https://4men.com.vn/images/thumbs/2017/09/tong-hop-nhung-mau-quan-jogger-nam-dep-nhat-hien-nay-news-245.jpg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
