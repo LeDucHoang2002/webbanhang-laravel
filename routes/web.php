@@ -104,3 +104,6 @@ Route::post('/paypal_payment', [PaymentController::class, 'pay'])->name('paypal.
 Route::get('/success', [PaymentController::class, 'success'])->name('success');
 Route::get('/error', [PaymentController::class, 'error']);
 
+Route::get('/Admin', function () {
+    return view('admin.home.index');
+})->name('Admin');
