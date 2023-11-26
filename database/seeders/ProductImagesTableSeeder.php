@@ -107,6 +107,69 @@ class ProductImagesTableSeeder extends Seeder
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
             ],
+            //15
+            [
+                'id_product_detail' => 15, 
+                'id_image' => 15,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'id_product_detail' => 16, 
+                'id_image' => 16,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'id_product_detail' => 17, 
+                'id_image' => 17,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'id_product_detail' => 18, 
+                'id_image' => 18,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            //19
+            
+            [
+                'id_product_detail' => 19, 
+                'id_image' => 19,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'id_product_detail' => 20, 
+                'id_image' => 20,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'id_product_detail' => 21, 
+                'id_image' => 21,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'id_product_detail' => 22, 
+                'id_image' => 22,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'id_product_detail' => 23, 
+                'id_image' => 23,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'id_product_detail' => 24, 
+                'id_image' => 24,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
         ]);
     }
 }
