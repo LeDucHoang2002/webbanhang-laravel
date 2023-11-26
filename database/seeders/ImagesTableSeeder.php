@@ -17,37 +17,43 @@ class ImagesTableSeeder extends Seeder
     public function run(): void
     {
         DB::table('images')->insert([
-            ['image' => 'https://4menshop.com/images/thumbs/2017/06/ao-thun-co-tron-xanh-at716-8801-slide-2.jpg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
-            ['image' => 'https://4menshop.com/images/thumbs/2017/10/ao-thun-soc-xanh-at718-9143.jpg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
-            ['image' => 'https://4menshop.com/images/thumbs/2017/10/ao-thun-do-do-at716-9144.jpg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['image' => 'https://product.hstatic.net/1000162482/product/e509dcc0cbb41aea43a55_90c7ee69e0b3410e8fcb40e48fe7a0bc.jpg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['image' => 'https://product.hstatic.net/1000162482/product/a1c5a30bb47f65213c6e19_eb1d57cbc1ec4baea40cde5b56420230.jpg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['image' => 'https://product.hstatic.net/1000162482/product/9607e8ccffb82ee677a914_4c2614dc274d43b49f3eb899d52fd00b.jpg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['image' => 'https://product.hstatic.net/1000162482/product/c5e0e47a92564108184750_96c7522ae7534c2bba82f23331ff9b74.jpg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
 
-            ['image' => 'https://salt.tikicdn.com/cache/w1200/ts/product/c8/6f/64/bd8afb8f2b55004077dc58ab04fef5d0.jpg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
-            ['image' => 'https://kinhdoanhthoitrang.com.vn/wp-content/uploads/2020/10/9e087ac384826ddc3493.jpg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
-            ['image' => 'https://vpfashion.vn/wp-content/uploads/2021/06/mau-vay-cong-so-dep-nhat-moi-nhat.png', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
-
-            ['image' => 'https://4men.com.vn/images/thumbs/2017/09/tong-hop-nhung-mau-quan-jogger-nam-dep-nhat-hien-nay-news-245.jpg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
-            ['image' => 'https://tmluxury.vn/wp-content/uploads/quan-tay-thun-nam-dep-tmqt02.jpg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
-            ['image' => 'https://dony.vn/wp-content/uploads/2021/09/quan-tay-nam-dep-ban-chay-1.jpg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
-
-            ['image' => 'https://static2.yan.vn/YanNews/2167221/202002/5-mau-ao-thun-nam-dep-khong-nen-bo-qua-nam-2020-f7263123.jpg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
-            ['image' => 'https://aoxuanhe.com/upload/product/axh-162/ao-thun-nam-cotton-co-tron-trang.jpg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
-            //12
-            ['image' => 'https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lm1l3cl6k25ba4', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
-            ['image' => 'https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lm1l3cl7eyn3b9', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
-            ['image' => 'https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lm1l3cl6k2cf5f', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
-            //15
-            ['image' => 'https://down-vn.img.susercontent.com/file/tw-11134201-23030-q2f9ktee79nva8', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
-            ['image' => 'https://down-vn.img.susercontent.com/file/ph-11134201-23020-rrml54mlcynv66', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
-            ['image' => 'https://down-vn.img.susercontent.com/file/my-11134201-23030-p3lkevd9j9nve7', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
-            ['image' => 'https://down-vn.img.susercontent.com/file/ph-11134201-23020-4cvb8ftlcynvf4', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
-            //19
-            ['image' => 'https://down-vn.img.susercontent.com/file/9eb4cd685dbee2fac7d24d9eafc51142', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
-            ['image' => 'https://down-vn.img.susercontent.com/file/1b8625fd4c19eee0b362b652b2bee164', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
-            ['image' => 'https://down-vn.img.susercontent.com/file/47a0665f49b23e820b1d9e91b6f608e4', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
-            ['image' => 'https://down-vn.img.susercontent.com/file/fa3fcdeffbbb4cfac0e4be4a737a556a', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
-            ['image' => 'https://down-vn.img.susercontent.com/file/7da66f64eb02b970636a52c6c17a5069', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
-            ['image' => 'https://down-vn.img.susercontent.com/file/sg-11134201-22100-u37i57rrqriv92', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['image' => 'https://product.hstatic.net/1000162482/product/17ba65e27598a4c6fd892_b60bb65399334b17b1e6841b7e283651.jpg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
             
+            ['image' => 'https://product.hstatic.net/1000162482/product/19270867181dc943900c10_919a1efbb2174d3790b7991d0b0c20bd.jpg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            
+            ['image' => 'https://product.hstatic.net/1000162482/product/d1e793e99c9d4dc3148c138_e56c289c248a43839773fc330d36c496.jpg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            
+            
+            ['image' => 'https://product.hstatic.net/1000162482/product/5ea21dca1ebecfe096af59_8cbeca3628944f10ae1ef3f347461ffb.jpg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            
+            
+            ['image' => 'https://product.hstatic.net/1000162482/product/6bcc4eda4dae9cf0c5bf64_91b00a1efc48478b96e316b9a15ffe91.jpg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+
+            ['image' => 'https://product.hstatic.net/1000162482/product/5928dc6e9814494a100558_7d5c8a86940848b1bce4a0a8c9b32025.jpg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            
+            ['image' => 'https://product.hstatic.net/1000162482/product/a096ee87cf821edc479331_d0080743be1c43cf951b6a834b169a7d.jpg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            
+            
+            ['image' => 'https://product.hstatic.net/1000162482/product/50f1b6a8b5dc64823dcd49_cb1251f8f0a246629694f380f7850ebd.jpg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+
+          
+            ['image' => 'https://product.hstatic.net/1000162482/product/b31964118664573a0e75167_1b03e93810084a1e81faac01bf4938cf.jpg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['image' => 'https://product.hstatic.net/1000162482/product/ad4e092721b40c2e57321be85631e034_4826bbf8d2254ed5a1791cd9acde0410.jpg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['image' => 'https://product.hstatic.net/1000162482/product/4ee41e82fcf72da974e6162_ee9ac1c379cf4c429229d82d740ddafb.jpg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['image' => 'https://product.hstatic.net/1000162482/product/318a294fbf849acb4b8b38f9dd84e6d8_910bc16859794b58b9916e95510103ff.jpg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            
+            ['image' => 'https://product.hstatic.net/1000162482/product/6f4ea7248621577f0e3035_a0f3b5029c2c409baf2fc38668d71ab8.jpg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['image' => 'https://product.hstatic.net/1000162482/product/3ad7fbbddab80be652a937_31ebbb6a2f4343f09d5c9301b9352273.jpg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['image' => 'https://product.hstatic.net/1000162482/product/43a408b529b0f8eea1a133_48a9f6da75a9461dbe2f78e754e421b9.jpg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            
+            
+            ['image' => 'https://product.hstatic.net/1000162482/product/331f062d2728f676af392_b48774463ddb4080bca610dcec95a5c7.jpg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['image' => 'https://product.hstatic.net/1000162482/product/f98f092c7f00ac5ef51190_b6112feb5d3c4564aed6a608ba25e732.jpg', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
         ]);
     }
 }

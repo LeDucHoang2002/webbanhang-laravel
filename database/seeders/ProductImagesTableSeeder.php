@@ -39,51 +39,51 @@ class ProductImagesTableSeeder extends Seeder
             ],
             [
                 'id_product_detail' => 4, 
-                'id_image' => 10,
+                'id_image' => 4,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
             ],
             [
                 'id_product_detail' => 5, 
-                'id_image' => 11,
+                'id_image' => 5,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
             ],
 
             [
                 'id_product_detail' => 6, 
-                'id_image' => 4,
+                'id_image' => 6,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
             ],
             [
                 'id_product_detail' => 7, 
-                'id_image' => 5,
+                'id_image' => 7,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
             ],
             [
                 'id_product_detail' => 8, 
-                'id_image' => 6,
+                'id_image' => 8,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
             ],
 
             [
                 'id_product_detail' => 9, 
-                'id_image' => 7,
+                'id_image' => 9,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
             ],
             [
                 'id_product_detail' => 10, 
-                'id_image' => 8,
+                'id_image' => 10,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
             ],
             [
                 'id_product_detail' => 11, 
-                'id_image' => 9,
+                'id_image' => 11,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
             ],
@@ -152,24 +152,7 @@ class ProductImagesTableSeeder extends Seeder
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
             ],
-            [
-                'id_product_detail' => 22, 
-                'id_image' => 22,
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now()
-            ],
-            [
-                'id_product_detail' => 23, 
-                'id_image' => 23,
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now()
-            ],
-            [
-                'id_product_detail' => 24, 
-                'id_image' => 24,
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now()
-            ],
+            
         ]);
     }
 }
