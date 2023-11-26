@@ -36,31 +36,15 @@ class FacebookController extends Controller
             }else{
             
             $newUser = User::updateOrCreate([
-
             'email' => $user->email, 
-
-            'username'=>$user->id,
-            
+            'username'=>$user->id, 
             'account_name' => $user->name, 
-
             'facebook_id' => $user->id,
-
-            'phone_number' => '0123456789', 
-            
-            'gender' => 'nam',
-
+            'phone_number' => '0353057899', 
             'birth_day' => '2002-08-11',
-
             'password' => bcrypt('ABC12345'),
-
             'avt' => $user->avatar,
-
             'address' => '41 Cao Thắng',
-
-          
-
-
-
         ]);
 
         $id_permission = User_Permission::where('username', $newUser->username)->value('id_permission');

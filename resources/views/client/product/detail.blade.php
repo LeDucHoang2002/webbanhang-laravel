@@ -54,7 +54,7 @@
                     <div class="p-r-50 p-t-5 p-lr-0-lg">
                         <h4 class="mtext-105 cl2 p-b-14">
                             <span class="js-name-detail">{{ $products->name_product }}</span><br>
-                            <b style="color: #f9ba48">
+                            <p style="color: #f9ba48">
                                 {{ number_format($averageStarRating, 1) }}
                                 @if ($averageStarRating > floor($averageStarRating))
                                     @for ($i = 0; $i < floor($averageStarRating); $i++)
@@ -66,7 +66,8 @@
                                         <i class="zmdi zmdi-star"></i>
                                     @endfor
                                 @endif
-                            </b>
+                                <span style="color: black">| {{ $totalFeedback }}</span><span style="color: #888"> Đánh giá</span>
+                            </p>
                         </h4>
 
                         <span style="color: #ff2600;font-size: 24px" class="mtext-106 cl2">
