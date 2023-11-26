@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,6 +18,7 @@ use App\Http\Controllers\Client\HomeController;
 use App\Http\Controllers\Client\ProductController;
 use App\Http\Controllers\Client\CartController;
 use App\Http\Controllers\Client\OrderController;
+use App\Http\Controllers\Auth\FacebookController;
 
 Route::get('/', [HomeController::class, 'index'])->name('client.home');
 
@@ -104,3 +107,9 @@ Route::post('/paypal_payment', [PaymentController::class, 'pay'])->name('paypal.
 Route::get('/success', [PaymentController::class, 'success'])->name('success');
 Route::get('/error', [PaymentController::class, 'error']);
 
+// Route Facebook-Login
+Route::get('auth/facebook',[FacebookController::class,'facebookpage']);;
+
+Route::get('auth/facebook/callback',[FacebookController::class,'facebookredirect']);;
+
+// Route Google-Login
