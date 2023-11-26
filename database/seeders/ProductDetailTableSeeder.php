@@ -119,6 +119,79 @@ class ProductDetailTableSeeder extends Seeder
                 'updated_at' => Carbon::now()
             ],
             //15
+            
+            [
+                'id_product' => 11, 
+                'color' => 'Màu trắng',
+                'price' => '151000', 
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'id_product' => 11, 
+                'color' => 'Màu đen',
+                'price' => '165000', 
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'id_product' => 11, 
+                'color' => 'Màu xám',
+                'price' => '151000', 
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'id_product' => 11, 
+                'color' => 'Màu xanh',
+                'price' => '151000', 
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            //19
+            [
+                'id_product' => 12, 
+                'color' => 'Màu nâu trầm',
+                'price' => '239000', 
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'id_product' => 12, 
+                'color' => 'Màu đen',
+                'price' => '239000', 
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'id_product' => 12, 
+                'color' => 'Màu be kem',
+                'price' => '239000', 
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'id_product' => 12, 
+                'color' => 'Màu trắng',
+                'price' => '239000', 
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'id_product' => 12, 
+                'color' => 'Màu ghi',
+                'price' => '239000', 
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'id_product' => 12, 
+                'color' => 'Màu xanh than',
+                'price' => '239000', 
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            //24
         ]);
     }
 }

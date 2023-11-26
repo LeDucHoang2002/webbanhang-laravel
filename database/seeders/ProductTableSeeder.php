@@ -133,6 +133,34 @@ class ProductTableSeeder extends Seeder
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
             ],
+            //11
+            [
+                'name_product' => 'Áo Thun Tay Ngắn Cổ Tròn Dáng Rộng Màu Sắc Đơn Giản Thoải Mái Có Size Lớn Cho Nam Giới', 
+                'image_product' => 'https://down-vn.img.susercontent.com/file/tw-11134201-23030-q2f9ktee79nva8',
+                'id_category' => '1', 
+                'description' => '
+                [1] Vui lòng xác nhận rằng tên, số điện thoại và địa chỉ của người nhận hàng là chính xác.
+                [2] Tất cả các mặt hàng trong cửa hàng của chúng tôi đều có trong kho. Sản phẩm của chúng tôi được vận chuyển từ Trung Quốc và các sản phẩm sẽ đến nơi trong vòng 7 đến 14 ngày.
+                [3] Phương thức vận chuyển của chúng tôi là hình thức chuyển phát tiêu chuẩn chính thức của Shopee, an toàn và nhanh chóng. Tôi hy vọng rằng khách hàng sẽ không cho chúng tôi đánh giá xấu vì thời gian hậu cần!
+                [4] Người mua không lấy hàng, vui lòng đi đường vòng! Đối với những người mua bị từ chối một cách ác ý, chúng tôi có quyền truy cứu trách nhiệm pháp lý!', 
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            //12
+            [
+                'name_product' => 'Áo khoác Blazer Nam Form rộng dài tay unisex basic chất Flannel Hàn cao cấp ,hợp mọi thời đại, phong cách Hàn Quốc, Vest', 
+                'image_product' => 'https://down-vn.img.susercontent.com/file/39ba55af4ef2c88080163ecb7a478a13',
+                'id_category' => '1', 
+                'description' => 'SHOP CAM KẾT
+                - Sản phẩm Áo Blazer Nam Form rộng cao cấp giống mô tả 100%
+                - Hình ảnh sản phẩm là ảnh thật, các hình hoàn toàn do shop tự thiết kế.
+                - Kiểm tra  cẩn thận trước khi gói hàng giao cho Quý Khách
+                - Hàng có sẵn, giao hàng ngay khi nhận được đơn 
+                - Hoàn tiền nếu sản phẩm không giống với mô tả
+                - Chấp nhận đổi hàng khi size không vừa trong 3 ngày.', 
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
         ]);
     }
 }
