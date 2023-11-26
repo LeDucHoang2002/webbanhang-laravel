@@ -13,6 +13,9 @@ class CartController extends Controller
     public function index()
     {
         $username = session('username');
+        if(!$username) {
+            return redirect()->route('client.home');
+        }
         $carts=Cart::Where('username',$username);
         $countCart=$carts->count('id');
         session()->put('countCart', $countCart);

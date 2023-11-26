@@ -15,7 +15,6 @@ use App\Models\Order_Detail;
 class PaymentController extends Controller
 {
     private $gateway;
-
     public function __construct() {
         $this->gateway = Omnipay::create("PayPal_Rest");
         $this->gateway->setClientId(env("PAYPAL_CLIENT_ID"));
@@ -83,7 +82,6 @@ class PaymentController extends Controller
     public function error() {
         return "User is decline Payment!"; //thanh toán thất bại
     }
-
 
 
     public function vnpayPayment(Request $request)

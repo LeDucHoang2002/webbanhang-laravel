@@ -14,11 +14,10 @@ class UserProfileController extends Controller
 {
     public function showProfile()
     {
-        
-       $username = session('username');
-       if (!$username) {
-           return redirect()->route('error.page')->with('error', 'Username not found in session.');
-       }
+        $username = session('username');
+        if(!$username) {
+            return redirect()->route('client.home');
+        }
 
        $user = User::where('username', $username)->first();
 
@@ -85,6 +84,10 @@ class UserProfileController extends Controller
 
     public function showPassword()
     {
+        $username = session('username');
+        if(!$username) {
+            return redirect()->route('client.home');
+        }
         return view('client.profile.password');
     }
 
@@ -118,6 +121,9 @@ class UserProfileController extends Controller
     public function showView()
     {    
         $username = session('username');
+        if(!$username) {
+            return redirect()->route('client.home');
+        }
         $orderDetails = Order_Detail::join('order', 'order.id', '=', 'order_detail.id_order')
             ->join('product_detail', 'order_detail.id_product_detail', '=', 'product_detail.id')
             ->join('product_images', 'product_detail.id', '=', 'product_images.id_product_detail')

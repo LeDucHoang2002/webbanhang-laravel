@@ -19,6 +19,10 @@ use App\Http\Controllers\Client\ProductController;
 use App\Http\Controllers\Client\CartController;
 use App\Http\Controllers\Client\OrderController;
 use App\Http\Controllers\Auth\FacebookController;
+use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\Client\UserProfileController;
+use App\Http\Controllers\Client\PaymentController;
+use App\Http\Controllers\Auth\ForgotPasswordController;
 
 Route::get('/', [HomeController::class, 'index'])->name('client.home');
 
@@ -45,13 +49,6 @@ Route::post('/update-cart-item/{id}', [CartController::class, 'updateCartItem'])
 
 Route::post('/cart/add', [CartController::class, 'addToCart'])->name('cart.add');
 
-Route::get('/payment', function () {
-    return view('client.payment.index');
-})->name('client.payment.index');
-
-
-use App\Http\Controllers\Auth\AuthController; // Replace with your actual controller
-
 Route::post('/login', [AuthController::class, 'login'])->name('login');
 Route::post('/register', [AuthController::class, 'register'])->name('register');
 Route::get('/logout', [AuthController::class,'logout'])->name('logout');
@@ -63,9 +60,6 @@ Route::get('/login', function () {
 Route::get('/register', function () {
     return view('auth.register');
 })->name('register');
-
-
-use App\Http\Controllers\Client\UserProfileController;
 
 Route::get('/profile', [UserProfileController::class, 'showProfile'])->name('profile');
 
@@ -89,8 +83,6 @@ Route::get('/verify-email', function () {
     return view('emails.verify-email');
 })->name('verify.email.custom');
 
-use App\Http\Controllers\Auth\ForgotPasswordController;
-
 Route::get('password/reset', [ForgotPasswordController::class, 'showLinkRequestForm'])->name('password.request');
 Route::post('password/email', [ForgotPasswordController::class, 'sendResetLinkEmail'])->name('password.email');
 
@@ -99,12 +91,12 @@ use App\Http\Controllers\Auth\ResetPasswordController;
 Route::get('password/reset/{token}', [ResetPasswordController::class, 'showResetForm'])->name('password.reset');
 Route::post('password/reset', [ResetPasswordController::class, 'reset'])->name('password.update');
 
-use App\Http\Controllers\Client\PaymentController;
-
 Route::post('/vnpay_payment', [PaymentController::class, 'vnpayPayment'])->name('vnpay.payment');
 
 Route::post('/paypal_payment', [PaymentController::class, 'pay'])->name('paypal.payment');
+
 Route::get('/success', [PaymentController::class, 'success'])->name('success');
+
 Route::get('/error', [PaymentController::class, 'error']);
 
 // Route Facebook-Login
@@ -117,6 +109,7 @@ use App\Http\Controllers\Auth\GoogleAuthController;
 //login with google
 Route::get('auth/google',[GoogleAuthController::class,'redirect'])->name('google-auth');
 Route::get('auth/google/callback',[GoogleAuthController::class,'callbackGoogle']);
+
 Route::get('/Admin', function () {
     return view('admin.home.index');
 })->name('Admin');
