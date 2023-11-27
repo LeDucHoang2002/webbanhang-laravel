@@ -18,7 +18,7 @@ use App\Http\Controllers\Client\HomeController;
 use App\Http\Controllers\Client\ProductController;
 use App\Http\Controllers\Client\CartController;
 use App\Http\Controllers\Client\OrderController;
-use App\Http\Controllers\Auth\FacebookController;
+
 
 Route::get('/', [HomeController::class, 'index'])->name('client.home');
 
@@ -108,7 +108,9 @@ Route::get('/success', [PaymentController::class, 'success'])->name('success');
 Route::get('/error', [PaymentController::class, 'error']);
 
 // Route Facebook-Login
-Route::get('auth/facebook',[FacebookController::class,'facebookpage']);;
+use App\Http\Controllers\Auth\FacebookController;
+
+Route::get('auth/facebook',[FacebookController::class,'facebookpage'])->name('facebook-auth');;
 
 Route::get('auth/facebook/callback',[FacebookController::class,'facebookredirect']);;
 
