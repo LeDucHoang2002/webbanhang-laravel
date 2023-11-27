@@ -53,6 +53,16 @@
                 <div class="col-md-6 col-lg-5 p-b-30">
                     <div class="p-r-50 p-t-5 p-lr-0-lg">
                         <h4 class="mtext-105 cl2 p-b-14">
+                            @if (session('success'))
+                                <div class="alert alert-success" id="success-alert">
+                                    {{session('success') }}
+                                </div>
+                                <script>
+                                    setTimeout(function() {
+                                        $('#success-alert').fadeOut('fast');
+                                    }, 3000);
+                                </script>
+                            @endif
                             <span class="js-name-detail">{{ $products->name_product }}</span><br>
                             <p style="color: #f9ba48">
                                 {{ number_format($averageStarRating, 1) }}
@@ -66,7 +76,8 @@
                                         <i class="zmdi zmdi-star"></i>
                                     @endfor
                                 @endif
-                                <span style="color: black">| {{ $totalFeedback }}</span><span style="color: #888"> Đánh giá</span>
+                                <span style="color: black">| {{ $totalFeedback }}</span><span style="color: #888"> Đánh
+                                    giá</span>
                             </p>
                         </h4>
 

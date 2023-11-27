@@ -100,9 +100,9 @@ class PaymentController extends Controller
             'size' => $size,
             'idProductDetail' => $idProductDetail,
         ]);
-        
-        $vnp_TmnCode = "CGXZLS0Z";
-        $vnp_HashSecret = "XNBCJFAKAZQSGTARRLGCHVZWCIOIGSHN";
+
+        $vnp_TmnCode = "B2J4MPE7";
+        $vnp_HashSecret = "GJMOFOTJTDUCFICNLVGVBIBLCXLRDDHH";
 
         $vnp_TxnRef = $latestOrderId+1;
         $vnp_OrderInfo = 'Thanh toan hoa don';
