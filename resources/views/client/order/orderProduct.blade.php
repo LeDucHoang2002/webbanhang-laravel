@@ -1,17 +1,7 @@
 @extends('client.layouts.app')
 @section('title', 'Order')
 @section('content')
-@if (session('ok'))
-        <div class="alert alert-success" id="success-alert">
-            {{ session('ok') }}
-        </div>
 
-        <script>
-            setTimeout(function() {
-                document.getElementById('success-alert').style.display = 'none';
-            }, 3000);
-        </script>
-    @endif
     <div class="order-container p-lr-100 p-t-30" style="background-color: #f5f5f5">
         <div class="order-address p-tb-40" style="background-color: #fff; border-radius: 10px">
             <div class="up m-l-30 p-b-10">
@@ -75,12 +65,12 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" id="tab2" data-toggle="tab" href="#content3">Thanh toán qua VNPay</a>
+                        <a class="nav-link" id="tab2" data-toggle="tab" href="#content3">Thanh toán qua PAYPAL</a>
                     </li>
                 </ul>
                 <div class="tab-content">
                     <div class="tab-pane fade show active" id="content1">
-                        <h3 class="m-3" style="width: 300px;float:left">Thanh toán khi nhận hàng</h3>
+                        <h4 class="m-3" style="width: 300px;float:left">Thanh toán khi nhận hàng</h4>
                         <div class="d-flex flex-column align-items-end">
                             <div class="d-flex justify-content-between w-25 my-2 mx-4">
                                 <p>Tổng tiền hàng</p>
@@ -143,7 +133,7 @@
                     </div>
 
                     <div class="tab-pane fade" id="content3">
-                        PAYPAL
+                        <img class="m-3" style="width: 300px;float:left" src="https://www.yourtradebase.com/growth-hacking/img/logo/paypal.png" alt="">
                         <div class="d-flex flex-column align-items-end">
                             <div class="d-flex justify-content-between w-25 my-2 mx-4">
                                 <p>Tổng tiền hàng</p>
