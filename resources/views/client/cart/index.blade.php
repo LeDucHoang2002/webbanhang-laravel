@@ -81,8 +81,8 @@
         @endif
     </div>
     <div class="buy-button-container">
-        <span style="display: flex"><b>Tổng tiền: </b>
-            <p id="Tong-tien"> </p>VNĐ
+        <span style="display: flex;color: red"><b>Tổng tiền: </b>
+            <p id="Tong-tien"> </p>đ
         </span>
         <button type="button" class="flex-c-m stext-101 cl0 size-101 bg1 bor3 hov-btn1 p-lr-15 trans-04 fl-r"
             onclick="buySelected()">

@@ -77,7 +77,16 @@ class OrderController extends Controller
     }
 
     public function saveOrderOnline(Request $request) {
-        
+        // Lấy các tham số trả về từ VNPAY
+    $vnp_ResponseCode = isset($_GET['vnp_ResponseCode']) ? $_GET['vnp_ResponseCode'] : '';
+
+    // Kiểm tra xem thanh toán có bị hủy hay không
+    if ($vnp_ResponseCode === '24') {
+        // Thực hiện các xử lý khi thanh toán bị hủy
+        echo "Thanh toán bị hủy. Xử lý tại đây.";
+        return redirect()->route('client.home');
+    } else {
+        // Thực hiện các xử lý khác nếu cần
         $username = session('username');
         $quantity = $request->input('quantity');
         $size = $request->input('size');
@@ -100,6 +109,8 @@ class OrderController extends Controller
         $orderDetail->status = 'Chờ duyệt'; 
         $orderDetail->save();
         return redirect()->route('view')->with('ok', 'Đã đặt hàng thành công');
+    }
+
     }
     
 }
