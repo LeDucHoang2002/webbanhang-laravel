@@ -45,7 +45,11 @@ class Kernel extends HttpKernel
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
     ];
-
+    protected $routeMiddleware = [
+        // ...
+        'client.middleware' => \App\Http\Middleware\ClientMiddleware::class,
+    ];
+    
     /**
      * The application's middleware aliases.
      *

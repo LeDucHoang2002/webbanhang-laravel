@@ -6,6 +6,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
+        .header {
+            font-family: Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-left: 13.5%;
+            padding-right: 13.5%;
+            font-size: 22px;
+            width: 100%;
+            height: 55px;
+            border-bottom: 1px solid #b2b2b2;
+            background-color: #ffffff;
+        }
+
         @media (min-width: 768px) {
             .card {
                 width: 40%;
@@ -32,18 +46,6 @@
 
         a {
             text-decoration: none;
-        }
-
-        .header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding-left: 13.5%;
-            padding-right: 13.5%;
-            font-size: 22px;
-            height: 65px;
-            border-bottom: 1px solid #b2b2b2;
-            background-color: #ffffff;
         }
 
         .form-group {
@@ -94,10 +96,9 @@
         }
     </style>
 
-
 </head>
 
-<body class="animsition">
+<body class="">
     <div class="header"> <a href="{{ route('client.home') }}" class="logo" style="color: #000">
             <p><b>SEASIDE</b> STORE / <span style="color: #a0a5a8">Quên mật khẩu</span></p>
         </a>

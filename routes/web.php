@@ -23,7 +23,10 @@ use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Client\UserProfileController;
 use App\Http\Controllers\Client\PaymentController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
+use App\Http\Controllers\Auth\ResetPasswordController;
+use App\Http\Controllers\Auth\GoogleAuthController;
 
+Route::middleware(['client.middleware'])->group(function () {
 Route::get('/', [HomeController::class, 'index'])->name('client.home');
 
 //  Route Product
@@ -51,7 +54,6 @@ Route::post('/cart/add', [CartController::class, 'addToCart'])->name('cart.add')
 
 Route::post('/login', [AuthController::class, 'login'])->name('login');
 Route::post('/register', [AuthController::class, 'register'])->name('register');
-Route::get('/logout', [AuthController::class,'logout'])->name('logout');
 // Route login
 Route::get('/login', function () {
     return view('auth.login');
@@ -74,8 +76,6 @@ Route::post('/profile/update', [UserProfileController::class, 'updateProfile'])-
 Route::post('/profile/update-password', [UserProfileController::class, 'updatePassword'])->name('update.password');
 
 Route::post('/confirm-received/{id}', [UserProfileController::class, 'confirmReceived'])->name('confirm.received');
-// Route::get('/email/verify/{token}', [AuthController::class, 'verifyEmail'])->name('verify.email');
-
 
 Route::get('/email/verify/{token}', [AuthController::class, 'verifyEmail'])->name('verify.email');
 
@@ -86,7 +86,6 @@ Route::get('/verify-email', function () {
 Route::get('password/reset', [ForgotPasswordController::class, 'showLinkRequestForm'])->name('password.request');
 Route::post('password/email', [ForgotPasswordController::class, 'sendResetLinkEmail'])->name('password.email');
 
-use App\Http\Controllers\Auth\ResetPasswordController;
 
 Route::get('password/reset/{token}', [ResetPasswordController::class, 'showResetForm'])->name('password.reset');
 Route::post('password/reset', [ResetPasswordController::class, 'reset'])->name('password.update');
@@ -100,16 +99,18 @@ Route::get('/success', [PaymentController::class, 'success'])->name('success');
 Route::get('/error', [PaymentController::class, 'error']);
 
 // Route Facebook-Login
-Route::get('auth/facebook',[FacebookController::class,'facebookpage']);;
+Route::get('auth/facebook',[FacebookController::class,'facebookpage'])->name('facebook-auth');
 
-Route::get('auth/facebook/callback',[FacebookController::class,'facebookredirect']);;
+Route::get('auth/facebook/callback',[FacebookController::class,'facebookredirect']);
 
 // Route Google-Login
-use App\Http\Controllers\Auth\GoogleAuthController;
 //login with google
 Route::get('auth/google',[GoogleAuthController::class,'redirect'])->name('google-auth');
 Route::get('auth/google/callback',[GoogleAuthController::class,'callbackGoogle']);
+});
 
-Route::get('/Admin', function () {
-    return view('admin.home.index');
-})->name('Admin');
+Route::get('/logout', [AuthController::class,'logout'])->name('logout');
+
+
+use App\Http\Controllers\Admin\AdminController;
+Route::get('/Admin', [AdminController::class,'showAdmin'])->name('Admin');

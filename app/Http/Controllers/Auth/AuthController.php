@@ -24,6 +24,7 @@ class AuthController extends Controller
         session()->flush();
         return redirect()->back();
     }
+    
     public function login(Request $request)
     {
         $credentials = $request->validate([

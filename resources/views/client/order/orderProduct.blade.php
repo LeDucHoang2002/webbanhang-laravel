@@ -1,7 +1,17 @@
 @extends('client.layouts.app')
 @section('title', 'Order')
 @section('content')
+@if (session('ok'))
+        <div class="alert alert-success" id="success-alert">
+            {{ session('ok') }}
+        </div>
 
+        <script>
+            setTimeout(function() {
+                document.getElementById('success-alert').style.display = 'none';
+            }, 3000);
+        </script>
+    @endif
     <div class="order-container p-lr-100 p-t-30" style="background-color: #f5f5f5">
         <div class="order-address p-tb-40" style="background-color: #fff; border-radius: 10px">
             <div class="up m-l-30 p-b-10">

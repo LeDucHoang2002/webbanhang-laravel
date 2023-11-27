@@ -35,13 +35,15 @@
         }
 
         .header {
+            font-family: Arial, sans-serif;
             display: flex;
             align-items: center;
             justify-content: space-between;
             padding-left: 13.5%;
             padding-right: 13.5%;
             font-size: 22px;
-            height: 65px;
+            width: 100%;
+            height: 55px;
             border-bottom: 1px solid #b2b2b2;
             background-color: #ffffff;
         }

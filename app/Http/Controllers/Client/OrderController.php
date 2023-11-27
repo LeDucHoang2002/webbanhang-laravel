@@ -77,14 +77,15 @@ class OrderController extends Controller
     }
 
     public function saveOrderOnline(Request $request) {
-        $user = $request->user();
+        
+        $username = session('username');
         $quantity = $request->input('quantity');
         $size = $request->input('size');
         $vnp_Amount=$request->input('vnp_Amount');
         $idProductDetail = $request->input('idProductDetail');    
         
         $order = new Order();
-        $order->username = $user->username; 
+        $order->username = $username; 
         $order->day_order = now(); 
         $order->status = 'Đã thanh toán'; 
         $order->save();
